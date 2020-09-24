@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Fortify\TwoFactorAuthenticatable;
-use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\DB;
+use Laravel\Jetstream\HasProfilePhoto;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -57,4 +58,41 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+      /**
+     *  Checking the role of the authenticated user
+     *  @param string $role
+     *  @return boolean
+     */
+    public function hasRole($is_role) {
+
+        $roles = $this->roles;
+        foreach ($roles as $role) {
+            if($role->name === $is_role){
+                return true;
+            break;
+            }
+        }
+
+        return false;
+    }
+
+    public function userRole()
+    {
+            $assign_roles = array();
+            $roles = DB::table('roles')->where([
+                ['name', '!=', 'superuser'],
+                ['name', '!=', 'normal']
+                ])->get();
+            
+            foreach ($roles as $role) {
+
+                if($this->hasRole($role->name) == false){
+                    $assign_roles[] = $role;
+                }
+            }
+
+            return $assign_roles;
+
+    }
 }

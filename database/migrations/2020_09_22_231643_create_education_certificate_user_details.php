@@ -15,8 +15,10 @@ class CreateEducationCertificateUserDetails extends Migration
     {
         Schema::create('education_certificate_user_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('education_certificate_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_details_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('education_certificate_id');
+            $table->foreign('education_certificate_id', 'ed_id_foreign')->references('id')->on('education_certificates')->onDelete('cascade');
+            $table->unsignedBigInteger('user_details_id');
+            $table->foreign('user_details_id', 'ud_id_foreign')->references('id')->on('user_details')->onDelete('cascade');
             $table->timestamps();
         });
     }

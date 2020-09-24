@@ -13,10 +13,12 @@ class CreateBoardRegistrationUserDetails extends Migration
      */
     public function up()
     {
-        Schema::table('board_registration_user_details', function (Blueprint $table) {
+        Schema::create('board_registration_user_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('board_registration_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_details_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('board_registration_id');
+            $table->foreign('board_registration_id', 'br_id_foreign')->references('id')->on('board_registrations')->onDelete('cascade');
+            $table->unsignedBigInteger('user_details_id');
+            $table->foreign('user_details_id', 'brud_id_foreign')->references('id')->on('user_details')->onDelete('cascade');
             $table->timestamps();
         });
     }

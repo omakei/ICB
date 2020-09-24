@@ -19,8 +19,8 @@ class CreateProjectsTable extends Migration
             $table->text('description');
             $table->double('contract_sum_vat_exclusive');
             $table->double('contract_sum_vat_inclusive');
-            $table->string('client_name');
             $table->enum('remarks', ['complited', 'complited pending payment', 'ongoing']);
+            $table->foreignId('client_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

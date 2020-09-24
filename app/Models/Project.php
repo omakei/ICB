@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function departments()
+    {
+        return $this->belongsToMany(Department::class);
+    }
 }

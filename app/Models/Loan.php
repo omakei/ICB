@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Loan extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function loan_refunds()
+    {
+        return $this->hasMany(LoanRefund::class);
+    }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }
