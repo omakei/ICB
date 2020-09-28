@@ -18,17 +18,17 @@ class Department extends Model
 
     public function getDepartment()
     {
-        # code...
+        return self::where('parent_id', null)->where('type', 'department')->get();
     }
 
-    public function getSection()
+    public function sections()
     {
-        # code...
+        return self::where('parent_id', $this->id)->where('type', 'section')->get();
     }
 
-    public function getUnity()
+    public function units()
     {
-        # code...
+        return self::where('parent_id', $this->id)->where('type', 'unity')->get();
     }
 
     public function projects()

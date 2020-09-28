@@ -9,21 +9,23 @@ export default ({
   ...props
 }) => {
   return (
-    <div className={className}>
+    <div className={`form-group ${className} ${errors.length?'is-invalid':''}`}>
       {label && (
-        <label className="form-label" htmlFor={name}>
-          {label}:
+        <label htmlFor={name}>
+          {label}
         </label>
       )}
       <select
         id={name}
         name={name}
         {...props}
-        className={`form-select ${errors.length ? 'error' : ''}`}
+        className={`form-select form-control ${errors.length ? 'error' : ''}`}
+        aria-invalid={errors.length?'true':''}
+        aria-describedby={errors.length?name+'-error':''}
       >
         {children}
       </select>
-      {errors && <div className="form-error">{errors[0]}</div>}
+      {errors && <div id={name+'-error'} className="invalid-feedback animated fadeInDown">{errors[0]}</div>}
     </div>
   );
 };

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\Organization;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class OrganizationController extends Controller
 {
@@ -14,7 +16,7 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Organization/Index', ['organization' => Organization::first(), 'creatable'=> Organization::count()>0?false:true]);
     }
 
     /**
@@ -24,7 +26,7 @@ class OrganizationController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Organization/Create');
     }
 
     /**
@@ -35,7 +37,33 @@ class OrganizationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'String'],
+            'address' => ['required'],
+            'contact' => ['required'],
+            'email' => ['required'],
+            'website' => ['required'],
+            'fax' => ['required'],
+            'image' => ['required']
+        ]);
+
+        // dd($request);
+
+        $organization = Organization::create([
+            'name' => $request['name'],
+            'address' => $request['address'],
+            'contact' => $request['contact'],
+            'email' => $request['email'],
+            'website' => $request['website'],
+            'fax' => $request['fax'],
+        ]);
+
+        if(is_null($request['image'])){
+
+            $organization->addMediaFromBase64($request['image'])->toMediaCollection();
+        }
+        
+        return Redirect::route('organization')->with('success', 'Organization created.');
     }
 
     /**
@@ -57,7 +85,7 @@ class OrganizationController extends Controller
      */
     public function edit(Organization $organization)
     {
-        //
+        return Inertia::render('Organization/Edit',['organization' => $organization]);
     }
 
     /**
@@ -69,7 +97,31 @@ class OrganizationController extends Controller
      */
     public function update(Request $request, Organization $organization)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'String'],
+            'address' => ['required'],
+            'contact' => ['required'],
+            'email' => ['required'],
+            'website' => ['required'],
+            'fax' => ['required'],
+            'image' => ['required']
+        ]);
+
+        $organization->update([
+            'name' => $request['name'],
+            'address' => $request['address'],
+            'contact' => $request['contact'],
+            'email' => $request['email'],
+            'website' => $request['website'],
+            'fax' => $request['fax'],
+        ]);
+
+        if(is_null($request['image'])){
+
+            $organization->addMediaFromBase64($request['image'])->toMediaCollection();
+        }
+        
+        return Redirect::route('organization')->with('success', 'Organization Updated.');
     }
 
     /**

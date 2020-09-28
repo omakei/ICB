@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\UserDetails;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,14 @@ class UserDetailsController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('User/Index', ['user_details' => UserDetails::all()->map(function($user){
+            $data['id']= $user->id;
+            $data['first_name'] = $user->first_name;
+            $data['middle_name'] = $user->middle_name;
+            $data['last_name'] = $user->last_name;
+            $data['mobile_number'] = $user->mobile_number;
+            $data['department']= $user->department->name;
+        })]);
     }
 
     /**
@@ -24,7 +32,7 @@ class UserDetailsController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('User/Create');
     }
 
     /**

@@ -1,6 +1,5 @@
 import React from 'react';
 import { InertiaLink } from '@inertiajs/inertia-react';
-// import classNames from 'classnames';
 import Icon from '@/Shared/Icon';
 
 export default ({ icon, link, text }) => {
@@ -8,9 +7,9 @@ export default ({ icon, link, text }) => {
 
 
   return (
-    <li>
+    <li className={ isActive? 'open': ''}>
       <InertiaLink href={route(link)} className={ isActive? 'active': ''}>
-        <Icon className={iconClasses} />
+        <Icon className={icon} />
         <span class="sidebar-mini-hide">{text}</span>
       </InertiaLink>
     </li>

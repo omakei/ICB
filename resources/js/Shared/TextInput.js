@@ -2,19 +2,21 @@ import React from 'react';
 
 export default ({ label, name, className, errors = [], ...props }) => {
   return (
-    <div className={className}>
+    <div className={`form-group ${className} ${errors.length?'is-invalid':''}`}>
       {label && (
-        <label className="form-label" htmlFor={name}>
-          {label}:
+        <label htmlFor={name}>
+          {label}
         </label>
       )}
       <input
         id={name}
         name={name}
         {...props}
-        className={`form-input ${errors.length ? 'error' : ''}`}
+        className={`form-input form-control ${errors.length ? 'error' : ''}`}
+        aria-invalid={errors.length?'true':''}
+        aria-describedby={errors.length?name+'-error':''}
       />
-      {errors && <div className="form-error">{errors[0]}</div>}
+      {errors && <div id={name+'-error'} className="invalid-feedback animated fadeInDown">{errors[0]}</div>}
     </div>
   );
 };

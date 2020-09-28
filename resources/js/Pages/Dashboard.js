@@ -1,15 +1,18 @@
 import React from 'react'
-import Layout from '../Shared/Layout'
+import BlockCard from '../Shared/BlockCard'
+import Layout from '@/Shared/Layout';
 
-export default ()=>{
+
+const Dashboard =  ()=>{
 
     return (
-        <Layout>
-            <div>
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Dashboard
-                </h2>
-            </div>
-        </Layout>
+        <BlockCard title="Dashboard">
+             
+            <p>Dashboard goes here!</p>
+          
+        </BlockCard>
     )
 }
+Dashboard.layout = page => <Layout children={page} />;
+
+export default Dashboard;

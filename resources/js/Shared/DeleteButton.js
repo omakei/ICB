@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default ({ onDelete, children }) => (
+export default ({ onDelete, children, className }) => (
   <button
-    className="text-red-600 focus:outline-none hover:underline"
+    className={`btn btn-alt-danger ${className}`}
     tabIndex="-1"
     type="button"
     onClick={onDelete}

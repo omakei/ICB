@@ -12,14 +12,8 @@ class DashboardController extends Controller
    
     public function index()
     {
-       
-
-            if (Organization::count() > 0) {
-
-                return Inertia::render('Install');
-            }
-            
-            return Inertia::render('Layout');
+        
+        return Inertia::render('Dashboard');
        
     }
 }
