@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EducationCertificate;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Models\EducationCertificate;
 
 class EducationCertificateController extends Controller
 {
@@ -14,7 +15,7 @@ class EducationCertificateController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('EducationCertificate/Index', ['certificates' => EducationCertificate::all()]);
     }
 
     /**
@@ -24,7 +25,7 @@ class EducationCertificateController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('EducationCertificate/Create');
     }
 
     /**
@@ -35,7 +36,10 @@ class EducationCertificateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       EducationCertificate::create($request->validate([
+        'name' => ['required'],
+        'description' => ['required']
+        ])); 
     }
 
     /**
@@ -57,7 +61,7 @@ class EducationCertificateController extends Controller
      */
     public function edit(EducationCertificate $educationCertificate)
     {
-        //
+        
     }
 
     /**

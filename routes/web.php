@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\EducationCertificateController;
+use App\Http\Controllers\BoardRegistrationController;
+use App\Http\Controllers\UserDetailsController;
 use Dotenv\Store\File\Reader;
 
 /*

@@ -11,7 +11,7 @@ export default ({ icon, link, text, children }) => {
 
     isActive = !isActive
 
-    console.log(isActive)
+    // console.log(isActive)
   }
 
   return (
