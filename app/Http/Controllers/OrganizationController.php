@@ -58,12 +58,12 @@ class OrganizationController extends Controller
             'fax' => $request['fax'],
         ]);
 
-        if(is_null($request['image'])){
+        if(!is_null($request['image'])){
 
             $organization->addMediaFromBase64($request['image'])->toMediaCollection();
         }
         
-        return Redirect::route('organization')->with('success', 'Organization created.');
+        return Redirect::route('organizations')->with('success', 'Organization created.');
     }
 
     /**
@@ -116,12 +116,12 @@ class OrganizationController extends Controller
             'fax' => $request['fax'],
         ]);
 
-        if(is_null($request['image'])){
+        if(!is_null($request['image'])){
 
             $organization->addMediaFromBase64($request['image'])->toMediaCollection();
         }
         
-        return Redirect::route('organization')->with('success', 'Organization Updated.');
+        return Redirect::route('organizations')->with('success', 'Organization Updated.');
     }
 
     /**
