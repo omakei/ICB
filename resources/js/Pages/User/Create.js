@@ -5,9 +5,13 @@ import TextInput from '@/Shared/TextInput'
 import LoadingButton from '@/Shared/LoadingButton'
 import BlockCard from '@/Shared/BlockCard'
 import { Inertia } from '@inertiajs/inertia';
+import SelectInput from '@/Shared/SelectInput'
+import MultiSelectInput from '@/Shared/MultiSelectInput'
+import FileInput from '@/Shared/FileInput'
+import Axios from 'axios';
 
 const Create =  ()=>{
-    const { departments ,errors } = usePage();
+    const { departments, certificates , boards, errors } = usePage();
     const [sending, setSending] = useState(false);
     const [values, setValues] = useState({
       first_name:'',
@@ -17,8 +21,8 @@ const Create =  ()=>{
       department:'',
       email:'',
       board_registrations: [],
-      education_certificaties:[],
-      attachments:[]
+      education_certificaties: [],
+      image:''
    
     });
   
@@ -31,17 +35,56 @@ const Create =  ()=>{
       }));
     }
 
-  
+    function handleMultiSelectChange(newValue, actionMeta) {
+      const key = actionMeta.name;
+      const value = newValue;
+      setValues(values => ({
+        ...values,
+        [key]: value
+      }));
+    }
+
+
+    function handleImage(file) {
+      let photo = ''
+       var reader = new FileReader();
+       reader.onloadend = function() {
+           console.log('RESULT', reader.result)
+           setValues(values => ({
+               ...values,
+               image: reader.result
+           }))
+       }
+       reader.readAsDataURL(file)
+      
+   }
+
+  //  function handleDepartmentChange(e)
+  //  {
+  //     setSending(true);
+  //     axios.post(route('check-domain'), { department: value.department}).then((response) => {
+  //       console.log(response.status);
+  //       if(response.status === 208) {
+  //         console.log(response.status);
+  //         setSending(true);
+  //         setSending(false);
+  //       } else {
+  //         setSending(false);
+  //         setSending(true);
+  //       }
+  //     });
+  //  }
+
     function handleSubmit(e) {
       e.preventDefault();
       setSending(true);
-      Inertia.post(route('units.store'), values).then(() => {
+      Inertia.post(route('userdetails.store'), values).then(() => {
         setSending(false);
       });
     }
 
     return (
-        <BlockCard title="Create Unit">
+        <BlockCard title="Create User">
              
              <form onSubmit={handleSubmit}>
                 <TextInput
@@ -94,16 +137,46 @@ const Create =  ()=>{
                     label="department"
                     name="department"
                     type="text"
-                    errors={errors.is_academic}
-                    value={values.is_academic}
+                    errors={errors.department}
+                    value={values.department}
                     onChange={handleChange}
                 >
+                  <option selected>Select department</option>
                   {departments.map((department)=>(
                     <option value={department.id}>{department.name}</option>
                   ))}
                 
                 </SelectInput>
-                
+            
+                <MultiSelectInput
+                    className="col-md-8"
+                    label="Board Registrations"
+                    name="board_registrations"
+                    options={boards}
+                    errors={errors.board_registrations}
+                    value={values.board_registrations}
+                    onChange={handleMultiSelectChange}
+                />
+                <MultiSelectInput
+                    className="col-md-8"
+                    label="Education Certificates"
+                    name="education_certificaties"
+                    options={certificates}
+                    errors={errors.education_certificaties}
+                    value={values.education_certificaties}
+                    onChange={handleMultiSelectChange}
+                />
+                <FileInput
+                  className="col-md-8 mb-4" 
+                  id='profile-image'
+                  name="image"
+                  accept="image/*"
+                  type="file"
+                  errors={errors.image}
+                  value={values.image}
+                  label="Profile Image"
+                  onChange={handleImage}
+                />
                 <div class="form-group pl-20">
                     <LoadingButton
                         type="submit"

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
@@ -23,6 +24,11 @@ use Dotenv\Store\File\Reader;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('activate_account',[ActivationController::class, 'index'] )->name('activate_account');
+Route::post('activate',[ActivationController::class, 'activate'] )->name('activate');
+Route::get('update_password',[ActivationController::class, 'update_password_form'] )->name('update_password.form');
+Route::post('update_password',[ActivationController::class, 'update_password'])->name('update_password.update');
 
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/home/dashboard', [DashboardController::class,'index']);

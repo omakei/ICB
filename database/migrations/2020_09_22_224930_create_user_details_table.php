@@ -19,9 +19,8 @@ class CreateUserDetailsTable extends Migration
             $table->string('middle_name');
             $table->string('last_name');
             $table->string('mobile_number');
-            $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
-            $table->foreignId('department_id')->unique()->constrained()->onDelete('cascade');
-            $table->foreignId('organization_id')->unique()->constrained()->onDelete('cascade');
+            $table->foreignId('department_id')->constrained()->onDelete('cascade');
+            $table->foreignId('organization_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

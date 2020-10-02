@@ -56,7 +56,7 @@ class DepartmentController extends Controller
             'type' => 'department'
         ]);
 
-        return Redirect::route('departments')->with(['success'  => 'Department Created Successful']);
+        return Redirect::route('departments.index')->with(['success'  => 'Department Created Successful']);
     }
 
     /**

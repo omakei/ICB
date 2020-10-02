@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBoardRegistrationsTable extends Migration
+class AddStatusColumnToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateBoardRegistrationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('board_registrations', function (Blueprint $table) {
-            $table->id();
-            $table->string('board_name');
-            $table->text('description');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('status')->default(1)->after('is_admin');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateBoardRegistrationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('board_registrations');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
     }
 }

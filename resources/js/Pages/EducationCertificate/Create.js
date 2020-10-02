@@ -11,14 +11,24 @@ const Create = () => {
   const { errors } = usePage();
   const [sending, setSending] = useState(false);
 
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
+  const [values, setValues] = useState({
+    certificate_name:  '',
+    description: '',
+  });
 
+  function handleChange(e) {
+    const key = e.target.name;
+    const value = e.target.value;
+    setValues(values => ({
+      ...values,
+      [key]: value
+    }));
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
     setSending(true);
-    Inertia.post(route('departments.store'), values).then(() => {
+    Inertia.post(route('educationcertificates.store'), values).then(() => {
       setSending(false);
     });
   }
@@ -30,20 +40,20 @@ const Create = () => {
         <TextInput
           className="col-md-8"
           label="Certificate Name"
-          name="Certificate name"
+          name="certificate_name"
           type="text"
-          errors={errors.name}
-          value={values.name}
-          onChange={text => setName(text)}
+          errors={errors.certificate_name}
+          value={values.certificate_name}
+          onChange={handleChange}
         />
         <TextAreaInput
           className="col-md-8"
           label="Description"
-          name="discription"
+          name="description"
           type="text"
-          errors={errors.is_academic}
-          value={values.is_academic}
-          onChange={text => setDescription(text)}>
+          errors={errors.description}
+          value={values.description}
+          onChange={handleChange}>
         </TextAreaInput>
         <div class="form-group pl-20">
           <LoadingButton

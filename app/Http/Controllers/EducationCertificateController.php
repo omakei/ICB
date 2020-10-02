@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Models\EducationCertificate;
+use Illuminate\Support\Facades\Redirect;
 
 class EducationCertificateController extends Controller
 {
@@ -37,9 +38,11 @@ class EducationCertificateController extends Controller
     public function store(Request $request)
     {
        EducationCertificate::create($request->validate([
-        'name' => ['required'],
+        'certificate_name' => ['required'],
         'description' => ['required']
         ])); 
+
+        return Redirect::route('educationcertificates.index')->with(['success' => 'Education Certificate Created Successful']);
     }
 
     /**
@@ -59,9 +62,9 @@ class EducationCertificateController extends Controller
      * @param  \App\Models\EducationCertificate  $educationCertificate
      * @return \Illuminate\Http\Response
      */
-    public function edit(EducationCertificate $educationCertificate)
+    public function edit(EducationCertificate $educationcertificate)
     {
-        
+        return Inertia::render('EducationCertificate/Edit', ['certificate' => $educationcertificate]);
     }
 
     /**
@@ -71,9 +74,14 @@ class EducationCertificateController extends Controller
      * @param  \App\Models\EducationCertificate  $educationCertificate
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EducationCertificate $educationCertificate)
+    public function update(Request $request, EducationCertificate $educationcertificate)
     {
-        //
+        $educationcertificate->update($request->validate([
+            'certificate_name' => ['required'],
+            'description' => ['required']
+            ])); 
+    
+            return Redirect::route('educationcertificates.index')->with(['success' => 'Education Certificate Updated Successful']);
     }
 
     /**
@@ -82,8 +90,10 @@ class EducationCertificateController extends Controller
      * @param  \App\Models\EducationCertificate  $educationCertificate
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EducationCertificate $educationCertificate)
+    public function destroy(EducationCertificate $educationcertificate)
     {
-        //
+        $educationcertificate->delete(); 
+    
+        return Redirect::route('educationcertificates.index')->with(['success' => 'Education Certificate Deleted Successful']);
     }
 }

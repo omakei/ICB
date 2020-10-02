@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BoardRegistration;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Models\BoardRegistration;
+use Illuminate\Support\Facades\Redirect;
 
 class BoardRegistrationController extends Controller
 {
@@ -14,7 +16,7 @@ class BoardRegistrationController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('BoardRegistration/Index', ['boards' => BoardRegistration::all()]);
     }
 
     /**
@@ -24,7 +26,7 @@ class BoardRegistrationController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('BoardRegistration/Create');
     }
 
     /**
@@ -35,7 +37,12 @@ class BoardRegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        BoardRegistration::create($request->validate([
+            'board_name' => ['required'],
+            'description' => ['required']
+            ])); 
+    
+            return Redirect::route('boardregistrations.index')->with(['success' => 'Board Registration Created Successful']);
     }
 
     /**
@@ -44,7 +51,7 @@ class BoardRegistrationController extends Controller
      * @param  \App\Models\BoardRegistration  $boardRegistration
      * @return \Illuminate\Http\Response
      */
-    public function show(BoardRegistration $boardRegistration)
+    public function show(BoardRegistration $boardregistration)
     {
         //
     }
@@ -55,9 +62,9 @@ class BoardRegistrationController extends Controller
      * @param  \App\Models\BoardRegistration  $boardRegistration
      * @return \Illuminate\Http\Response
      */
-    public function edit(BoardRegistration $boardRegistration)
+    public function edit(BoardRegistration $boardregistration)
     {
-        //
+        return Inertia::render('BoardRegistration/Edit', ['board' => $boardregistration]);
     }
 
     /**
@@ -67,9 +74,14 @@ class BoardRegistrationController extends Controller
      * @param  \App\Models\BoardRegistration  $boardRegistration
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BoardRegistration $boardRegistration)
+    public function update(Request $request, BoardRegistration $boardregistration)
     {
-        //
+        $boardregistration->update($request->validate([
+            'board_name' => ['required'],
+            'description' => ['required']
+            ])); 
+    
+            return Redirect::route('boardregistrations.index')->with(['success' => 'Board Registration Update Successful']);
     }
 
     /**
@@ -78,8 +90,10 @@ class BoardRegistrationController extends Controller
      * @param  \App\Models\BoardRegistration  $boardRegistration
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BoardRegistration $boardRegistration)
+    public function destroy(BoardRegistration $boardregistration)
     {
-        //
+        $boardregistration->delete(); 
+    
+        return Redirect::route('boardregistrations.index')->with(['success' => 'Board Registration Deleted Successful']);
     }
 }

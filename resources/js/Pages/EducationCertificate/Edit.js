@@ -5,14 +5,14 @@ import TextInput from '@/Shared/TextInput'
 import LoadingButton from '@/Shared/LoadingButton'
 import BlockCard from '@/Shared/BlockCard'
 import { Inertia } from '@inertiajs/inertia';
-import SelectInput from '@/Shared/SelectInput'
+import TextAreaInput from '@/Shared/TextAreaInput'
 
 const Edit =  ()=>{
-    const { department, errors } = usePage();
+    const { certificate, errors } = usePage();
     const [sending, setSending] = useState(false);
     const [values, setValues] = useState({
-      name: department.name || '',
-      is_academic: department.is_academic || '1',
+      certificate_name: certificate.certificate_name || '',
+      description: certificate.description || '',
     });
   
     function handleChange(e) {
@@ -28,7 +28,7 @@ const Edit =  ()=>{
     function handleSubmit(e) {
       e.preventDefault();
       setSending(true);
-      Inertia.put(route('departments.update'), values).then(() => {
+      Inertia.put(route('educationcertificates.update', certificate.id), values).then(() => {
         setSending(false);
       });
     }
@@ -37,27 +37,24 @@ const Edit =  ()=>{
         <BlockCard title="Create Organization">
              
              <form onSubmit={handleSubmit}>
-                <TextInput
-                    className="col-md-8"
-                    label="Organization Name"
-                    name="name"
-                    type="text"
-                    errors={errors.name}
-                    value={values.name}
-                    onChange={handleChange}
-                />
-                <SelectInput
-                    className="col-md-8"
-                    label="Department Type"
-                    name="is_academic"
-                    type="text"
-                    errors={errors.is_academic}
-                    value={values.is_academic}
-                    onChange={handleChange}
-                >
-                <option value="1">Accademic Department </option>
-                <option value="0">Non Accademic Department </option>
-                </SelectInput>
+              <TextInput
+                className="col-md-8"
+                label="Certificate Name"
+                name="certificate_name"
+                type="text"
+                errors={errors.certificate_name}
+                value={values.certificate_name}
+                onChange={handleChange}
+              />
+              <TextAreaInput
+                className="col-md-8"
+                label="Description"
+                name="description"
+                type="text"
+                errors={errors.description}
+                value={values.description}
+                onChange={handleChange}>
+              </TextAreaInput>
                 <div class="form-group pl-20">
                     <LoadingButton
                         type="submit"

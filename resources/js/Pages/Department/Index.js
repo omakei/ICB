@@ -4,6 +4,7 @@ import React from 'react'
 import BlockCard from '../../Shared/BlockCard';
 import Layout from '@/Shared/Layout';
 import DeleteButton from '../../Shared/DeleteButton';
+import { Inertia } from '@inertiajs/inertia';
 
 const Index = () => {
     const { departments } = usePage();

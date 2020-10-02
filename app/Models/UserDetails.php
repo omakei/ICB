@@ -13,14 +13,14 @@ class UserDetails extends Model implements HasMedia
 
     protected $guarded = [];
 
-    public function user()
+    public function account()
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(User::class, 'user_id');
     }
 
     public function department()
     {
-        # code ...
+        return $this->belongsTo(Department::class);
     }
 
     public function section()
