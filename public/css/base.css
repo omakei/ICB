@@ -88,3 +88,10 @@
   margin: 5px;
   box-shadow: 0 0 0 5px rgba(255,255,255,.4);
 }
+
+.react-date-picker__wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border: 0 !important;
+}

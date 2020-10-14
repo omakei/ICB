@@ -11,6 +11,10 @@ class Expenditure extends Model
 
     protected $guarded = [];
 
+    protected $dates = [
+        'date_paid'
+    ];
+
     public function project()
     {
         return $this->belongsTo(Project::class);

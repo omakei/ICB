@@ -42,4 +42,9 @@ class UserDetails extends Model implements HasMedia
     {
         return $this->belongsToMany(EducationCertificate::class);
     }
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
 }

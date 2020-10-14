@@ -9,11 +9,6 @@ import { Inertia } from '@inertiajs/inertia';
 const Index = () => {
     const { departments } = usePage();
 
-    function destroy(id) {
-        if (confirm('Are you sure you want to delete this Department?')) {
-          Inertia.delete(route('organizations.destroy', id));
-        }
-      }
 
     return (
     <BlockCard title="Organization Stracture">
@@ -49,7 +44,11 @@ const Index = () => {
                         <InertiaLink href={route('departments.edit',department.id)} className="btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="Edit Department" title="Edit Department">
                             <i className="fa fa-edit"></i>
                         </InertiaLink>
-                        <DeleteButton onDelete={destroy(department.id)} className="btn-circle mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="Delete Department" title="Delete Department">
+                        <DeleteButton 
+                        message="Are you sure you want to delete this Department?" 
+                        link="departments.destroy"
+                        id={department.id} 
+                        className="btn-circle mr-5 mb-5" >
                             <i className="fa fa-trash"></i>
                         </DeleteButton>
                         </td>

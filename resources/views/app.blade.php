@@ -15,12 +15,14 @@
         <link rel="stylesheet" href="{{ asset('css/base.css') }}">
         <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.min.css') }}">
         <link rel="stylesheet" href="{{asset('assets/js/plugins/datatables/dataTables.bootstrap4.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')}}">
         
         @routes
         <!-- Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
         <script src="{{ asset('assets/js/core/jquery.min.js') }}" defer></script>
         {{-- <script src="{{ asset('assets/js/core/bootstrap.bundle.min.js') }}" defer></script> --}}
+        <script src="{{asset('assets/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}" defer></script>
         <script src="{{ asset('assets/js/codebase.core.min.js') }}" defer></script>
         <script src="{{ asset('assets/js/codebase.app.min.js') }}" defer></script>
         <script src="{{asset('assets/js/pages/op_installation.min.js')}}" defer></script>

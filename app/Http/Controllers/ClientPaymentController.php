@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClientPayment;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
-
+use App\Models\ClientPayment;
+use App\Models\Project;
+use Illuminate\Support\Facades\Redirect;
 class ClientPaymentController extends Controller
 {
     /**
@@ -22,9 +24,9 @@ class ClientPaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Project $project)
     {
-        //
+        return Inertia::render('ClientPayment/Create', ['project'=> $project]);
     }
 
     /**
@@ -35,7 +37,23 @@ class ClientPaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'amount' => ['required'],
+            'date_paid' => ['required'],
+            'account_number' => ['required'],
+            'receipt' => ['required'],
+            'project_id' => ['required', 'exists:projects,id']
+        ]);
+
+        $client_payment = ClientPayment::create([
+            'amount' => $request['amount'],
+            'date_paid' => date('Y-m-d H:i:s',strtotime($request['date_paid'])),
+            'account_number' => $request['account_number'],
+            'receipt' => $request['receipt'],
+            'project_id' => $request['project_id']
+        ]);
+
+        return Redirect::route('projects.show',['project' => $request['project_id']])->with('success', 'Client Payment Created');
     }
 
     /**
@@ -55,9 +73,9 @@ class ClientPaymentController extends Controller
      * @param  \App\Models\ClientPayment  $clientPayment
      * @return \Illuminate\Http\Response
      */
-    public function edit(ClientPayment $clientPayment)
+    public function edit(ClientPayment $client_payment)
     {
-        //
+        return Inertia::render('ClientPayment/Edit', ['project'=> $client_payment]);
     }
 
     /**
@@ -67,9 +85,25 @@ class ClientPaymentController extends Controller
      * @param  \App\Models\ClientPayment  $clientPayment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClientPayment $clientPayment)
+    public function update(Request $request, ClientPayment $client_payment)
     {
-        //
+        $request->validate([
+            'amount' => ['required'],
+            'date_paid' => ['required'],
+            'account_number' => ['required'],
+            'receipt' => ['required'],
+            'project_id' => ['required', 'exists:projects,id']
+        ]);
+
+        $client_payment->update([
+            'amount' => $request['amount'],
+            'date_paid' => date('Y-m-d H:i:s',strtotime($request['date_paid'])),
+            'account_number' => $request['account_number'],
+            'receipt' => $request['receipt'],
+            'project_id' => $request['project_id']
+        ]);
+
+        return Redirect::route('projects.show',['project' => $request['project_id']])->with('success', 'Client Payment Update');
     }
 
     /**
@@ -78,8 +112,10 @@ class ClientPaymentController extends Controller
      * @param  \App\Models\ClientPayment  $clientPayment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClientPayment $clientPayment)
+    public function destroy(ClientPayment $client_payment)
     {
-        //
+        $client_payment->delete();
+
+        return Redirect::back()->with('success', 'Client Payment deleted!');
     }
 }

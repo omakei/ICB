@@ -14,6 +14,13 @@ export default () => {
           <MainMenuItem text="Education Cetificates" link="educationcertificates.index" icon="" />
         </ul>
       </MultiLinkMainMenuItem>
+      <MultiLinkMainMenuItem text="Project Managment" link="projects.index" icon="si si-folder-alt" >
+        <ul>
+          <MainMenuItem text="Clients" link="clients.index" icon="" />
+          <MainMenuItem text="Projects" link="projects.index" icon="" />
+          <MainMenuItem text="Loans" link="loans.index" icon="" />
+        </ul>
+      </MultiLinkMainMenuItem>
     </ul>
   );
 };

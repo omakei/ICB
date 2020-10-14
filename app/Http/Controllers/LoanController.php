@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Loan;
+use Inertia\Inertia;
+use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class LoanController extends Controller
 {
@@ -14,7 +17,16 @@ class LoanController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Loan/Index', ['loans' => Loan::all()->map(function($loan){
+            $data['id'] = $loan->id;
+            $data['amount'] = $loan->amount;
+            $data['description'] = $loan->description;
+            $data['consaltants'] = $loan->project->user_details;
+            $data['project'] = $loan->project->name;
+            $data['issued_date'] = $loan->issued_date->diffForHumans();
+
+            return $data;
+        })]);
     }
 
     /**
@@ -22,9 +34,9 @@ class LoanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Project $project)
     {
-        //
+        return Inertia::render('Loan/Create', ['project'=> $project]);
     }
 
     /**
@@ -35,7 +47,21 @@ class LoanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'amount' => ['required'],
+            'issued_date' => ['required'],
+            'description' => ['required'],
+            'project_id' => ['required', 'exists:projects,id']
+        ]);
+
+        $loan = Loan::create([
+            'amount' => $request['amount'],
+            'issued_date' => date('Y-m-d H:i:s',strtotime($request['issued_date'])),
+            'description' => $request['description'],
+            'project_id' => $request['project_id']
+        ]);
+
+        return Redirect::route('projects.show',['project'=> $request['project_id']])->with('success', 'Loan Created');
     }
 
     /**
@@ -46,7 +72,7 @@ class LoanController extends Controller
      */
     public function show(Loan $loan)
     {
-        //
+        return Inertia::render('Loan/Show', ['loan'=> $loan, 'refunds' => $loan->loan_refunds]);
     }
 
     /**
@@ -57,7 +83,7 @@ class LoanController extends Controller
      */
     public function edit(Loan $loan)
     {
-        //
+        return Inertia::render('Loan/Edit', ['loan'=> $loan]);
     }
 
     /**
@@ -69,7 +95,21 @@ class LoanController extends Controller
      */
     public function update(Request $request, Loan $loan)
     {
-        //
+        $request->validate([
+            'amount' => ['required'],
+            'issued_date' => ['required'],
+            'description' => ['required'],
+            'project_id' => ['required', 'exists:projects,id']
+        ]);
+
+        $loan->update([
+            'amount' => $request['amount'],
+            'issued_date' => date('Y-m-d H:i:s',strtotime($request['issued_date'])),
+            'description' => $request['description'],
+            'project_id' => $request['project_id']
+        ]);
+
+        return Redirect::route('projects.show',['project'=> $request['project_id']])->with('success', 'Loan Update');
     }
 
     /**
@@ -80,6 +120,8 @@ class LoanController extends Controller
      */
     public function destroy(Loan $loan)
     {
-        //
+        $loan->delete(); 
+    
+        return Redirect::back()->with(['success' => 'Loan Deleted Successful']);
     }
 }

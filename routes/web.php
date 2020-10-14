@@ -1,14 +1,20 @@
 <?php
 
-use App\Http\Controllers\ActivationController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\OrganizationController;
-use App\Http\Controllers\EducationCertificateController;
-use App\Http\Controllers\BoardRegistrationController;
-use App\Http\Controllers\UserDetailsController;
 use Dotenv\Store\File\Reader;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoanController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ActivationController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\LoanRefundController;
+use App\Http\Controllers\ExpenditureController;
+use App\Http\Controllers\UserDetailsController;
+use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\ClientPaymentController;
+use App\Http\Controllers\BoardRegistrationController;
+use App\Http\Controllers\EducationCertificateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +43,35 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::resource('userdetails', UserDetailsController::class);
     Route::resource('educationcertificates', EducationCertificateController::class);
     Route::resource('boardregistrations', BoardRegistrationController::class);
+    Route::resource('projects', ProjectController::class);
+    Route::resource('clients', ClientController::class);
 
 
+    Route::get('client_payments/{project}/create', [ClientPaymentController::class, 'create'])->name('client_payments.create');
+    Route::post('client_payments/store', [ClientPaymentController::class, 'store'])->name('client_payments.store');
+    Route::get('client_payments/{client_payment}/edit', [ClientPaymentController::class, 'edit'])->name('client_payments.edit');
+    Route::put('client_payments/{client_payment}/update', [ClientPaymentController::class, 'update'])->name('client_payments.update');
+    Route::delete('client_payments/{client_payment}/destroy', [ClientPaymentController::class, 'delete'])->name('client_payments.delete');
+
+    Route::get('expenditures/{project}/create', [ExpenditureController::class, 'create'])->name('expenditures.create');
+    Route::post('expenditures/store', [ExpenditureController::class, 'store'])->name('expenditures.store');
+    Route::get('expenditures/{expenditure}/edit', [ExpenditureController::class, 'edit'])->name('expenditures.edit');
+    Route::put('expenditures/{expenditure}/update', [ExpenditureController::class, 'update'])->name('expenditures.update');
+    Route::delete('expenditures/{expenditure}/destroy', [ExpenditureController::class, 'delete'])->name('expenditures.delete');
+
+    Route::get('loan_refunds/{loan}/create', [LoanRefundController::class, 'create'])->name('loan_refunds.create');
+    Route::post('loan_refunds/store', [LoanRefundController::class, 'store'])->name('loan_refunds.store');
+    Route::get('loan_refunds/{loan_refund}/edit', [LoanRefundController::class, 'edit'])->name('loan_refunds.edit');
+    Route::put('loan_refunds/{loan_refund}/update', [LoanRefundController::class, 'update'])->name('loan_refunds.update');
+    Route::delete('loan_refunds/{loan_refund}/destroy', [LoanRefundController::class, 'delete'])->name('loan_refunds.delete');
+
+    Route::get('loans/{project}/create', [LoanController::class, 'create'])->name('loans.create');
+    Route::get('loans', [LoanController::class, 'index'])->name('loans.index');
+    Route::post('loans/store', [LoanController::class, 'store'])->name('loans.store');
+    Route::get('loans/{loan}/edit', [LoanController::class, 'edit'])->name('loans.edit');
+    Route::put('loans/{loan}/update', [LoanController::class, 'update'])->name('loans.update');
+    Route::delete('loans/{loan}/destroy', [LoanController::class, 'delete'])->name('loans.delete');
+    
     Route::get('sections/{department}/create', [DepartmentController::class,'create_section'])->name('sections.create');
     Route::post('sections/store', [DepartmentController::class,'store_section'])->name('sections.store');
     Route::get('sections/{department}/Edit{section}', [DepartmentController::class,'edit_section'])->name('sections.edit');

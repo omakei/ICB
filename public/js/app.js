@@ -2141,6 +2141,420 @@ function e(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var t=e(__
 
 /***/ }),
 
+/***/ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@wojtekmaj/date-utils/dist/esm/index.js ***!
+  \**************************************************************/
+/*! exports provided: getYear, getMonth, getMonthHuman, getDate, getHours, getMinutes, getSeconds, getCenturyStart, getPreviousCenturyStart, getNextCenturyStart, getCenturyEnd, getPreviousCenturyEnd, getNextCenturyEnd, getCenturyRange, getDecadeStart, getPreviousDecadeStart, getNextDecadeStart, getDecadeEnd, getPreviousDecadeEnd, getNextDecadeEnd, getDecadeRange, getYearStart, getPreviousYearStart, getNextYearStart, getYearEnd, getPreviousYearEnd, getNextYearEnd, getYearRange, getMonthStart, getPreviousMonthStart, getNextMonthStart, getMonthEnd, getPreviousMonthEnd, getNextMonthEnd, getMonthRange, getDayStart, getPreviousDayStart, getNextDayStart, getDayEnd, getPreviousDayEnd, getNextDayEnd, getDayRange, getDaysInMonth, getHoursMinutes, getHoursMinutesSeconds, getISOLocalMonth, getISOLocalDate, getISOLocalDateTime */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getYear", function() { return getYear; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMonth", function() { return getMonth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMonthHuman", function() { return getMonthHuman; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDate", function() { return getDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHours", function() { return getHours; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMinutes", function() { return getMinutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSeconds", function() { return getSeconds; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCenturyStart", function() { return getCenturyStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousCenturyStart", function() { return getPreviousCenturyStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextCenturyStart", function() { return getNextCenturyStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCenturyEnd", function() { return getCenturyEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousCenturyEnd", function() { return getPreviousCenturyEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextCenturyEnd", function() { return getNextCenturyEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCenturyRange", function() { return getCenturyRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDecadeStart", function() { return getDecadeStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousDecadeStart", function() { return getPreviousDecadeStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextDecadeStart", function() { return getNextDecadeStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDecadeEnd", function() { return getDecadeEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousDecadeEnd", function() { return getPreviousDecadeEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextDecadeEnd", function() { return getNextDecadeEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDecadeRange", function() { return getDecadeRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getYearStart", function() { return getYearStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousYearStart", function() { return getPreviousYearStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextYearStart", function() { return getNextYearStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getYearEnd", function() { return getYearEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousYearEnd", function() { return getPreviousYearEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextYearEnd", function() { return getNextYearEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getYearRange", function() { return getYearRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMonthStart", function() { return getMonthStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousMonthStart", function() { return getPreviousMonthStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextMonthStart", function() { return getNextMonthStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMonthEnd", function() { return getMonthEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousMonthEnd", function() { return getPreviousMonthEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextMonthEnd", function() { return getNextMonthEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMonthRange", function() { return getMonthRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDayStart", function() { return getDayStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousDayStart", function() { return getPreviousDayStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextDayStart", function() { return getNextDayStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDayEnd", function() { return getDayEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPreviousDayEnd", function() { return getPreviousDayEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNextDayEnd", function() { return getNextDayEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDayRange", function() { return getDayRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDaysInMonth", function() { return getDaysInMonth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHoursMinutes", function() { return getHoursMinutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHoursMinutesSeconds", function() { return getHoursMinutesSeconds; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getISOLocalMonth", function() { return getISOLocalMonth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getISOLocalDate", function() { return getISOLocalDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getISOLocalDateTime", function() { return getISOLocalDateTime; });
+/**
+ * Utils
+ */
+function makeGetEdgeOfNeighbor(getPeriod, getEdgeOfPeriod, defaultOffset) {
+  return function makeGetEdgeOfNeighborInternal(date) {
+    var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultOffset;
+    var previousPeriod = getPeriod(date) + offset;
+    return getEdgeOfPeriod(previousPeriod);
+  };
+}
+
+function makeGetEnd(getBeginOfNextPeriod) {
+  return function makeGetEndInternal(date) {
+    return new Date(getBeginOfNextPeriod(date).getTime() - 1);
+  };
+}
+
+function makeGetRange(functions) {
+  return function makeGetRangeInternal(date) {
+    return functions.map(function (fn) {
+      return fn(date);
+    });
+  };
+}
+/**
+ * Simple getters - getting a property of a given point in time
+ */
+
+/**
+ * Gets year from date.
+ *
+ * @param {Date|number|string} date Date to get year from.
+ */
+
+
+function getYear(date) {
+  if (date instanceof Date) {
+    return date.getFullYear();
+  }
+
+  if (typeof date === 'number') {
+    return date;
+  }
+
+  var year = parseInt(date, 10);
+
+  if (typeof date === 'string' && !isNaN(year)) {
+    return year;
+  }
+
+  throw new Error("Failed to get year from date: ".concat(date, "."));
+}
+/**
+ * Gets month from date.
+ *
+ * @param {Date} date Date to get month from.
+ */
+
+function getMonth(date) {
+  if (date instanceof Date) {
+    return date.getMonth();
+  }
+
+  throw new Error("Failed to get month from date: ".concat(date, "."));
+}
+/**
+ * Gets human-readable month from date.
+ *
+ * @param {Date} date Date to get human-readable month from.
+ */
+
+function getMonthHuman(date) {
+  if (date instanceof Date) {
+    return date.getMonth() + 1;
+  }
+
+  throw new Error("Failed to get human-readable month from date: ".concat(date, "."));
+}
+/**
+ * Gets human-readable day of the month from date.
+ *
+ * @param {Date} date Date to get day of the month from.
+ */
+
+function getDate(date) {
+  if (date instanceof Date) {
+    return date.getDate();
+  }
+
+  throw new Error("Failed to get year from date: ".concat(date, "."));
+}
+/**
+ * Gets hours from date.
+ *
+ * @param {Date|string} date Date to get hours from.
+ */
+
+function getHours(date) {
+  if (date instanceof Date) {
+    return date.getHours();
+  }
+
+  if (typeof date === 'string') {
+    var datePieces = date.split(':');
+
+    if (datePieces.length >= 2) {
+      var hoursString = datePieces[0];
+      var hours = parseInt(hoursString, 10);
+
+      if (!isNaN(hours)) {
+        return hours;
+      }
+    }
+  }
+
+  throw new Error("Failed to get hours from date: ".concat(date, "."));
+}
+/**
+ * Gets minutes from date.
+ *
+ * @param {Date|string} date Date to get minutes from.
+ */
+
+function getMinutes(date) {
+  if (date instanceof Date) {
+    return date.getMinutes();
+  }
+
+  if (typeof date === 'string') {
+    var datePieces = date.split(':');
+
+    if (datePieces.length >= 2) {
+      var minutesString = datePieces[1] || 0;
+      var minutes = parseInt(minutesString, 10);
+
+      if (!isNaN(minutes)) {
+        return minutes;
+      }
+    }
+  }
+
+  throw new Error("Failed to get minutes from date: ".concat(date, "."));
+}
+/**
+ * Gets seconds from date.
+ *
+ * @param {Date|string} date Date to get seconds from.
+ */
+
+function getSeconds(date) {
+  if (date instanceof Date) {
+    return date.getSeconds();
+  }
+
+  if (typeof date === 'string') {
+    var datePieces = date.split(':');
+
+    if (datePieces.length >= 2) {
+      var secondsString = datePieces[2] || 0;
+      var seconds = parseInt(secondsString, 10);
+
+      if (!isNaN(seconds)) {
+        return seconds;
+      }
+    }
+  }
+
+  throw new Error("Failed to get seconds from date: ".concat(date, "."));
+}
+/**
+ * Century
+ */
+
+function getCenturyStart(date) {
+  var year = getYear(date);
+  var centuryStartYear = year + (-year + 1) % 100;
+  var centuryStartDate = new Date();
+  centuryStartDate.setFullYear(centuryStartYear, 0, 1);
+  centuryStartDate.setHours(0, 0, 0, 0);
+  return centuryStartDate;
+}
+var getPreviousCenturyStart = makeGetEdgeOfNeighbor(getYear, getCenturyStart, -100);
+var getNextCenturyStart = makeGetEdgeOfNeighbor(getYear, getCenturyStart, 100);
+var getCenturyEnd = makeGetEnd(getNextCenturyStart);
+var getPreviousCenturyEnd = makeGetEdgeOfNeighbor(getYear, getCenturyEnd, -100);
+var getNextCenturyEnd = makeGetEdgeOfNeighbor(getYear, getCenturyEnd, 100);
+var getCenturyRange = makeGetRange([getCenturyStart, getCenturyEnd]);
+/**
+ * Decade
+ */
+
+function getDecadeStart(date) {
+  var year = getYear(date);
+  var decadeStartYear = year + (-year + 1) % 10;
+  var decadeStartDate = new Date();
+  decadeStartDate.setFullYear(decadeStartYear, 0, 1);
+  decadeStartDate.setHours(0, 0, 0, 0);
+  return decadeStartDate;
+}
+var getPreviousDecadeStart = makeGetEdgeOfNeighbor(getYear, getDecadeStart, -10);
+var getNextDecadeStart = makeGetEdgeOfNeighbor(getYear, getDecadeStart, 10);
+var getDecadeEnd = makeGetEnd(getNextDecadeStart);
+var getPreviousDecadeEnd = makeGetEdgeOfNeighbor(getYear, getDecadeEnd, -10);
+var getNextDecadeEnd = makeGetEdgeOfNeighbor(getYear, getDecadeEnd, 10);
+var getDecadeRange = makeGetRange([getDecadeStart, getDecadeEnd]);
+/**
+ * Year
+ */
+
+function getYearStart(date) {
+  var year = getYear(date);
+  var yearStartDate = new Date();
+  yearStartDate.setFullYear(year, 0, 1);
+  yearStartDate.setHours(0, 0, 0, 0);
+  return yearStartDate;
+}
+var getPreviousYearStart = makeGetEdgeOfNeighbor(getYear, getYearStart, -1);
+var getNextYearStart = makeGetEdgeOfNeighbor(getYear, getYearStart, 1);
+var getYearEnd = makeGetEnd(getNextYearStart);
+var getPreviousYearEnd = makeGetEdgeOfNeighbor(getYear, getYearEnd, -1);
+var getNextYearEnd = makeGetEdgeOfNeighbor(getYear, getYearEnd, 1);
+var getYearRange = makeGetRange([getYearStart, getYearEnd]);
+/**
+ * Month
+ */
+
+function makeGetEdgeOfNeighborMonth(getEdgeOfPeriod, defaultOffset) {
+  return function makeGetEdgeOfNeighborMonthInternal(date) {
+    var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultOffset;
+    var year = getYear(date);
+    var month = getMonth(date) + offset;
+    var previousPeriod = new Date();
+    previousPeriod.setFullYear(year, month, 1);
+    previousPeriod.setHours(0, 0, 0, 0);
+    return getEdgeOfPeriod(previousPeriod);
+  };
+}
+
+function getMonthStart(date) {
+  var year = getYear(date);
+  var month = getMonth(date);
+  var monthStartDate = new Date();
+  monthStartDate.setFullYear(year, month, 1);
+  monthStartDate.setHours(0, 0, 0, 0);
+  return monthStartDate;
+}
+var getPreviousMonthStart = makeGetEdgeOfNeighborMonth(getMonthStart, -1);
+var getNextMonthStart = makeGetEdgeOfNeighborMonth(getMonthStart, 1);
+var getMonthEnd = makeGetEnd(getNextMonthStart);
+var getPreviousMonthEnd = makeGetEdgeOfNeighborMonth(getMonthEnd, -1);
+var getNextMonthEnd = makeGetEdgeOfNeighborMonth(getMonthEnd, 1);
+var getMonthRange = makeGetRange([getMonthStart, getMonthEnd]);
+/**
+ * Day
+ */
+
+function makeGetEdgeOfNeighborDay(getEdgeOfPeriod, defaultOffset) {
+  return function makeGetEdgeOfNeighborDayInternal(date) {
+    var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultOffset;
+    var year = getYear(date);
+    var month = getMonth(date);
+    var day = getDate(date) + offset;
+    var previousPeriod = new Date();
+    previousPeriod.setFullYear(year, month, day);
+    previousPeriod.setHours(0, 0, 0, 0);
+    return getEdgeOfPeriod(previousPeriod);
+  };
+}
+
+function getDayStart(date) {
+  var year = getYear(date);
+  var month = getMonth(date);
+  var day = getDate(date);
+  var dayStartDate = new Date();
+  dayStartDate.setFullYear(year, month, day);
+  dayStartDate.setHours(0, 0, 0, 0);
+  return dayStartDate;
+}
+var getPreviousDayStart = makeGetEdgeOfNeighborDay(getDayStart, -1);
+var getNextDayStart = makeGetEdgeOfNeighborDay(getDayStart, 1);
+var getDayEnd = makeGetEnd(getNextDayStart);
+var getPreviousDayEnd = makeGetEdgeOfNeighborDay(getDayEnd, -1);
+var getNextDayEnd = makeGetEdgeOfNeighborDay(getDayEnd, 1);
+var getDayRange = makeGetRange([getDayStart, getDayEnd]);
+/**
+ * Other
+ */
+
+/**
+ * Returns a number of days in a month of a given date.
+ *
+ * @param {Date} date Date.
+ */
+
+function getDaysInMonth(date) {
+  return getDate(getMonthEnd(date));
+}
+
+function padStart(num) {
+  var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+  var numStr = "".concat(num);
+
+  if (numStr.length >= val) {
+    return num;
+  }
+
+  return "0000".concat(numStr).slice(-val);
+}
+/**
+ * Returns local hours and minutes (hh:mm).
+ */
+
+
+function getHoursMinutes(date) {
+  var hours = padStart(getHours(date));
+  var minutes = padStart(getMinutes(date));
+  return "".concat(hours, ":").concat(minutes);
+}
+/**
+ * Returns local hours, minutes and seconds (hh:mm:ss).
+ */
+
+function getHoursMinutesSeconds(date) {
+  var hours = padStart(getHours(date));
+  var minutes = padStart(getMinutes(date));
+  var seconds = padStart(getSeconds(date));
+  return "".concat(hours, ":").concat(minutes, ":").concat(seconds);
+}
+/**
+ * Returns local month in ISO-like format (YYYY-MM).
+ */
+
+function getISOLocalMonth(date) {
+  var year = padStart(getYear(date), 4);
+  var month = padStart(getMonthHuman(date));
+  return "".concat(year, "-").concat(month);
+}
+/**
+ * Returns local date in ISO-like format (YYYY-MM-DD).
+ */
+
+function getISOLocalDate(date) {
+  var year = padStart(getYear(date), 4);
+  var month = padStart(getMonthHuman(date));
+  var day = padStart(getDate(date));
+  return "".concat(year, "-").concat(month, "-").concat(day);
+}
+/**
+ * Returns local date & time in ISO-like format (YYYY-MM-DDThh:mm:ss).
+ */
+
+function getISOLocalDateTime(date) {
+  return "".concat(getISOLocalDate(date), "T").concat(getHoursMinutesSeconds(date));
+}
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -3950,6 +4364,563 @@ module.exports = {
   extend: extend,
   trim: trim
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-calendar/dist/Calendar.css":
+/*!***************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/react-calendar/dist/Calendar.css ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".react-calendar {\n  width: 350px;\n  max-width: 100%;\n  background: white;\n  border: 1px solid #a0a096;\n  font-family: Arial, Helvetica, sans-serif;\n  line-height: 1.125em;\n}\n\n.react-calendar--doubleView {\n  width: 700px;\n}\n\n.react-calendar--doubleView .react-calendar__viewContainer {\n  display: flex;\n  margin: -0.5em;\n}\n\n.react-calendar--doubleView .react-calendar__viewContainer > * {\n  width: 50%;\n  margin: 0.5em;\n}\n\n.react-calendar,\n.react-calendar *,\n.react-calendar *:before,\n.react-calendar *:after {\n  box-sizing: border-box;\n}\n\n.react-calendar button {\n  margin: 0;\n  border: 0;\n  outline: none;\n}\n\n.react-calendar button:enabled:hover {\n  cursor: pointer;\n}\n\n.react-calendar__navigation {\n  height: 44px;\n  margin-bottom: 1em;\n}\n\n.react-calendar__navigation button {\n  min-width: 44px;\n  background: none;\n}\n\n.react-calendar__navigation button:enabled:hover,\n.react-calendar__navigation button:enabled:focus {\n  background-color: #e6e6e6;\n}\n\n.react-calendar__navigation button[disabled] {\n  background-color: #f0f0f0;\n}\n\n.react-calendar__month-view__weekdays {\n  text-align: center;\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 0.75em;\n}\n\n.react-calendar__month-view__weekdays__weekday {\n  padding: 0.5em;\n}\n\n.react-calendar__month-view__weekNumbers {\n  font-weight: bold;\n}\n\n.react-calendar__month-view__weekNumbers .react-calendar__tile {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 0.75em;\n  padding: calc(0.75em / 0.75) calc(0.5em / 0.75);\n}\n\n.react-calendar__month-view__days__day--weekend {\n  color: #d10000;\n}\n\n.react-calendar__month-view__days__day--neighboringMonth {\n  color: #757575;\n}\n\n.react-calendar__year-view .react-calendar__tile,\n.react-calendar__decade-view .react-calendar__tile,\n.react-calendar__century-view .react-calendar__tile {\n  padding: 2em 0.5em;\n}\n\n.react-calendar__tile {\n  max-width: 100%;\n  text-align: center;\n  padding: 0.75em 0.5em;\n  background: none;\n}\n\n.react-calendar__tile:disabled {\n  background-color: #f0f0f0;\n}\n\n.react-calendar__tile:enabled:hover,\n.react-calendar__tile:enabled:focus {\n  background-color: #e6e6e6;\n}\n\n.react-calendar__tile--now {\n  background: #ffff76;\n}\n\n.react-calendar__tile--now:enabled:hover,\n.react-calendar__tile--now:enabled:focus {\n  background: #ffffa9;\n}\n\n.react-calendar__tile--hasActive {\n  background: #76baff;\n}\n\n.react-calendar__tile--hasActive:enabled:hover,\n.react-calendar__tile--hasActive:enabled:focus {\n  background: #a9d4ff;\n}\n\n.react-calendar__tile--active {\n  background: #006edc;\n  color: white;\n}\n\n.react-calendar__tile--active:enabled:hover,\n.react-calendar__tile--active:enabled:focus {\n  background: #1087ff;\n}\n\n.react-calendar--selectRange .react-calendar__tile--hover {\n  background-color: #e6e6e6;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-date-picker/dist/DatePicker.css":
+/*!********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/react-date-picker/dist/DatePicker.css ***!
+  \********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".react-date-picker {\n  display: inline-flex;\n  position: relative;\n}\n\n.react-date-picker,\n.react-date-picker *,\n.react-date-picker *:before,\n.react-date-picker *:after {\n  box-sizing: border-box;\n}\n\n.react-date-picker--disabled {\n  background-color: #f0f0f0;\n  color: #6d6d6d;\n}\n\n.react-date-picker__wrapper {\n  display: flex;\n  flex-grow: 1;\n  flex-shrink: 0;\n  border: thin solid gray;\n}\n\n.react-date-picker__inputGroup {\n  min-width: calc((4px * 3) +  0.54em * 8  +  0.217em * 2);\n  flex-grow: 1;\n  padding: 0 2px;\n  box-sizing: content-box;\n}\n\n.react-date-picker__inputGroup__divider {\n  padding: 1px 0;\n  white-space: pre;\n}\n\n.react-date-picker__inputGroup__input {\n  min-width: 0.54em;\n  height: 100%;\n  position: relative;\n  padding: 0 1px;\n  border: 0;\n  background: none;\n  font: inherit;\n  box-sizing: content-box;\n  -moz-appearance: textfield;\n}\n\n.react-date-picker__inputGroup__input::-webkit-outer-spin-button,\n.react-date-picker__inputGroup__input::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.react-date-picker__inputGroup__input:invalid {\n  background: rgba(255, 0, 0, 0.1);\n}\n\n.react-date-picker__inputGroup__input--hasLeadingZero {\n  margin-left: -0.54em;\n  padding-left: calc(1px +  0.54em);\n}\n\n.react-date-picker__button {\n  border: 0;\n  background: transparent;\n  padding: 4px 6px;\n}\n\n.react-date-picker__button:enabled {\n  cursor: pointer;\n}\n\n.react-date-picker__button:enabled:hover .react-date-picker__button__icon,\n.react-date-picker__button:enabled:focus .react-date-picker__button__icon {\n  stroke: #0078d7;\n}\n\n.react-date-picker__button:disabled .react-date-picker__button__icon {\n  stroke: #6d6d6d;\n}\n\n.react-date-picker__button svg {\n  display: inherit;\n}\n\n.react-date-picker__calendar {\n  width: 350px;\n  max-width: 100vw;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1;\n}\n\n.react-date-picker__calendar--closed {\n  display: none;\n}\n\n.react-date-picker__calendar .react-calendar {\n  border-width: thin;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/detect-element-overflow/dist/esm/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/detect-element-overflow/dist/esm/index.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var getRect = function getRect(element) {
+  return element.getBoundingClientRect();
+};
+
+var detectElementOverflow = function detectElementOverflow(element, container) {
+  return {
+    get collidedTop() {
+      return getRect(element).top < getRect(container).top;
+    },
+
+    get collidedBottom() {
+      return getRect(element).bottom > getRect(container).bottom;
+    },
+
+    get collidedLeft() {
+      return getRect(element).left < getRect(container).left;
+    },
+
+    get collidedRight() {
+      return getRect(element).right > getRect(container).right;
+    },
+
+    get overflowTop() {
+      return getRect(container).top - getRect(element).top;
+    },
+
+    get overflowBottom() {
+      return getRect(element).bottom - getRect(container).bottom;
+    },
+
+    get overflowLeft() {
+      return getRect(container).left - getRect(element).left;
+    },
+
+    get overflowRight() {
+      return getRect(element).right - getRect(container).right;
+    }
+
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (detectElementOverflow);
+
+/***/ }),
+
+/***/ "./node_modules/get-user-locale/dist/esm/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/get-user-locale/dist/esm/index.js ***!
+  \********************************************************/
+/*! exports provided: getUserLocales, getUserLocale, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserLocales", function() { return getUserLocales; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserLocale", function() { return getUserLocale; });
+/* harmony import */ var lodash_once__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash.once */ "./node_modules/lodash.once/index.js");
+/* harmony import */ var lodash_once__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_once__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function filterDuplicates(arr) {
+  return arr.filter(function (el, index, self) {
+    return self.indexOf(el) === index;
+  });
+}
+
+function fixLowercaseProperties(arr) {
+  return arr.map(function (el) {
+    if (!el || el.indexOf('-') === -1 || el.toLowerCase() !== el) {
+      return el;
+    }
+
+    var splitEl = el.split('-');
+    return "".concat(splitEl[0], "-").concat(splitEl[1].toUpperCase());
+  });
+}
+
+function getUserLocalesInternal() {
+  var languageList = [];
+
+  if (typeof window !== 'undefined') {
+    if (window.navigator.languages) {
+      languageList = languageList.concat(window.navigator.languages);
+    }
+
+    if (window.navigator.language) {
+      languageList.push(window.navigator.language);
+    }
+
+    if (window.navigator.userLanguage) {
+      languageList.push(window.navigator.userLanguage);
+    }
+
+    if (window.navigator.browserLanguage) {
+      languageList.push(window.navigator.browserLanguage);
+    }
+
+    if (window.navigator.systemLanguage) {
+      languageList.push(window.navigator.systemLanguage);
+    }
+  }
+
+  languageList.push('en-US'); // Fallback
+
+  return fixLowercaseProperties(filterDuplicates(languageList));
+}
+
+var getUserLocales = lodash_once__WEBPACK_IMPORTED_MODULE_0___default()(getUserLocalesInternal);
+
+function getUserLocaleInternal() {
+  return getUserLocales()[0];
+}
+
+var getUserLocale = lodash_once__WEBPACK_IMPORTED_MODULE_0___default()(getUserLocaleInternal);
+/* harmony default export */ __webpack_exports__["default"] = (getUserLocale);
+
+/***/ }),
+
+/***/ "./node_modules/lodash.once/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash.once/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0,
+    MAX_INTEGER = 1.7976931348623157e+308,
+    NAN = 0 / 0;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Creates a function that invokes `func`, with the `this` binding and arguments
+ * of the created function, while it's called less than `n` times. Subsequent
+ * calls to the created function return the result of the last `func` invocation.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Function
+ * @param {number} n The number of calls at which `func` is no longer invoked.
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new restricted function.
+ * @example
+ *
+ * jQuery(element).on('click', _.before(5, addContactToList));
+ * // => Allows adding up to 4 contacts to the list.
+ */
+function before(n, func) {
+  var result;
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  n = toInteger(n);
+  return function() {
+    if (--n > 0) {
+      result = func.apply(this, arguments);
+    }
+    if (n <= 1) {
+      func = undefined;
+    }
+    return result;
+  };
+}
+
+/**
+ * Creates a function that is restricted to invoking `func` once. Repeat calls
+ * to the function return the value of the first invocation. The `func` is
+ * invoked with the `this` binding and arguments of the created function.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new restricted function.
+ * @example
+ *
+ * var initialize = _.once(createApplication);
+ * initialize();
+ * initialize();
+ * // => `createApplication` is invoked once
+ */
+function once(func) {
+  return before(2, func);
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Converts `value` to a finite number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.12.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted number.
+ * @example
+ *
+ * _.toFinite(3.2);
+ * // => 3.2
+ *
+ * _.toFinite(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toFinite(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toFinite('3.2');
+ * // => 3.2
+ */
+function toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+  value = toNumber(value);
+  if (value === INFINITY || value === -INFINITY) {
+    var sign = (value < 0 ? -1 : 1);
+    return sign * MAX_INTEGER;
+  }
+  return value === value ? value : 0;
+}
+
+/**
+ * Converts `value` to an integer.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted integer.
+ * @example
+ *
+ * _.toInteger(3.2);
+ * // => 3
+ *
+ * _.toInteger(Number.MIN_VALUE);
+ * // => 0
+ *
+ * _.toInteger(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toInteger('3.2');
+ * // => 3
+ */
+function toInteger(value) {
+  var result = toFinite(value),
+      remainder = result % 1;
+
+  return result === result ? (remainder ? result - remainder : result) : 0;
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = once;
 
 
 /***/ }),
@@ -21119,6 +22090,57 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/make-event-props/dist/entry.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/make-event-props/dist/entry.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.focusEvents = exports.keyboardEvents = exports.touchEvents = exports.mouseEvents = void 0;
+// As defined on the list of supported mouse events: https://reactjs.org/docs/events.html#mouse-events
+var mouseEvents = ['onClick', 'onContextMenu', 'onDoubleClick', 'onDrag', 'onDragEnd', 'onDragEnter', 'onDragExit', 'onDragLeave', 'onDragOver', 'onDragStart', 'onDrop', 'onMouseDown', 'onMouseEnter', 'onMouseLeave', 'onMouseMove', 'onMouseOut', 'onMouseOver', 'onMouseUp']; // As defined on the list of supported touch events: https://reactjs.org/docs/events.html#touch-events
+
+exports.mouseEvents = mouseEvents;
+var touchEvents = ['onTouchCancel', 'onTouchEnd', 'onTouchMove', 'onTouchStart']; // As defined on the list of supported keyboard events: https://reactjs.org/docs/events.html#keyboard-events
+
+exports.touchEvents = touchEvents;
+var keyboardEvents = ['onKeyDown', 'onKeyPress', 'onKeyUp']; // As defined on the list of supported keyboard events: https://reactjs.org/docs/events.html#focus-events
+
+exports.keyboardEvents = keyboardEvents;
+var focusEvents = ['onFocus', 'onBlur'];
+/**
+ * Returns an object with on-event callback props curried with provided args.
+ * @param {Object} props Props passed to a component.
+ * @param {Function=} getArgs A function that returns argument(s) on-event callbacks
+ *   shall be curried with.
+ */
+
+exports.focusEvents = focusEvents;
+
+var makeEventProps = function makeEventProps(props, getArgs) {
+  var eventProps = {};
+  [].concat(mouseEvents, touchEvents, keyboardEvents, focusEvents).forEach(function (eventName) {
+    if (props[eventName]) {
+      eventProps[eventName] = function (event) {
+        return getArgs ? props[eventName](event, getArgs(eventName)) : props[eventName](event);
+      };
+    }
+  });
+  return eventProps;
+};
+
+var _default = makeEventProps;
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/memoize-one/dist/memoize-one.esm.js":
 /*!**********************************************************!*\
   !*** ./node_modules/memoize-one/dist/memoize-one.esm.js ***!
@@ -21165,6 +22187,28 @@ function memoizeOne(resultFn, isEqual) {
 
 /* harmony default export */ __webpack_exports__["default"] = (memoizeOne);
 
+
+/***/ }),
+
+/***/ "./node_modules/merge-class-names/dist/esm/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/merge-class-names/dist/esm/index.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return mergeClassNames; });
+function mergeClassNames() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return args.reduce(function (classList, arg) {
+    return typeof arg === 'string' || arg instanceof Array ? classList.concat(arg) : classList;
+  }, []).filter(Boolean).join(' ');
+}
 
 /***/ }),
 
@@ -22716,6 +23760,5230 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/Calendar.css":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-calendar/dist/Calendar.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./Calendar.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-calendar/dist/Calendar.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/Calendar.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/Calendar.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Calendar; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var merge_class_names__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! merge-class-names */ "./node_modules/merge-class-names/dist/esm/index.js");
+/* harmony import */ var _Calendar_Navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Calendar/Navigation */ "./node_modules/react-calendar/dist/esm/Calendar/Navigation.js");
+/* harmony import */ var _CenturyView__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CenturyView */ "./node_modules/react-calendar/dist/esm/CenturyView.js");
+/* harmony import */ var _DecadeView__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DecadeView */ "./node_modules/react-calendar/dist/esm/DecadeView.js");
+/* harmony import */ var _YearView__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./YearView */ "./node_modules/react-calendar/dist/esm/YearView.js");
+/* harmony import */ var _MonthView__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./MonthView */ "./node_modules/react-calendar/dist/esm/MonthView.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+/* harmony import */ var _shared_utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shared/utils */ "./node_modules/react-calendar/dist/esm/shared/utils.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+
+
+
+
+
+
+
+
+var baseClassName = 'react-calendar';
+var allViews = ['century', 'decade', 'year', 'month'];
+var allValueTypes = [].concat(_toConsumableArray(allViews.slice(1)), ['day']);
+/**
+ * Returns views array with disallowed values cut off.
+ */
+
+function getLimitedViews(minDetail, maxDetail) {
+  return allViews.slice(allViews.indexOf(minDetail), allViews.indexOf(maxDetail) + 1);
+}
+/**
+ * Determines whether a given view is allowed with currently applied settings.
+ */
+
+
+function isViewAllowed(view, minDetail, maxDetail) {
+  var views = getLimitedViews(minDetail, maxDetail);
+  return views.indexOf(view) !== -1;
+}
+/**
+ * Gets either provided view if allowed by minDetail and maxDetail, or gets
+ * the default view if not allowed.
+ */
+
+
+function getView(view, minDetail, maxDetail) {
+  if (isViewAllowed(view, minDetail, maxDetail)) {
+    return view;
+  }
+
+  return maxDetail;
+}
+/**
+ * Returns value type that can be returned with currently applied settings.
+ */
+
+
+function getValueType(maxDetail) {
+  return allValueTypes[allViews.indexOf(maxDetail)];
+}
+
+function getValue(value, index) {
+  if (!value) {
+    return null;
+  }
+
+  var rawValue = value instanceof Array && value.length === 2 ? value[index] : value;
+
+  if (!rawValue) {
+    return null;
+  }
+
+  var valueDate = new Date(rawValue);
+
+  if (isNaN(valueDate.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  return valueDate;
+}
+
+function getDetailValue(_ref, index) {
+  var value = _ref.value,
+      minDate = _ref.minDate,
+      maxDate = _ref.maxDate,
+      maxDetail = _ref.maxDetail;
+  var valuePiece = getValue(value, index);
+
+  if (!valuePiece) {
+    return null;
+  }
+
+  var valueType = getValueType(maxDetail);
+  var detailValueFrom = [_shared_dates__WEBPACK_IMPORTED_MODULE_8__["getBegin"], _shared_dates__WEBPACK_IMPORTED_MODULE_8__["getEnd"]][index](valueType, valuePiece);
+  return Object(_shared_utils__WEBPACK_IMPORTED_MODULE_10__["between"])(detailValueFrom, minDate, maxDate);
+}
+
+var getDetailValueFrom = function getDetailValueFrom(args) {
+  return getDetailValue(args, 0);
+};
+
+var getDetailValueTo = function getDetailValueTo(args) {
+  return getDetailValue(args, 1);
+};
+
+var getDetailValueArray = function getDetailValueArray(args) {
+  var value = args.value;
+
+  if (value instanceof Array) {
+    return value;
+  }
+
+  return [getDetailValueFrom, getDetailValueTo].map(function (fn) {
+    return fn(args);
+  });
+};
+
+function getActiveStartDate(props) {
+  var maxDate = props.maxDate,
+      maxDetail = props.maxDetail,
+      minDate = props.minDate,
+      minDetail = props.minDetail,
+      value = props.value,
+      view = props.view;
+  var rangeType = getView(view, minDetail, maxDetail);
+  var valueFrom = getDetailValueFrom({
+    value: value,
+    minDate: minDate,
+    maxDate: maxDate,
+    maxDetail: maxDetail
+  }) || new Date();
+  return Object(_shared_dates__WEBPACK_IMPORTED_MODULE_8__["getBegin"])(rangeType, valueFrom);
+}
+
+function getInitialActiveStartDate(props) {
+  var activeStartDate = props.activeStartDate,
+      defaultActiveStartDate = props.defaultActiveStartDate,
+      defaultValue = props.defaultValue,
+      defaultView = props.defaultView,
+      maxDetail = props.maxDetail,
+      minDetail = props.minDetail,
+      value = props.value,
+      view = props.view,
+      otherProps = _objectWithoutProperties(props, ["activeStartDate", "defaultActiveStartDate", "defaultValue", "defaultView", "maxDetail", "minDetail", "value", "view"]);
+
+  var rangeType = getView(view, minDetail, maxDetail);
+  var valueFrom = activeStartDate || defaultActiveStartDate;
+
+  if (valueFrom) {
+    return Object(_shared_dates__WEBPACK_IMPORTED_MODULE_8__["getBegin"])(rangeType, valueFrom);
+  }
+
+  return getActiveStartDate(_objectSpread({
+    maxDetail: maxDetail,
+    minDetail: minDetail,
+    value: value || defaultValue,
+    view: view || defaultView
+  }, otherProps));
+}
+
+var getIsSingleValue = function getIsSingleValue(value) {
+  return value && [].concat(value).length === 1;
+};
+
+var Calendar = /*#__PURE__*/function (_Component) {
+  _inherits(Calendar, _Component);
+
+  var _super = _createSuper(Calendar);
+
+  function Calendar() {
+    var _this;
+
+    _classCallCheck(this, Calendar);
+
+    for (var _len = arguments.length, _args = new Array(_len), _key = 0; _key < _len; _key++) {
+      _args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(_args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      /* eslint-disable react/destructuring-assignment */
+      activeStartDate: _this.props.defaultActiveStartDate,
+      value: _this.props.defaultValue,
+      view: _this.props.defaultView
+      /* eslint-enable react/destructuring-assignment */
+
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setStateAndCallCallbacks", function (nextState, callback) {
+      var _assertThisInitialize = _assertThisInitialized(_this),
+          previousActiveStartDate = _assertThisInitialize.activeStartDate,
+          previousView = _assertThisInitialize.view;
+
+      var _this$props = _this.props,
+          allowPartialRange = _this$props.allowPartialRange,
+          onActiveStartDateChange = _this$props.onActiveStartDateChange,
+          onChange = _this$props.onChange,
+          onViewChange = _this$props.onViewChange,
+          selectRange = _this$props.selectRange;
+      var prevArgs = {
+        activeStartDate: previousActiveStartDate,
+        view: previousView
+      };
+
+      _this.setState(nextState, function () {
+        var args = {
+          activeStartDate: nextState.activeStartDate || _this.activeStartDate,
+          view: nextState.view || _this.view
+        };
+
+        function shouldUpdate(key) {
+          return (// Key must exist, and…
+            key in nextState && ( // …key changed from undefined to defined or the other way around, or…
+            _typeof(nextState[key]) !== _typeof(prevArgs[key]) // …value changed.
+            || (nextState[key] instanceof Date ? nextState[key].getTime() !== prevArgs[key].getTime() : nextState[key] !== prevArgs[key]))
+          );
+        }
+
+        if (shouldUpdate('activeStartDate')) {
+          if (onActiveStartDateChange) onActiveStartDateChange(args);
+        }
+
+        if (shouldUpdate('view')) {
+          if (onViewChange) onViewChange(args);
+        }
+
+        if (shouldUpdate('value')) {
+          if (onChange) {
+            if (selectRange) {
+              var isSingleValue = getIsSingleValue(nextState.value);
+
+              if (!isSingleValue) {
+                onChange(nextState.value);
+              } else if (allowPartialRange) {
+                onChange([nextState.value]);
+              }
+            } else {
+              onChange(nextState.value);
+            }
+          }
+        }
+
+        if (callback) callback(args);
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setActiveStartDate", function (activeStartDate) {
+      _this.setStateAndCallCallbacks({
+        activeStartDate: activeStartDate
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "drillDown", function (nextActiveStartDate, event) {
+      if (!_this.drillDownAvailable) {
+        return;
+      }
+
+      _this.onClickTile(nextActiveStartDate, event);
+
+      var _assertThisInitialize2 = _assertThisInitialized(_this),
+          view = _assertThisInitialize2.view,
+          views = _assertThisInitialize2.views;
+
+      var onDrillDown = _this.props.onDrillDown;
+      var nextView = views[views.indexOf(view) + 1];
+
+      _this.setStateAndCallCallbacks({
+        activeStartDate: nextActiveStartDate,
+        view: nextView
+      }, onDrillDown);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "drillUp", function () {
+      if (!_this.drillUpAvailable) {
+        return;
+      }
+
+      var _assertThisInitialize3 = _assertThisInitialized(_this),
+          activeStartDate = _assertThisInitialize3.activeStartDate,
+          view = _assertThisInitialize3.view,
+          views = _assertThisInitialize3.views;
+
+      var onDrillUp = _this.props.onDrillUp;
+      var nextView = views[views.indexOf(view) - 1];
+      var nextActiveStartDate = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_8__["getBegin"])(nextView, activeStartDate);
+
+      _this.setStateAndCallCallbacks({
+        activeStartDate: nextActiveStartDate,
+        view: nextView
+      }, onDrillUp);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (value, event) {
+      var selectRange = _this.props.selectRange;
+
+      _this.onClickTile(value, event);
+
+      var nextValue;
+
+      if (selectRange) {
+        // Range selection turned on
+        var _assertThisInitialize4 = _assertThisInitialized(_this),
+            previousValue = _assertThisInitialize4.value,
+            valueType = _assertThisInitialize4.valueType;
+
+        if (!getIsSingleValue(previousValue)) {
+          // Value has 0 or 2 elements - either way we're starting a new array
+          // First value
+          nextValue = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_8__["getBegin"])(valueType, value);
+        } else {
+          // Second value
+          nextValue = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_8__["getValueRange"])(valueType, previousValue, value);
+        }
+      } else {
+        // Range selection turned off
+        nextValue = _this.getProcessedValue(value);
+      }
+
+      var nextActiveStartDate = getActiveStartDate(_objectSpread({}, _this.props, {
+        value: nextValue
+      }));
+
+      _this.setStateAndCallCallbacks({
+        activeStartDate: nextActiveStartDate,
+        value: nextValue
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onClickTile", function (value, event) {
+      var _assertThisInitialize5 = _assertThisInitialized(_this),
+          view = _assertThisInitialize5.view;
+
+      var _this$props2 = _this.props,
+          onClickDay = _this$props2.onClickDay,
+          onClickDecade = _this$props2.onClickDecade,
+          onClickMonth = _this$props2.onClickMonth,
+          onClickYear = _this$props2.onClickYear;
+
+      var callback = function () {
+        switch (view) {
+          case 'century':
+            return onClickDecade;
+
+          case 'decade':
+            return onClickYear;
+
+          case 'year':
+            return onClickMonth;
+
+          case 'month':
+            return onClickDay;
+
+          default:
+            throw new Error("Invalid view: ".concat(view, "."));
+        }
+      }();
+
+      if (callback) callback(value, event);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onMouseOver", function (value) {
+      _this.setState(function (prevState) {
+        if (prevState.hover && prevState.hover.getTime() === value.getTime()) {
+          return null;
+        }
+
+        return {
+          hover: value
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onMouseLeave", function () {
+      _this.setState({
+        hover: null
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(Calendar, [{
+    key: "getProcessedValue",
+
+    /**
+     * Gets current value in a desired format.
+     */
+    value: function getProcessedValue(value) {
+      var _this$props3 = this.props,
+          minDate = _this$props3.minDate,
+          maxDate = _this$props3.maxDate,
+          maxDetail = _this$props3.maxDetail,
+          returnValue = _this$props3.returnValue;
+
+      var processFunction = function () {
+        switch (returnValue) {
+          case 'start':
+            return getDetailValueFrom;
+
+          case 'end':
+            return getDetailValueTo;
+
+          case 'range':
+            return getDetailValueArray;
+
+          default:
+            throw new Error('Invalid returnValue.');
+        }
+      }();
+
+      return processFunction({
+        value: value,
+        minDate: minDate,
+        maxDate: maxDate,
+        maxDetail: maxDetail
+      });
+    }
+  }, {
+    key: "renderContent",
+    value: function renderContent(next) {
+      var currentActiveStartDate = this.activeStartDate,
+          onMouseOver = this.onMouseOver,
+          valueType = this.valueType,
+          value = this.value,
+          view = this.view;
+      var _this$props4 = this.props,
+          calendarType = _this$props4.calendarType,
+          locale = _this$props4.locale,
+          maxDate = _this$props4.maxDate,
+          minDate = _this$props4.minDate,
+          selectRange = _this$props4.selectRange,
+          tileClassName = _this$props4.tileClassName,
+          tileContent = _this$props4.tileContent,
+          tileDisabled = _this$props4.tileDisabled;
+      var hover = this.hover;
+      var activeStartDate = next ? Object(_shared_dates__WEBPACK_IMPORTED_MODULE_8__["getBeginNext"])(view, currentActiveStartDate) : Object(_shared_dates__WEBPACK_IMPORTED_MODULE_8__["getBegin"])(view, currentActiveStartDate);
+      var onClick = this.drillDownAvailable ? this.drillDown : this.onChange;
+      var commonProps = {
+        activeStartDate: activeStartDate,
+        hover: hover,
+        locale: locale,
+        maxDate: maxDate,
+        minDate: minDate,
+        onClick: onClick,
+        onMouseOver: selectRange ? onMouseOver : null,
+        tileClassName: tileClassName,
+        tileContent: tileContent,
+        tileDisabled: tileDisabled,
+        value: value,
+        valueType: valueType
+      };
+
+      switch (view) {
+        case 'century':
+          {
+            var formatYear = this.props.formatYear;
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CenturyView__WEBPACK_IMPORTED_MODULE_4__["default"], _extends({
+              formatYear: formatYear
+            }, commonProps));
+          }
+
+        case 'decade':
+          {
+            var _formatYear = this.props.formatYear;
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DecadeView__WEBPACK_IMPORTED_MODULE_5__["default"], _extends({
+              formatYear: _formatYear
+            }, commonProps));
+          }
+
+        case 'year':
+          {
+            var _this$props5 = this.props,
+                formatMonth = _this$props5.formatMonth,
+                formatMonthYear = _this$props5.formatMonthYear;
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_YearView__WEBPACK_IMPORTED_MODULE_6__["default"], _extends({
+              formatMonth: formatMonth,
+              formatMonthYear: formatMonthYear
+            }, commonProps));
+          }
+
+        case 'month':
+          {
+            var _this$props6 = this.props,
+                formatLongDate = _this$props6.formatLongDate,
+                formatShortWeekday = _this$props6.formatShortWeekday,
+                onClickWeekNumber = _this$props6.onClickWeekNumber,
+                showDoubleView = _this$props6.showDoubleView,
+                showFixedNumberOfWeeks = _this$props6.showFixedNumberOfWeeks,
+                showNeighboringMonth = _this$props6.showNeighboringMonth,
+                showWeekNumbers = _this$props6.showWeekNumbers;
+            var onMouseLeave = this.onMouseLeave;
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MonthView__WEBPACK_IMPORTED_MODULE_7__["default"], _extends({
+              calendarType: calendarType,
+              formatLongDate: formatLongDate,
+              formatShortWeekday: formatShortWeekday,
+              onClickWeekNumber: onClickWeekNumber,
+              onMouseLeave: selectRange ? onMouseLeave : null,
+              showFixedNumberOfWeeks: showFixedNumberOfWeeks || showDoubleView,
+              showNeighboringMonth: showNeighboringMonth,
+              showWeekNumbers: showWeekNumbers
+            }, commonProps));
+          }
+
+        default:
+          throw new Error("Invalid view: ".concat(view, "."));
+      }
+    }
+  }, {
+    key: "renderNavigation",
+    value: function renderNavigation() {
+      var showNavigation = this.props.showNavigation;
+
+      if (!showNavigation) {
+        return null;
+      }
+
+      var activeStartDate = this.activeStartDate,
+          view = this.view,
+          views = this.views;
+      var _this$props7 = this.props,
+          formatMonthYear = _this$props7.formatMonthYear,
+          formatYear = _this$props7.formatYear,
+          locale = _this$props7.locale,
+          maxDate = _this$props7.maxDate,
+          minDate = _this$props7.minDate,
+          navigationAriaLabel = _this$props7.navigationAriaLabel,
+          navigationLabel = _this$props7.navigationLabel,
+          next2AriaLabel = _this$props7.next2AriaLabel,
+          next2Label = _this$props7.next2Label,
+          nextAriaLabel = _this$props7.nextAriaLabel,
+          nextLabel = _this$props7.nextLabel,
+          prev2AriaLabel = _this$props7.prev2AriaLabel,
+          prev2Label = _this$props7.prev2Label,
+          prevAriaLabel = _this$props7.prevAriaLabel,
+          prevLabel = _this$props7.prevLabel,
+          showDoubleView = _this$props7.showDoubleView;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Calendar_Navigation__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        activeStartDate: activeStartDate,
+        drillUp: this.drillUp,
+        formatMonthYear: formatMonthYear,
+        formatYear: formatYear,
+        locale: locale,
+        maxDate: maxDate,
+        minDate: minDate,
+        navigationAriaLabel: navigationAriaLabel,
+        navigationLabel: navigationLabel,
+        next2AriaLabel: next2AriaLabel,
+        next2Label: next2Label,
+        nextAriaLabel: nextAriaLabel,
+        nextLabel: nextLabel,
+        prev2AriaLabel: prev2AriaLabel,
+        prev2Label: prev2Label,
+        prevAriaLabel: prevAriaLabel,
+        prevLabel: prevLabel,
+        setActiveStartDate: this.setActiveStartDate,
+        showDoubleView: showDoubleView,
+        view: view,
+        views: views
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props8 = this.props,
+          className = _this$props8.className,
+          selectRange = _this$props8.selectRange,
+          showDoubleView = _this$props8.showDoubleView;
+      var onMouseLeave = this.onMouseLeave,
+          value = this.value;
+      var valueArray = [].concat(value);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: Object(merge_class_names__WEBPACK_IMPORTED_MODULE_2__["default"])(baseClassName, selectRange && valueArray.length === 1 && "".concat(baseClassName, "--selectRange"), showDoubleView && "".concat(baseClassName, "--doubleView"), className)
+      }, this.renderNavigation(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "".concat(baseClassName, "__viewContainer"),
+        onBlur: selectRange ? onMouseLeave : null,
+        onMouseLeave: selectRange ? onMouseLeave : null
+      }, this.renderContent(), showDoubleView && this.renderContent(true)));
+    }
+  }, {
+    key: "activeStartDate",
+    get: function get() {
+      var activeStartDateProps = this.props.activeStartDate;
+      var activeStartDateState = this.state.activeStartDate;
+      return activeStartDateProps || activeStartDateState || getInitialActiveStartDate(this.props);
+    }
+  }, {
+    key: "value",
+    get: function get() {
+      var _this$props9 = this.props,
+          selectRange = _this$props9.selectRange,
+          valueProps = _this$props9.value;
+      var valueState = this.state.value; // In the middle of range selection, use value from state
+
+      if (selectRange && getIsSingleValue(valueState)) {
+        return valueState;
+      }
+
+      return valueProps !== undefined ? valueProps : valueState;
+    }
+  }, {
+    key: "valueType",
+    get: function get() {
+      var maxDetail = this.props.maxDetail;
+      return getValueType(maxDetail);
+    }
+  }, {
+    key: "view",
+    get: function get() {
+      var _this$props10 = this.props,
+          minDetail = _this$props10.minDetail,
+          maxDetail = _this$props10.maxDetail,
+          viewProps = _this$props10.view;
+      var viewState = this.state.view;
+      return getView(viewProps || viewState, minDetail, maxDetail);
+    }
+  }, {
+    key: "views",
+    get: function get() {
+      var _this$props11 = this.props,
+          minDetail = _this$props11.minDetail,
+          maxDetail = _this$props11.maxDetail;
+      return getLimitedViews(minDetail, maxDetail);
+    }
+  }, {
+    key: "hover",
+    get: function get() {
+      var selectRange = this.props.selectRange;
+      var hover = this.state.hover;
+      return selectRange ? hover : null;
+    }
+  }, {
+    key: "drillDownAvailable",
+    get: function get() {
+      var view = this.view,
+          views = this.views;
+      return views.indexOf(view) < views.length - 1;
+    }
+  }, {
+    key: "drillUpAvailable",
+    get: function get() {
+      var view = this.view,
+          views = this.views;
+      return views.indexOf(view) > 0;
+    }
+  }]);
+
+  return Calendar;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+Calendar.defaultProps = {
+  maxDetail: 'month',
+  minDetail: 'century',
+  returnValue: 'start',
+  showNavigation: true,
+  showNeighboringMonth: true
+};
+var isActiveStartDate = prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Date);
+var isLooseValue = prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__["isValue"]]);
+Calendar.propTypes = {
+  activeStartDate: isActiveStartDate,
+  allowPartialRange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  calendarType: _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__["isCalendarType"],
+  className: _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__["isClassName"],
+  defaultActiveStartDate: isActiveStartDate,
+  defaultValue: isLooseValue,
+  defaultView: _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__["isView"],
+  formatLongDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  formatMonth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  formatMonthYear: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  formatShortWeekday: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  formatYear: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  locale: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  maxDate: _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__["isMaxDate"],
+  maxDetail: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(allViews),
+  minDate: _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__["isMinDate"],
+  minDetail: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(allViews),
+  navigationAriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  navigationLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  next2AriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  next2Label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  nextAriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  nextLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  onActiveStartDateChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onClickDay: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onClickDecade: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onClickMonth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onClickWeekNumber: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onClickYear: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onDrillDown: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onDrillUp: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onViewChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  prev2AriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  prev2Label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  prevAriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  prevLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  returnValue: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['start', 'end', 'range']),
+  selectRange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  showDoubleView: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  showFixedNumberOfWeeks: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  showNavigation: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  showNeighboringMonth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  showWeekNumbers: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  tileClassName: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__["isClassName"]]),
+  tileContent: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node]),
+  tileDisabled: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  value: isLooseValue,
+  view: _shared_propTypes__WEBPACK_IMPORTED_MODULE_9__["isView"]
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/Calendar/Navigation.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/Calendar/Navigation.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Navigation; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var get_user_locale__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! get-user-locale */ "./node_modules/get-user-locale/dist/esm/index.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/dateFormatter */ "./node_modules/react-calendar/dist/esm/shared/dateFormatter.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+
+
+
+
+
+
+var className = 'react-calendar__navigation';
+function Navigation(_ref) {
+  var activeStartDate = _ref.activeStartDate,
+      drillUp = _ref.drillUp,
+      _ref$formatMonthYear = _ref.formatMonthYear,
+      formatMonthYear = _ref$formatMonthYear === void 0 ? _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_4__["formatMonthYear"] : _ref$formatMonthYear,
+      _ref$formatYear = _ref.formatYear,
+      formatYear = _ref$formatYear === void 0 ? _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_4__["formatYear"] : _ref$formatYear,
+      locale = _ref.locale,
+      maxDate = _ref.maxDate,
+      minDate = _ref.minDate,
+      _ref$navigationAriaLa = _ref.navigationAriaLabel,
+      navigationAriaLabel = _ref$navigationAriaLa === void 0 ? '' : _ref$navigationAriaLa,
+      navigationLabel = _ref.navigationLabel,
+      _ref$next2AriaLabel = _ref.next2AriaLabel,
+      next2AriaLabel = _ref$next2AriaLabel === void 0 ? '' : _ref$next2AriaLabel,
+      _ref$next2Label = _ref.next2Label,
+      next2Label = _ref$next2Label === void 0 ? '»' : _ref$next2Label,
+      _ref$nextAriaLabel = _ref.nextAriaLabel,
+      nextAriaLabel = _ref$nextAriaLabel === void 0 ? '' : _ref$nextAriaLabel,
+      _ref$nextLabel = _ref.nextLabel,
+      nextLabel = _ref$nextLabel === void 0 ? '›' : _ref$nextLabel,
+      _ref$prev2AriaLabel = _ref.prev2AriaLabel,
+      prev2AriaLabel = _ref$prev2AriaLabel === void 0 ? '' : _ref$prev2AriaLabel,
+      _ref$prev2Label = _ref.prev2Label,
+      prev2Label = _ref$prev2Label === void 0 ? '«' : _ref$prev2Label,
+      _ref$prevAriaLabel = _ref.prevAriaLabel,
+      prevAriaLabel = _ref$prevAriaLabel === void 0 ? '' : _ref$prevAriaLabel,
+      _ref$prevLabel = _ref.prevLabel,
+      prevLabel = _ref$prevLabel === void 0 ? '‹' : _ref$prevLabel,
+      setActiveStartDate = _ref.setActiveStartDate,
+      showDoubleView = _ref.showDoubleView,
+      view = _ref.view,
+      views = _ref.views;
+  var drillUpAvailable = views.indexOf(view) > 0;
+  var shouldShowPrevNext2Buttons = view !== 'century';
+  var previousActiveStartDate = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getBeginPrevious"])(view, activeStartDate);
+  var previousActiveStartDate2 = shouldShowPrevNext2Buttons && Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getBeginPrevious2"])(view, activeStartDate);
+  var nextActiveStartDate = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getBeginNext"])(view, activeStartDate);
+  var nextActiveStartDate2 = shouldShowPrevNext2Buttons && Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getBeginNext2"])(view, activeStartDate);
+
+  var prevButtonDisabled = function () {
+    if (previousActiveStartDate.getFullYear() < 1000) {
+      return true;
+    }
+
+    var previousActiveEndDate = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getEndPrevious"])(view, activeStartDate);
+    return minDate && minDate >= previousActiveEndDate;
+  }();
+
+  var prev2ButtonDisabled = shouldShowPrevNext2Buttons && function () {
+    if (previousActiveStartDate2.getFullYear() < 1000) {
+      return true;
+    }
+
+    var previousActiveEndDate = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getEndPrevious2"])(view, activeStartDate);
+    return minDate && minDate >= previousActiveEndDate;
+  }();
+
+  var nextButtonDisabled = maxDate && maxDate <= nextActiveStartDate;
+  var next2ButtonDisabled = shouldShowPrevNext2Buttons && maxDate && maxDate <= nextActiveStartDate2;
+
+  function onClickPrevious() {
+    setActiveStartDate(previousActiveStartDate);
+  }
+
+  function onClickPrevious2() {
+    setActiveStartDate(previousActiveStartDate2);
+  }
+
+  function onClickNext() {
+    setActiveStartDate(nextActiveStartDate);
+  }
+
+  function onClickNext2() {
+    setActiveStartDate(nextActiveStartDate2);
+  }
+
+  function renderLabel(date) {
+    var label = function () {
+      switch (view) {
+        case 'century':
+          return Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getCenturyLabel"])(locale, formatYear, date);
+
+        case 'decade':
+          return Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getDecadeLabel"])(locale, formatYear, date);
+
+        case 'year':
+          return formatYear(locale, date);
+
+        case 'month':
+          return formatMonthYear(locale, date);
+
+        default:
+          throw new Error("Invalid view: ".concat(view, "."));
+      }
+    }();
+
+    return navigationLabel ? navigationLabel({
+      date: date,
+      label: label,
+      locale: locale || Object(get_user_locale__WEBPACK_IMPORTED_MODULE_2__["getUserLocale"])(),
+      view: view
+    }) : label;
+  }
+
+  function renderButton() {
+    var labelClassName = "".concat(className, "__label");
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      "aria-label": navigationAriaLabel,
+      className: labelClassName,
+      disabled: !drillUpAvailable,
+      onClick: drillUp,
+      style: {
+        flexGrow: 1
+      },
+      type: "button"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "".concat(labelClassName, "__labelText ").concat(labelClassName, "__labelText--from")
+    }, renderLabel(activeStartDate)), showDoubleView && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "".concat(labelClassName, "__divider")
+    }, ' ', "\u2013", ' '), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "".concat(labelClassName, "__labelText ").concat(labelClassName, "__labelText--to")
+    }, renderLabel(nextActiveStartDate))));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className,
+    style: {
+      display: 'flex'
+    }
+  }, prev2Label !== null && shouldShowPrevNext2Buttons && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    "aria-label": prev2AriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__prev2-button"),
+    disabled: prev2ButtonDisabled,
+    onClick: onClickPrevious2,
+    type: "button"
+  }, prev2Label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    "aria-label": prevAriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__prev-button"),
+    disabled: prevButtonDisabled,
+    onClick: onClickPrevious,
+    type: "button"
+  }, prevLabel), renderButton(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    "aria-label": nextAriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__next-button"),
+    disabled: nextButtonDisabled,
+    onClick: onClickNext,
+    type: "button"
+  }, nextLabel), next2Label !== null && shouldShowPrevNext2Buttons && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    "aria-label": next2AriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__next2-button"),
+    disabled: next2ButtonDisabled,
+    onClick: onClickNext2,
+    type: "button"
+  }, next2Label));
+}
+Navigation.propTypes = {
+  activeStartDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Date).isRequired,
+  drillUp: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  formatMonthYear: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  formatYear: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  locale: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  maxDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Date),
+  minDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Date),
+  navigationAriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  navigationLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  next2AriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  next2Label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node]),
+  nextAriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  nextLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node]),
+  prev2AriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  prev2Label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node]),
+  prevAriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  prevLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node]),
+  setActiveStartDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  showDoubleView: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  view: _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__["isView"].isRequired,
+  views: _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__["isViews"].isRequired
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/CenturyView.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/CenturyView.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CenturyView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CenturyView_Decades__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CenturyView/Decades */ "./node_modules/react-calendar/dist/esm/CenturyView/Decades.js");
+
+
+function CenturyView(props) {
+  function renderDecades() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CenturyView_Decades__WEBPACK_IMPORTED_MODULE_1__["default"], props);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "react-calendar__century-view"
+  }, renderDecades());
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/CenturyView/Decade.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/CenturyView/Decade.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Decade; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _Tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Tile */ "./node_modules/react-calendar/dist/esm/Tile.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/dateFormatter */ "./node_modules/react-calendar/dist/esm/shared/dateFormatter.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+var className = 'react-calendar__century-view__decades__decade';
+function Decade(_ref) {
+  var classes = _ref.classes,
+      _ref$formatYear = _ref.formatYear,
+      formatYear = _ref$formatYear === void 0 ? _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_5__["formatYear"] : _ref$formatYear,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "formatYear"]);
+
+  var date = otherProps.date,
+      locale = otherProps.locale;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tile__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    maxDateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getDecadeEnd"],
+    minDateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getDecadeStart"],
+    view: "century"
+  }), Object(_shared_dates__WEBPACK_IMPORTED_MODULE_4__["getDecadeLabel"])(locale, formatYear, date));
+}
+Decade.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__["tileProps"], {
+  formatYear: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/CenturyView/Decades.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/CenturyView/Decades.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Decades; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _TileGroup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../TileGroup */ "./node_modules/react-calendar/dist/esm/TileGroup.js");
+/* harmony import */ var _Decade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Decade */ "./node_modules/react-calendar/dist/esm/CenturyView/Decade.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
+
+
+
+function Decades(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_4__["getBeginOfCenturyYear"])(activeStartDate);
+  var end = start + 99;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TileGroup__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({}, props, {
+    className: "react-calendar__century-view__decades",
+    dateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_1__["getDecadeStart"],
+    dateType: "decade",
+    end: end,
+    start: start,
+    step: 10,
+    tile: _Decade__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }));
+}
+Decades.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__["tileGroupProps"]);
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/DecadeView.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/DecadeView.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DecadeView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _DecadeView_Years__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DecadeView/Years */ "./node_modules/react-calendar/dist/esm/DecadeView/Years.js");
+
+
+function DecadeView(props) {
+  function renderYears() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DecadeView_Years__WEBPACK_IMPORTED_MODULE_1__["default"], props);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "react-calendar__decade-view"
+  }, renderYears());
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/DecadeView/Year.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/DecadeView/Year.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Year; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _Tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Tile */ "./node_modules/react-calendar/dist/esm/Tile.js");
+/* harmony import */ var _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/dateFormatter */ "./node_modules/react-calendar/dist/esm/shared/dateFormatter.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+var className = 'react-calendar__decade-view__years__year';
+function Year(_ref) {
+  var classes = _ref.classes,
+      _ref$formatYear = _ref.formatYear,
+      formatYear = _ref$formatYear === void 0 ? _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_4__["formatYear"] : _ref$formatYear,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "formatYear"]);
+
+  var date = otherProps.date,
+      locale = otherProps.locale;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tile__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    maxDateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getYearEnd"],
+    minDateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getYearStart"],
+    view: "decade"
+  }), formatYear(locale, date));
+}
+Year.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__["tileProps"], {
+  formatYear: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/DecadeView/Years.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/DecadeView/Years.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Years; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _TileGroup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../TileGroup */ "./node_modules/react-calendar/dist/esm/TileGroup.js");
+/* harmony import */ var _Year__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Year */ "./node_modules/react-calendar/dist/esm/DecadeView/Year.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
+
+
+function Years(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_3__["getBeginOfDecadeYear"])(activeStartDate);
+  var end = start + 9;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TileGroup__WEBPACK_IMPORTED_MODULE_1__["default"], _extends({}, props, {
+    className: "react-calendar__decade-view__years",
+    dateTransform: function dateTransform(year) {
+      return new Date(year, 0, 1);
+    },
+    dateType: "year",
+    end: end,
+    start: start,
+    tile: _Year__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }));
+}
+Years.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_4__["tileGroupProps"]);
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/Flex.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/Flex.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Flex; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+function toPercent(num) {
+  return "".concat(num, "%");
+}
+
+function Flex(_ref) {
+  var children = _ref.children,
+      className = _ref.className,
+      direction = _ref.direction,
+      count = _ref.count,
+      offset = _ref.offset,
+      style = _ref.style,
+      wrap = _ref.wrap,
+      otherProps = _objectWithoutProperties(_ref, ["children", "className", "direction", "count", "offset", "style", "wrap"]);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({
+    className: className,
+    style: _objectSpread({
+      display: 'flex',
+      flexDirection: direction,
+      flexWrap: wrap ? 'wrap' : 'no-wrap'
+    }, style)
+  }, otherProps), react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.map(children, function (child, index) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(child, _objectSpread({}, child.props, {
+      style: {
+        flexBasis: toPercent(100 / count),
+        maxWidth: toPercent(100 / count),
+        overflow: 'hidden',
+        marginLeft: offset && index === 0 ? toPercent(100 * offset / count) : null
+      }
+    }));
+  }));
+}
+Flex.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  count: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  direction: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  offset: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.objectOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number])),
+  wrap: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/MonthView.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/MonthView.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MonthView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _MonthView_Days__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MonthView/Days */ "./node_modules/react-calendar/dist/esm/MonthView/Days.js");
+/* harmony import */ var _MonthView_Weekdays__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MonthView/Weekdays */ "./node_modules/react-calendar/dist/esm/MonthView/Weekdays.js");
+/* harmony import */ var _MonthView_WeekNumbers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MonthView/WeekNumbers */ "./node_modules/react-calendar/dist/esm/MonthView/WeekNumbers.js");
+/* harmony import */ var _shared_const__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shared/const */ "./node_modules/react-calendar/dist/esm/shared/const.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+
+function getCalendarTypeFromLocale(locale) {
+  return Object.keys(_shared_const__WEBPACK_IMPORTED_MODULE_5__["CALENDAR_TYPE_LOCALES"]).find(function (calendarType) {
+    return _shared_const__WEBPACK_IMPORTED_MODULE_5__["CALENDAR_TYPE_LOCALES"][calendarType].includes(locale);
+  }) || _shared_const__WEBPACK_IMPORTED_MODULE_5__["CALENDAR_TYPES"].ISO_8601;
+}
+
+function MonthView(props) {
+  var activeStartDate = props.activeStartDate,
+      locale = props.locale,
+      onMouseLeave = props.onMouseLeave,
+      showFixedNumberOfWeeks = props.showFixedNumberOfWeeks;
+
+  var _props$calendarType = props.calendarType,
+      calendarType = _props$calendarType === void 0 ? getCalendarTypeFromLocale(locale) : _props$calendarType,
+      formatShortWeekday = props.formatShortWeekday,
+      onClickWeekNumber = props.onClickWeekNumber,
+      showWeekNumbers = props.showWeekNumbers,
+      childProps = _objectWithoutProperties(props, ["calendarType", "formatShortWeekday", "onClickWeekNumber", "showWeekNumbers"]);
+
+  function renderWeekdays() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MonthView_Weekdays__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      calendarType: calendarType,
+      formatShortWeekday: formatShortWeekday,
+      locale: locale,
+      onMouseLeave: onMouseLeave
+    });
+  }
+
+  function renderWeekNumbers() {
+    if (!showWeekNumbers) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MonthView_WeekNumbers__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      activeStartDate: activeStartDate,
+      calendarType: calendarType,
+      onClickWeekNumber: onClickWeekNumber,
+      onMouseLeave: onMouseLeave,
+      showFixedNumberOfWeeks: showFixedNumberOfWeeks
+    });
+  }
+
+  function renderDays() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MonthView_Days__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({
+      calendarType: calendarType
+    }, childProps));
+  }
+
+  var className = 'react-calendar__month-view';
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: [className, showWeekNumbers ? "".concat(className, "--weekNumbers") : ''].join(' ')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'flex-end'
+    }
+  }, renderWeekNumbers(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      flexGrow: 1,
+      width: '100%'
+    }
+  }, renderWeekdays(), renderDays())));
+}
+MonthView.propTypes = {
+  activeStartDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Date).isRequired,
+  calendarType: _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__["isCalendarType"],
+  formatShortWeekday: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  locale: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  onClickWeekNumber: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onMouseLeave: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  showFixedNumberOfWeeks: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  showWeekNumbers: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/MonthView/Day.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/MonthView/Day.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Day; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _Tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Tile */ "./node_modules/react-calendar/dist/esm/Tile.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/dateFormatter */ "./node_modules/react-calendar/dist/esm/shared/dateFormatter.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+var className = 'react-calendar__month-view__days__day';
+function Day(_ref) {
+  var _ref$formatLongDate = _ref.formatLongDate,
+      formatLongDate = _ref$formatLongDate === void 0 ? _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_5__["formatLongDate"] : _ref$formatLongDate,
+      calendarType = _ref.calendarType,
+      classes = _ref.classes,
+      currentMonthIndex = _ref.currentMonthIndex,
+      otherProps = _objectWithoutProperties(_ref, ["formatLongDate", "calendarType", "classes", "currentMonthIndex"]);
+
+  var date = otherProps.date;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tile__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className, Object(_shared_dates__WEBPACK_IMPORTED_MODULE_4__["isWeekend"])(date, calendarType) ? "".concat(className, "--weekend") : null, date.getMonth() !== currentMonthIndex ? "".concat(className, "--neighboringMonth") : null),
+    formatAbbr: formatLongDate,
+    maxDateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getDayEnd"],
+    minDateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getDayStart"],
+    view: "month"
+  }), Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getDate"])(date));
+}
+Day.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__["tileProps"], {
+  currentMonthIndex: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  formatLongDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/MonthView/Days.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/MonthView/Days.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Days; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _TileGroup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../TileGroup */ "./node_modules/react-calendar/dist/esm/TileGroup.js");
+/* harmony import */ var _Day__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Day */ "./node_modules/react-calendar/dist/esm/MonthView/Day.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+
+function Days(props) {
+  var activeStartDate = props.activeStartDate,
+      calendarType = props.calendarType;
+
+  var showFixedNumberOfWeeks = props.showFixedNumberOfWeeks,
+      showNeighboringMonth = props.showNeighboringMonth,
+      otherProps = _objectWithoutProperties(props, ["showFixedNumberOfWeeks", "showNeighboringMonth"]);
+
+  var year = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getYear"])(activeStartDate);
+  var monthIndex = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getMonth"])(activeStartDate);
+  var hasFixedNumberOfWeeks = showFixedNumberOfWeeks || showNeighboringMonth;
+  var dayOfWeek = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_5__["getDayOfWeek"])(activeStartDate, calendarType);
+  var offset = hasFixedNumberOfWeeks ? 0 : dayOfWeek;
+  /**
+   * Defines on which day of the month the grid shall start. If we simply show current
+   * month, we obviously start on day one, but if showNeighboringMonth is set to
+   * true, we need to find the beginning of the week the first day of the month is in.
+   */
+
+  var start = (hasFixedNumberOfWeeks ? -dayOfWeek : 0) + 1;
+  /**
+   * Defines on which day of the month the grid shall end. If we simply show current
+   * month, we need to stop on the last day of the month, but if showNeighboringMonth
+   * is set to true, we need to find the end of the week the last day of the month is in.
+   */
+
+  var end = function () {
+    if (showFixedNumberOfWeeks) {
+      // Always show 6 weeks
+      return start + 6 * 7 - 1;
+    }
+
+    var daysInMonth = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getDaysInMonth"])(activeStartDate);
+
+    if (showNeighboringMonth) {
+      var activeEndDate = new Date();
+      activeEndDate.setFullYear(year, monthIndex, daysInMonth);
+      activeEndDate.setHours(0, 0, 0, 0);
+      var daysUntilEndOfTheWeek = 7 - Object(_shared_dates__WEBPACK_IMPORTED_MODULE_5__["getDayOfWeek"])(activeEndDate, calendarType) - 1;
+      return daysInMonth + daysUntilEndOfTheWeek;
+    }
+
+    return daysInMonth;
+  }();
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TileGroup__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({}, otherProps, {
+    className: "react-calendar__month-view__days",
+    count: 7,
+    currentMonthIndex: monthIndex,
+    dateTransform: function dateTransform(day) {
+      var date = new Date();
+      date.setFullYear(year, monthIndex, day);
+      date.setHours(0, 0, 0, 0);
+      return date;
+    },
+    dateType: "day",
+    end: end,
+    offset: offset,
+    start: start,
+    tile: _Day__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }));
+}
+Days.propTypes = _objectSpread({
+  calendarType: _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__["isCalendarType"].isRequired,
+  showFixedNumberOfWeeks: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  showNeighboringMonth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
+}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__["tileGroupProps"]);
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/MonthView/WeekNumber.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/MonthView/WeekNumber.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return WeekNumber; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+function WeekNumber(_ref) {
+  var date = _ref.date,
+      onClickWeekNumber = _ref.onClickWeekNumber,
+      weekNumber = _ref.weekNumber;
+  var props = {
+    className: 'react-calendar__tile',
+    style: {
+      flexGrow: 1
+    }
+  };
+  var children = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, weekNumber);
+  return onClickWeekNumber ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", _extends({}, props, {
+    onClick: function onClick(event) {
+      return onClickWeekNumber(weekNumber, date, event);
+    },
+    type: "button"
+  }), children) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", props, children);
+}
+WeekNumber.propTypes = {
+  date: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Date).isRequired,
+  onClickWeekNumber: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  weekNumber: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/MonthView/WeekNumbers.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/MonthView/WeekNumbers.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return WeekNumbers; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _WeekNumber__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./WeekNumber */ "./node_modules/react-calendar/dist/esm/MonthView/WeekNumber.js");
+/* harmony import */ var _Flex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Flex */ "./node_modules/react-calendar/dist/esm/Flex.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+
+
+
+
+
+
+
+function WeekNumbers(props) {
+  var activeStartDate = props.activeStartDate,
+      calendarType = props.calendarType,
+      onClickWeekNumber = props.onClickWeekNumber,
+      onMouseLeave = props.onMouseLeave,
+      showFixedNumberOfWeeks = props.showFixedNumberOfWeeks;
+
+  var numberOfWeeks = function () {
+    if (showFixedNumberOfWeeks) {
+      return 6;
+    }
+
+    var numberOfDays = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getDaysInMonth"])(activeStartDate);
+    var startWeekday = Object(_shared_dates__WEBPACK_IMPORTED_MODULE_5__["getDayOfWeek"])(activeStartDate, calendarType);
+    var days = numberOfDays - (7 - startWeekday);
+    return 1 + Math.ceil(days / 7);
+  }();
+
+  var dates = function () {
+    var year = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getYear"])(activeStartDate);
+    var monthIndex = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getMonth"])(activeStartDate);
+    var day = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getDate"])(activeStartDate);
+    var result = [];
+
+    for (var index = 0; index < numberOfWeeks; index += 1) {
+      result.push(Object(_shared_dates__WEBPACK_IMPORTED_MODULE_5__["getBeginOfWeek"])(new Date(year, monthIndex, day + index * 7), calendarType));
+    }
+
+    return result;
+  }();
+
+  var weekNumbers = dates.map(function (date) {
+    return Object(_shared_dates__WEBPACK_IMPORTED_MODULE_5__["getWeekNumber"])(date, calendarType);
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Flex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "react-calendar__month-view__weekNumbers",
+    count: numberOfWeeks,
+    direction: "column",
+    onFocus: onMouseLeave,
+    onMouseOver: onMouseLeave,
+    style: {
+      flexBasis: 'calc(100% * (1 / 8)',
+      flexShrink: 0
+    }
+  }, weekNumbers.map(function (weekNumber, weekIndex) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WeekNumber__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      key: weekNumber,
+      date: dates[weekIndex],
+      onClickWeekNumber: onClickWeekNumber,
+      weekNumber: weekNumber
+    });
+  }));
+}
+WeekNumbers.propTypes = {
+  activeStartDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Date).isRequired,
+  calendarType: _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__["isCalendarType"].isRequired,
+  onClickWeekNumber: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onMouseLeave: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  showFixedNumberOfWeeks: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/MonthView/Weekdays.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/MonthView/Weekdays.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Weekdays; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _Flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Flex */ "./node_modules/react-calendar/dist/esm/Flex.js");
+/* harmony import */ var _shared_dates__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+/* harmony import */ var _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/dateFormatter */ "./node_modules/react-calendar/dist/esm/shared/dateFormatter.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+
+
+
+
+
+
+
+var className = 'react-calendar__month-view__weekdays';
+function Weekdays(props) {
+  var calendarType = props.calendarType,
+      _props$formatShortWee = props.formatShortWeekday,
+      formatShortWeekday = _props$formatShortWee === void 0 ? _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_5__["formatShortWeekday"] : _props$formatShortWee,
+      locale = props.locale,
+      onMouseLeave = props.onMouseLeave;
+  var anyDate = new Date();
+  var beginOfMonth = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getMonthStart"])(anyDate);
+  var year = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getYear"])(beginOfMonth);
+  var monthIndex = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getMonth"])(beginOfMonth);
+  var weekdays = [];
+
+  for (var weekday = 1; weekday <= 7; weekday += 1) {
+    var weekdayDate = new Date(year, monthIndex, weekday - Object(_shared_dates__WEBPACK_IMPORTED_MODULE_4__["getDayOfWeek"])(beginOfMonth, calendarType));
+    var abbr = Object(_shared_dateFormatter__WEBPACK_IMPORTED_MODULE_5__["formatWeekday"])(locale, weekdayDate);
+    weekdays.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: weekday,
+      className: "".concat(className, "__weekday")
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("abbr", {
+      "aria-label": abbr,
+      title: abbr
+    }, formatShortWeekday(locale, weekdayDate).replace('.', ''))));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Flex__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: className,
+    count: 7,
+    onFocus: onMouseLeave,
+    onMouseOver: onMouseLeave
+  }, weekdays);
+}
+Weekdays.propTypes = {
+  calendarType: _shared_propTypes__WEBPACK_IMPORTED_MODULE_6__["isCalendarType"].isRequired,
+  formatShortWeekday: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  locale: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  onMouseLeave: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/Tile.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/Tile.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Tile; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var merge_class_names__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! merge-class-names */ "./node_modules/merge-class-names/dist/esm/index.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+function getValue(nextProps, prop) {
+  var activeStartDate = nextProps.activeStartDate,
+      date = nextProps.date,
+      view = nextProps.view;
+  return typeof prop === 'function' ? prop({
+    activeStartDate: activeStartDate,
+    date: date,
+    view: view
+  }) : prop;
+}
+
+var Tile = /*#__PURE__*/function (_Component) {
+  _inherits(Tile, _Component);
+
+  var _super = _createSuper(Tile);
+
+  function Tile() {
+    var _this;
+
+    _classCallCheck(this, Tile);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    return _this;
+  }
+
+  _createClass(Tile, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          activeStartDate = _this$props.activeStartDate,
+          children = _this$props.children,
+          classes = _this$props.classes,
+          date = _this$props.date,
+          formatAbbr = _this$props.formatAbbr,
+          locale = _this$props.locale,
+          maxDate = _this$props.maxDate,
+          maxDateTransform = _this$props.maxDateTransform,
+          minDate = _this$props.minDate,
+          minDateTransform = _this$props.minDateTransform,
+          onClick = _this$props.onClick,
+          onMouseOver = _this$props.onMouseOver,
+          style = _this$props.style,
+          tileDisabled = _this$props.tileDisabled,
+          view = _this$props.view;
+      var _this$state = this.state,
+          tileClassName = _this$state.tileClassName,
+          tileContent = _this$state.tileContent;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: Object(merge_class_names__WEBPACK_IMPORTED_MODULE_2__["default"])(classes, tileClassName),
+        disabled: minDate && minDateTransform(minDate) > date || maxDate && maxDateTransform(maxDate) < date || tileDisabled && tileDisabled({
+          activeStartDate: activeStartDate,
+          date: date,
+          view: view
+        }),
+        onClick: onClick && function (event) {
+          return onClick(date, event);
+        },
+        onFocus: onMouseOver && function () {
+          return onMouseOver(date);
+        },
+        onMouseOver: onMouseOver && function () {
+          return onMouseOver(date);
+        },
+        style: style,
+        type: "button"
+      }, formatAbbr ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("abbr", {
+        "aria-label": formatAbbr(locale, date)
+      }, children) : children, tileContent);
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(nextProps, prevState) {
+      var tileClassName = nextProps.tileClassName,
+          tileContent = nextProps.tileContent;
+      var nextState = {};
+
+      if (tileClassName !== prevState.tileClassNameProps) {
+        nextState.tileClassName = getValue(nextProps, tileClassName);
+        nextState.tileClassNameProps = tileClassName;
+      }
+
+      if (tileContent !== prevState.tileContentProps) {
+        nextState.tileContent = getValue(nextProps, tileContent);
+        nextState.tileContentProps = tileContent;
+      }
+
+      return nextState;
+    }
+  }]);
+
+  return Tile;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+Tile.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_3__["tileProps"], {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired,
+  formatAbbr: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  maxDateTransform: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  minDateTransform: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/TileGroup.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/TileGroup.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TileGroup; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Flex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Flex */ "./node_modules/react-calendar/dist/esm/Flex.js");
+/* harmony import */ var _shared_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/utils */ "./node_modules/react-calendar/dist/esm/shared/utils.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+function TileGroup(_ref) {
+  var className = _ref.className,
+      _ref$count = _ref.count,
+      count = _ref$count === void 0 ? 3 : _ref$count,
+      dateTransform = _ref.dateTransform,
+      dateType = _ref.dateType,
+      end = _ref.end,
+      hover = _ref.hover,
+      offset = _ref.offset,
+      start = _ref.start,
+      _ref$step = _ref.step,
+      step = _ref$step === void 0 ? 1 : _ref$step,
+      Tile = _ref.tile,
+      value = _ref.value,
+      valueType = _ref.valueType,
+      tileProps = _objectWithoutProperties(_ref, ["className", "count", "dateTransform", "dateType", "end", "hover", "offset", "start", "step", "tile", "value", "valueType"]);
+
+  var tiles = [];
+
+  for (var point = start; point <= end; point += step) {
+    var date = dateTransform(point);
+    tiles.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Tile, _extends({
+      key: date.getTime(),
+      classes: Object(_shared_utils__WEBPACK_IMPORTED_MODULE_3__["getTileClasses"])({
+        value: value,
+        valueType: valueType,
+        date: date,
+        dateType: dateType,
+        hover: hover
+      }),
+      date: date,
+      point: point
+    }, tileProps)));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Flex__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: className,
+    count: count,
+    offset: offset,
+    wrap: true
+  }, tiles);
+}
+TileGroup.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_4__["tileGroupProps"], {
+  activeStartDate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Date),
+  count: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  dateTransform: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  offset: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  step: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  tile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/YearView.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/YearView.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return YearView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _YearView_Months__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./YearView/Months */ "./node_modules/react-calendar/dist/esm/YearView/Months.js");
+
+
+function YearView(props) {
+  function renderMonths() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_YearView_Months__WEBPACK_IMPORTED_MODULE_1__["default"], props);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "react-calendar__year-view"
+  }, renderMonths());
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/YearView/Month.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/YearView/Month.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Month; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _Tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Tile */ "./node_modules/react-calendar/dist/esm/Tile.js");
+/* harmony import */ var _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/dateFormatter */ "./node_modules/react-calendar/dist/esm/shared/dateFormatter.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+
+var className = 'react-calendar__year-view__months__month';
+function Month(_ref) {
+  var classes = _ref.classes,
+      _ref$formatMonth = _ref.formatMonth,
+      formatMonth = _ref$formatMonth === void 0 ? _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_4__["formatMonth"] : _ref$formatMonth,
+      _ref$formatMonthYear = _ref.formatMonthYear,
+      formatMonthYear = _ref$formatMonthYear === void 0 ? _shared_dateFormatter__WEBPACK_IMPORTED_MODULE_4__["formatMonthYear"] : _ref$formatMonthYear,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "formatMonth", "formatMonthYear"]);
+
+  var date = otherProps.date,
+      locale = otherProps.locale;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tile__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    formatAbbr: formatMonthYear,
+    maxDateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getMonthEnd"],
+    minDateTransform: _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getMonthStart"],
+    view: "year"
+  }), formatMonth(locale, date));
+}
+Month.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__["tileProps"], {
+  formatMonth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  formatMonthYear: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/YearView/Months.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/YearView/Months.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Months; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _TileGroup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../TileGroup */ "./node_modules/react-calendar/dist/esm/TileGroup.js");
+/* harmony import */ var _Month__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Month */ "./node_modules/react-calendar/dist/esm/YearView/Month.js");
+/* harmony import */ var _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-calendar/dist/esm/shared/propTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
+
+
+
+function Months(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = 0;
+  var end = 11;
+  var year = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_2__["getYear"])(activeStartDate);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TileGroup__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({}, props, {
+    className: "react-calendar__year-view__months",
+    dateTransform: function dateTransform(monthIndex) {
+      return new Date(year, monthIndex, 1);
+    },
+    dateType: "month",
+    end: end,
+    start: start,
+    tile: _Month__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }));
+}
+Months.propTypes = _objectSpread({}, _shared_propTypes__WEBPACK_IMPORTED_MODULE_5__["tileGroupProps"], {
+  locale: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/index.js ***!
+  \*******************************************************/
+/*! exports provided: default, Calendar, CenturyView, DecadeView, YearView, MonthView */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Calendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Calendar */ "./node_modules/react-calendar/dist/esm/Calendar.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Calendar", function() { return _Calendar__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _CenturyView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CenturyView */ "./node_modules/react-calendar/dist/esm/CenturyView.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CenturyView", function() { return _CenturyView__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _DecadeView__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DecadeView */ "./node_modules/react-calendar/dist/esm/DecadeView.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DecadeView", function() { return _DecadeView__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony import */ var _YearView__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./YearView */ "./node_modules/react-calendar/dist/esm/YearView.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "YearView", function() { return _YearView__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
+/* harmony import */ var _MonthView__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MonthView */ "./node_modules/react-calendar/dist/esm/MonthView.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MonthView", function() { return _MonthView__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_Calendar__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/shared/const.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/shared/const.js ***!
+  \**************************************************************/
+/*! exports provided: CALENDAR_TYPES, CALENDAR_TYPE_LOCALES, WEEKDAYS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CALENDAR_TYPES", function() { return CALENDAR_TYPES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CALENDAR_TYPE_LOCALES", function() { return CALENDAR_TYPE_LOCALES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WEEKDAYS", function() { return WEEKDAYS; });
+var _CALENDAR_TYPE_LOCALE;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var CALENDAR_TYPES = {
+  ARABIC: 'Arabic',
+  HEBREW: 'Hebrew',
+  ISO_8601: 'ISO 8601',
+  US: 'US'
+};
+var CALENDAR_TYPE_LOCALES = (_CALENDAR_TYPE_LOCALE = {}, _defineProperty(_CALENDAR_TYPE_LOCALE, CALENDAR_TYPES.US, ['en-CA', 'en-US', 'es-AR', 'es-BO', 'es-CL', 'es-CO', 'es-CR', 'es-DO', 'es-EC', 'es-GT', 'es-HN', 'es-MX', 'es-NI', 'es-PA', 'es-PE', 'es-PR', 'es-SV', 'es-VE', 'pt-BR']), _defineProperty(_CALENDAR_TYPE_LOCALE, CALENDAR_TYPES.ARABIC, [// ar-LB, ar-MA intentionally missing
+'ar', 'ar-AE', 'ar-BH', 'ar-DZ', 'ar-EG', 'ar-IQ', 'ar-JO', 'ar-KW', 'ar-LY', 'ar-OM', 'ar-QA', 'ar-SA', 'ar-SD', 'ar-SY', 'ar-YE', 'dv', 'dv-MV', 'ps', 'ps-AR']), _defineProperty(_CALENDAR_TYPE_LOCALE, CALENDAR_TYPES.HEBREW, ['he', 'he-IL']), _CALENDAR_TYPE_LOCALE);
+var WEEKDAYS = _toConsumableArray(Array(7)).map(function (el, index) {
+  return index;
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/shared/dateFormatter.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/shared/dateFormatter.js ***!
+  \**********************************************************************/
+/*! exports provided: formatDate, formatLongDate, formatMonth, formatMonthYear, formatYear, formatShortWeekday, formatWeekday */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatDate", function() { return formatDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatLongDate", function() { return formatLongDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatMonth", function() { return formatMonth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatMonthYear", function() { return formatMonthYear; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatYear", function() { return formatYear; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatShortWeekday", function() { return formatShortWeekday; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatWeekday", function() { return formatWeekday; });
+/* harmony import */ var get_user_locale__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! get-user-locale */ "./node_modules/get-user-locale/dist/esm/index.js");
+
+
+function getFormatter(options) {
+  return function (locale, date) {
+    return date.toLocaleString(locale || Object(get_user_locale__WEBPACK_IMPORTED_MODULE_0__["default"])(), options);
+  };
+}
+/**
+ * Changes the hour in a Date to ensure right date formatting even if DST is messed up.
+ * Workaround for bug in WebKit and Firefox with historical dates.
+ * For more details, see:
+ * https://bugs.chromium.org/p/chromium/issues/detail?id=750465
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=1385643
+ *
+ * @param {Date} date Date.
+ */
+
+
+function toSafeHour(date) {
+  var safeDate = new Date(date);
+  return new Date(safeDate.setHours(12));
+}
+
+function getSafeFormatter(options) {
+  return function (locale, date) {
+    return getFormatter(options)(locale, toSafeHour(date));
+  };
+}
+
+var formatDateOptions = {
+  day: 'numeric',
+  month: 'numeric',
+  year: 'numeric'
+};
+var formatLongDateOptions = {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+};
+var formatMonthOptions = {
+  month: 'long'
+};
+var formatMonthYearOptions = {
+  month: 'long',
+  year: 'numeric'
+};
+var formatYearOptions = {
+  year: 'numeric'
+};
+var formatShortWeekdayOptions = {
+  weekday: 'short'
+};
+var formatWeekdayOptions = {
+  weekday: 'long'
+};
+var formatDate = getSafeFormatter(formatDateOptions);
+var formatLongDate = getSafeFormatter(formatLongDateOptions);
+var formatMonth = getSafeFormatter(formatMonthOptions);
+var formatMonthYear = getSafeFormatter(formatMonthYearOptions);
+var formatYear = getSafeFormatter(formatYearOptions);
+var formatShortWeekday = getSafeFormatter(formatShortWeekdayOptions);
+var formatWeekday = getSafeFormatter(formatWeekdayOptions);
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/shared/dates.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/shared/dates.js ***!
+  \**************************************************************/
+/*! exports provided: getDayOfWeek, getBeginOfCenturyYear, getBeginOfDecadeYear, getBeginOfWeek, getWeekNumber, getBegin, getBeginPrevious, getBeginNext, getBeginPrevious2, getBeginNext2, getEnd, getEndPrevious, getEndPrevious2, getRange, getValueRange, getCenturyLabel, getDecadeLabel, isWeekend */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDayOfWeek", function() { return getDayOfWeek; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBeginOfCenturyYear", function() { return getBeginOfCenturyYear; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBeginOfDecadeYear", function() { return getBeginOfDecadeYear; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBeginOfWeek", function() { return getBeginOfWeek; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWeekNumber", function() { return getWeekNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBegin", function() { return getBegin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBeginPrevious", function() { return getBeginPrevious; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBeginNext", function() { return getBeginNext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBeginPrevious2", function() { return getBeginPrevious2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBeginNext2", function() { return getBeginNext2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEnd", function() { return getEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEndPrevious", function() { return getEndPrevious; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEndPrevious2", function() { return getEndPrevious2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRange", function() { return getRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getValueRange", function() { return getValueRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCenturyLabel", function() { return getCenturyLabel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDecadeLabel", function() { return getDecadeLabel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isWeekend", function() { return isWeekend; });
+/* harmony import */ var _wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./const */ "./node_modules/react-calendar/dist/esm/shared/const.js");
+/* harmony import */ var _dateFormatter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dateFormatter */ "./node_modules/react-calendar/dist/esm/shared/dateFormatter.js");
+
+
+
+var SUNDAY = _const__WEBPACK_IMPORTED_MODULE_1__["WEEKDAYS"][0];
+var FRIDAY = _const__WEBPACK_IMPORTED_MODULE_1__["WEEKDAYS"][5];
+var SATURDAY = _const__WEBPACK_IMPORTED_MODULE_1__["WEEKDAYS"][6];
+/* Simple getters - getting a property of a given point in time */
+
+function getDayOfWeek(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ISO_8601;
+  var weekday = date.getDay();
+
+  switch (calendarType) {
+    case _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ISO_8601:
+      // Shifts days of the week so that Monday is 0, Sunday is 6
+      return (weekday + 6) % 7;
+
+    case _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ARABIC:
+      return (weekday + 1) % 7;
+
+    case _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].HEBREW:
+    case _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].US:
+      return weekday;
+
+    default:
+      throw new Error('Unsupported calendar type.');
+  }
+}
+/**
+ * Century
+ */
+
+function getBeginOfCenturyYear(date) {
+  var beginOfCentury = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getCenturyStart"])(date);
+  return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getYear"])(beginOfCentury);
+}
+/**
+ * Decade
+ */
+
+function getBeginOfDecadeYear(date) {
+  var beginOfDecade = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getDecadeStart"])(date);
+  return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getYear"])(beginOfDecade);
+}
+/**
+ * Week
+ */
+
+/**
+ * Returns the beginning of a given week.
+ *
+ * @param {Date} date Date.
+ * @param {String} calendarType Calendar type. Can be ISO 8601 or US.
+ */
+
+function getBeginOfWeek(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ISO_8601;
+  var year = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getYear"])(date);
+  var monthIndex = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getMonth"])(date);
+  var day = date.getDate() - getDayOfWeek(date, calendarType);
+  return new Date(year, monthIndex, day);
+}
+/**
+ * Gets week number according to ISO 8601 or US standard.
+ * In ISO 8601, Arabic and Hebrew week 1 is the one with January 4.
+ * In US calendar week 1 is the one with January 1.
+ *
+ * @param {Date} date Date.
+ * @param {String} calendarType Calendar type. Can be ISO 8601 or US.
+ */
+
+function getWeekNumber(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ISO_8601;
+  var calendarTypeForWeekNumber = calendarType === _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].US ? _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].US : _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ISO_8601;
+  var beginOfWeek = getBeginOfWeek(date, calendarTypeForWeekNumber);
+  var year = Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getYear"])(date) + 1;
+  var dayInWeekOne;
+  var beginOfFirstWeek; // Look for the first week one that does not come after a given date
+
+  do {
+    dayInWeekOne = new Date(year, 0, calendarTypeForWeekNumber === _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ISO_8601 ? 4 : 1);
+    beginOfFirstWeek = getBeginOfWeek(dayInWeekOne, calendarTypeForWeekNumber);
+    year -= 1;
+  } while (date - beginOfFirstWeek < 0);
+
+  return Math.round((beginOfWeek - beginOfFirstWeek) / (8.64e7 * 7)) + 1;
+}
+/**
+ * Others
+ */
+
+/**
+ * Returns the beginning of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+function getBegin(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getCenturyStart"])(date);
+
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getDecadeStart"])(date);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getYearStart"])(date);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getMonthStart"])(date);
+
+    case 'day':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getDayStart"])(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+function getBeginPrevious(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousCenturyStart"])(date);
+
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousDecadeStart"])(date);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousYearStart"])(date);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousMonthStart"])(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+function getBeginNext(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getNextCenturyStart"])(date);
+
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getNextDecadeStart"])(date);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getNextYearStart"])(date);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getNextMonthStart"])(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+var getBeginPrevious2 = function getBeginPrevious2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousDecadeStart"])(date, -100);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousYearStart"])(date, -10);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousMonthStart"])(date, -12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+var getBeginNext2 = function getBeginNext2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getNextDecadeStart"])(date, 100);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getNextYearStart"])(date, 10);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getNextMonthStart"])(date, 12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+/**
+ * Returns the end of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+function getEnd(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getCenturyEnd"])(date);
+
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getDecadeEnd"])(date);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getYearEnd"])(date);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getMonthEnd"])(date);
+
+    case 'day':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getDayEnd"])(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+function getEndPrevious(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousCenturyEnd"])(date);
+
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousDecadeEnd"])(date);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousYearEnd"])(date);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousMonthEnd"])(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+var getEndPrevious2 = function getEndPrevious2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousDecadeEnd"])(date, -100);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousYearEnd"])(date, -10);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getPreviousMonthEnd"])(date, -12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+/**
+ * Returns an array with the beginning and the end of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+function getRange(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getCenturyRange"])(date);
+
+    case 'decade':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getDecadeRange"])(date);
+
+    case 'year':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getYearRange"])(date);
+
+    case 'month':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getMonthRange"])(date);
+
+    case 'day':
+      return Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getDayRange"])(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+/**
+ * Creates a range out of two values, ensuring they are in order and covering entire period ranges.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date1 First date.
+ * @param {Date} date2 Second date.
+ */
+
+function getValueRange(rangeType, date1, date2) {
+  var rawNextValue = [date1, date2].sort(function (a, b) {
+    return a - b;
+  });
+  return [getBegin(rangeType, rawNextValue[0]), getEnd(rangeType, rawNextValue[1])];
+}
+
+function toYearLabel(locale) {
+  var formatYear = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _dateFormatter__WEBPACK_IMPORTED_MODULE_2__["formatYear"];
+  var dates = arguments.length > 2 ? arguments[2] : undefined;
+  return dates.map(function (date) {
+    return formatYear(locale, date);
+  }).join(' – ');
+}
+/**
+ * Returns a string labelling a century of a given date.
+ * For example, for 2017 it will return 2001-2100.
+ *
+ * @param {Date|String|Number} date Date or a year as a string or as a number.
+ */
+
+
+function getCenturyLabel(locale, formatYear, date) {
+  return toYearLabel(locale, formatYear, Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getCenturyRange"])(date));
+}
+/**
+ * Returns a string labelling a century of a given date.
+ * For example, for 2017 it will return 2011-2020.
+ *
+ * @param {Date|String|Number} date Date or a year as a string or as a number.
+ */
+
+function getDecadeLabel(locale, formatYear, date) {
+  return toYearLabel(locale, formatYear, Object(_wojtekmaj_date_utils__WEBPACK_IMPORTED_MODULE_0__["getDecadeRange"])(date));
+}
+/**
+ * Returns a boolean determining whether a given date is on Saturday or Sunday.
+ *
+ * @param {Date} date Date.
+ */
+
+function isWeekend(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ISO_8601;
+  var weekday = date.getDay();
+
+  switch (calendarType) {
+    case _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ARABIC:
+    case _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].HEBREW:
+      return weekday === FRIDAY || weekday === SATURDAY;
+
+    case _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].ISO_8601:
+    case _const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"].US:
+      return weekday === SATURDAY || weekday === SUNDAY;
+
+    default:
+      throw new Error('Unsupported calendar type.');
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/shared/propTypes.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/shared/propTypes.js ***!
+  \******************************************************************/
+/*! exports provided: isCalendarType, isMinDate, isMaxDate, isValue, isViews, isClassName, isView, tileGroupProps, tileProps */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isCalendarType", function() { return isCalendarType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isMinDate", function() { return isMinDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isMaxDate", function() { return isMaxDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isValue", function() { return isValue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isViews", function() { return isViews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isClassName", function() { return isClassName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isView", function() { return isView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tileGroupProps", function() { return tileGroupProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tileProps", function() { return tileProps; });
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./const */ "./node_modules/react-calendar/dist/esm/shared/const.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+var calendarTypes = Object.values(_const__WEBPACK_IMPORTED_MODULE_1__["CALENDAR_TYPES"]);
+var allViews = ['century', 'decade', 'year', 'month'];
+var isCalendarType = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOf(calendarTypes);
+var isMinDate = function isMinDate(props, propName, componentName) {
+  var minDate = props[propName];
+
+  if (!minDate) {
+    return null;
+  }
+
+  if (!(minDate instanceof Date)) {
+    return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
+  }
+
+  var maxDate = props.maxDate;
+
+  if (maxDate && minDate > maxDate) {
+    return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, minDate cannot be larger than maxDate."));
+  }
+
+  return null;
+};
+var isMaxDate = function isMaxDate(props, propName, componentName) {
+  var maxDate = props[propName];
+
+  if (!maxDate) {
+    return null;
+  }
+
+  if (!(maxDate instanceof Date)) {
+    return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
+  }
+
+  var minDate = props.minDate;
+
+  if (minDate && maxDate < minDate) {
+    return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, maxDate cannot be smaller than minDate."));
+  }
+
+  return null;
+};
+var isValue = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.instanceOf(Date), prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.instanceOf(Date))]);
+var isViews = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOf(allViews));
+var isClassName = prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string)]);
+var isView = function isView(props, propName, componentName) {
+  var view = props[propName];
+  var views = props.views;
+  var allowedViews = views || allViews;
+
+  if (view !== undefined && allowedViews.indexOf(view) === -1) {
+    return new Error("Invalid prop `".concat(propName, "` of value `").concat(view, "` supplied to `").concat(componentName, "`, expected one of [").concat(allowedViews.map(function (a) {
+      return "\"".concat(a, "\"");
+    }).join(', '), "]."));
+  } // Everything is fine
+
+
+  return null;
+};
+
+isView.isRequired = function (props, propName, componentName) {
+  var view = props[propName];
+
+  if (!view) {
+    return new Error("The prop `".concat(propName, "` is marked as required in `").concat(componentName, "`, but its value is `").concat(view, "`."));
+  }
+
+  return isView(props, propName, componentName);
+};
+
+var tileGroupProps = {
+  activeStartDate: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.instanceOf(Date).isRequired,
+  hover: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.instanceOf(Date),
+  locale: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
+  maxDate: isMaxDate,
+  minDate: isMinDate,
+  onClick: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
+  onMouseOver: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
+  tileClassName: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func, isClassName]),
+  tileContent: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.node]),
+  value: isValue,
+  valueType: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string
+};
+var tileProps = {
+  activeStartDate: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.instanceOf(Date).isRequired,
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string).isRequired,
+  date: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.instanceOf(Date).isRequired,
+  locale: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
+  maxDate: isMaxDate,
+  minDate: isMinDate,
+  onClick: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
+  onMouseOver: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func,
+  style: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.objectOf(prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.number])),
+  tileClassName: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func, isClassName]),
+  tileContent: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.node]),
+  tileDisabled: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-calendar/dist/esm/shared/utils.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-calendar/dist/esm/shared/utils.js ***!
+  \**************************************************************/
+/*! exports provided: between, isValueWithinRange, isRangeWithinRange, doRangesOverlap, getTileClasses */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "between", function() { return between; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isValueWithinRange", function() { return isValueWithinRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isRangeWithinRange", function() { return isRangeWithinRange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "doRangesOverlap", function() { return doRangesOverlap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTileClasses", function() { return getTileClasses; });
+/* harmony import */ var _dates__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dates */ "./node_modules/react-calendar/dist/esm/shared/dates.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+/**
+ * Returns a value no smaller than min and no larger than max.
+ *
+ * @param {*} value Value to return.
+ * @param {*} min Minimum return value.
+ * @param {*} max Maximum return value.
+ */
+
+function between(value, min, max) {
+  if (min && min > value) {
+    return min;
+  }
+
+  if (max && max < value) {
+    return max;
+  }
+
+  return value;
+}
+function isValueWithinRange(value, range) {
+  return range[0] <= value && range[1] >= value;
+}
+function isRangeWithinRange(greaterRange, smallerRange) {
+  return greaterRange[0] <= smallerRange[0] && greaterRange[1] >= smallerRange[1];
+}
+function doRangesOverlap(range1, range2) {
+  return isValueWithinRange(range1[0], range2) || isValueWithinRange(range1[1], range2);
+}
+
+function getRangeClassNames(valueRange, dateRange, baseClassName) {
+  var isRange = doRangesOverlap(dateRange, valueRange);
+  var classes = [];
+
+  if (isRange) {
+    classes.push(baseClassName);
+    var isRangeStart = isValueWithinRange(valueRange[0], dateRange);
+    var isRangeEnd = isValueWithinRange(valueRange[1], dateRange);
+
+    if (isRangeStart) {
+      classes.push("".concat(baseClassName, "Start"));
+    }
+
+    if (isRangeEnd) {
+      classes.push("".concat(baseClassName, "End"));
+    }
+
+    if (isRangeStart && isRangeEnd) {
+      classes.push("".concat(baseClassName, "BothEnds"));
+    }
+  }
+
+  return classes;
+}
+
+function getTileClasses() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      value = _ref.value,
+      valueType = _ref.valueType,
+      date = _ref.date,
+      dateType = _ref.dateType,
+      hover = _ref.hover;
+
+  var className = 'react-calendar__tile';
+  var classes = [className];
+
+  if (!date) {
+    return classes;
+  }
+
+  if (!(date instanceof Array) && !dateType) {
+    throw new Error('getTileClasses(): Unable to get tile activity classes because one or more required arguments were not passed.');
+  }
+
+  var now = new Date();
+  var dateRange = date instanceof Array ? date : Object(_dates__WEBPACK_IMPORTED_MODULE_0__["getRange"])(dateType, date);
+
+  if (isValueWithinRange(now, dateRange)) {
+    classes.push("".concat(className, "--now"));
+  }
+
+  if (!value) {
+    return classes;
+  }
+
+  if (!(value instanceof Array) && !valueType) {
+    throw new Error('getTileClasses(): Unable to get tile activity classes because one or more required arguments were not passed.');
+  }
+
+  var valueRange = value instanceof Array ? value : Object(_dates__WEBPACK_IMPORTED_MODULE_0__["getRange"])(valueType, value);
+
+  if (isRangeWithinRange(valueRange, dateRange)) {
+    classes.push("".concat(className, "--active"));
+  } else if (doRangesOverlap(valueRange, dateRange)) {
+    classes.push("".concat(className, "--hasActive"));
+  }
+
+  var valueRangeClassNames = getRangeClassNames(valueRange, dateRange, "".concat(className, "--range"));
+  classes.push.apply(classes, _toConsumableArray(valueRangeClassNames));
+
+  if (hover) {
+    var hoverRange = hover > valueRange[1] ? [valueRange[1], hover] : [hover, valueRange[0]];
+    var hoverRangeClassNames = getRangeClassNames(hoverRange, dateRange, "".concat(className, "--hover"));
+    classes.push.apply(classes, _toConsumableArray(hoverRangeClassNames));
+  }
+
+  return classes;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DateInput.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DateInput.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _dateUtils = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+
+var _Divider = _interopRequireDefault(__webpack_require__(/*! ./Divider */ "./node_modules/react-date-picker/dist/Divider.js"));
+
+var _DayInput = _interopRequireDefault(__webpack_require__(/*! ./DateInput/DayInput */ "./node_modules/react-date-picker/dist/DateInput/DayInput.js"));
+
+var _MonthInput = _interopRequireDefault(__webpack_require__(/*! ./DateInput/MonthInput */ "./node_modules/react-date-picker/dist/DateInput/MonthInput.js"));
+
+var _MonthSelect = _interopRequireDefault(__webpack_require__(/*! ./DateInput/MonthSelect */ "./node_modules/react-date-picker/dist/DateInput/MonthSelect.js"));
+
+var _YearInput = _interopRequireDefault(__webpack_require__(/*! ./DateInput/YearInput */ "./node_modules/react-date-picker/dist/DateInput/YearInput.js"));
+
+var _NativeInput = _interopRequireDefault(__webpack_require__(/*! ./DateInput/NativeInput */ "./node_modules/react-date-picker/dist/DateInput/NativeInput.js"));
+
+var _dateFormatter = __webpack_require__(/*! ./shared/dateFormatter */ "./node_modules/react-date-picker/dist/shared/dateFormatter.js");
+
+var _dates = __webpack_require__(/*! ./shared/dates */ "./node_modules/react-date-picker/dist/shared/dates.js");
+
+var _propTypes2 = __webpack_require__(/*! ./shared/propTypes */ "./node_modules/react-date-picker/dist/shared/propTypes.js");
+
+var _utils = __webpack_require__(/*! ./shared/utils */ "./node_modules/react-date-picker/dist/shared/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var defaultMinDate = new Date('0001-01-01');
+var defaultMaxDate = new Date(8.64e15);
+var allViews = ['century', 'decade', 'year', 'month'];
+var allValueTypes = [].concat(_toConsumableArray(allViews.slice(1)), ['day']);
+
+function datesAreDifferent(date1, date2) {
+  return date1 && !date2 || !date1 && date2 || date1 && date2 && date1.getTime() !== date2.getTime();
+}
+/**
+ * Returns value type that can be returned with currently applied settings.
+ */
+
+
+function getValueType(maxDetail) {
+  return allValueTypes[allViews.indexOf(maxDetail)];
+}
+
+function getValue(value, index) {
+  if (!value) {
+    return null;
+  }
+
+  var rawValue = value instanceof Array && value.length === 2 ? value[index] : value;
+
+  if (!rawValue) {
+    return null;
+  }
+
+  var valueDate = new Date(rawValue);
+
+  if (isNaN(valueDate.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  return valueDate;
+}
+
+function getDetailValue(_ref, index) {
+  var value = _ref.value,
+      minDate = _ref.minDate,
+      maxDate = _ref.maxDate,
+      maxDetail = _ref.maxDetail;
+  var valuePiece = getValue(value, index);
+
+  if (!valuePiece) {
+    return null;
+  }
+
+  var valueType = getValueType(maxDetail);
+  var detailValueFrom = [_dates.getBegin, _dates.getEnd][index](valueType, valuePiece);
+  return (0, _utils.between)(detailValueFrom, minDate, maxDate);
+}
+
+var getDetailValueFrom = function getDetailValueFrom(args) {
+  return getDetailValue(args, 0);
+};
+
+var getDetailValueTo = function getDetailValueTo(args) {
+  return getDetailValue(args, 1);
+};
+
+var getDetailValueArray = function getDetailValueArray(args) {
+  var value = args.value;
+
+  if (value instanceof Array) {
+    return value;
+  }
+
+  return [getDetailValueFrom, getDetailValueTo].map(function (fn) {
+    return fn(args);
+  });
+};
+
+function isInternalInput(element) {
+  return element.getAttribute('data-input') === 'true';
+}
+
+function findInput(element, property) {
+  var nextElement = element;
+
+  do {
+    nextElement = nextElement[property];
+  } while (nextElement && !isInternalInput(nextElement));
+
+  return nextElement;
+}
+
+function focus(element) {
+  if (element) {
+    element.focus();
+  }
+}
+
+function _renderCustomInputs(placeholder, elementFunctions, allowMultipleInstances) {
+  var usedFunctions = [];
+  var pattern = new RegExp(Object.keys(elementFunctions).map(function (el) {
+    return "".concat(el, "+");
+  }).join('|'), 'g');
+  var matches = placeholder.match(pattern);
+  return placeholder.split(pattern).reduce(function (arr, element, index) {
+    var divider = element &&
+    /*#__PURE__*/
+    // eslint-disable-next-line react/no-array-index-key
+    _react["default"].createElement(_Divider["default"], {
+      key: "separator_".concat(index)
+    }, element);
+
+    var res = [].concat(_toConsumableArray(arr), [divider]);
+    var currentMatch = matches && matches[index];
+
+    if (currentMatch) {
+      var renderFunction = elementFunctions[currentMatch] || elementFunctions[Object.keys(elementFunctions).find(function (elementFunction) {
+        return currentMatch.match(elementFunction);
+      })];
+
+      if (!allowMultipleInstances && usedFunctions.includes(renderFunction)) {
+        res.push(currentMatch);
+      } else {
+        res.push(renderFunction(currentMatch, index));
+        usedFunctions.push(renderFunction);
+      }
+    }
+
+    return res;
+  }, []);
+}
+
+var DateInput = /*#__PURE__*/function (_PureComponent) {
+  _inherits(DateInput, _PureComponent);
+
+  var _super = _createSuper(DateInput);
+
+  function DateInput() {
+    var _this;
+
+    _classCallCheck(this, DateInput);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      year: null,
+      month: null,
+      day: null
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onClick", function (event) {
+      if (event.target === event.currentTarget) {
+        // Wrapper was directly clicked
+        var firstInput = event.target.children[1];
+        focus(firstInput);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onKeyDown", function (event) {
+      switch (event.key) {
+        case 'ArrowLeft':
+        case 'ArrowRight':
+        case _this.divider:
+          {
+            event.preventDefault();
+            var input = event.target;
+            var property = event.key === 'ArrowLeft' ? 'previousElementSibling' : 'nextElementSibling';
+            var nextInput = findInput(input, property);
+            focus(nextInput);
+            break;
+          }
+
+        default:
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onKeyUp", function (event) {
+      var key = event.key,
+          input = event.target;
+      var isNumberKey = !isNaN(parseInt(key, 10));
+
+      if (!isNumberKey) {
+        return;
+      }
+
+      var value = input.value;
+      var max = input.getAttribute('max');
+      /**
+       * Given 1, the smallest possible number the user could type by adding another digit is 10.
+       * 10 would be a valid value given max = 12, so we won't jump to the next input.
+       * However, given 2, smallers possible number would be 20, and thus keeping the focus in
+       * this field doesn't make sense.
+       */
+
+      if (value * 10 > max || value.length >= max.length) {
+        var property = 'nextElementSibling';
+        var nextInput = findInput(input, property);
+        focus(nextInput);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
+      var _event$target = event.target,
+          name = _event$target.name,
+          value = _event$target.value;
+
+      _this.setState(_defineProperty({}, name, value ? parseInt(value, 10) : null), _this.onChangeExternal);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChangeNative", function (event) {
+      var onChange = _this.props.onChange;
+      var value = event.target.value;
+
+      if (!onChange) {
+        return;
+      }
+
+      var processedValue = function () {
+        if (!value) {
+          return null;
+        }
+
+        var _value$split = value.split('-'),
+            _value$split2 = _slicedToArray(_value$split, 3),
+            yearString = _value$split2[0],
+            monthString = _value$split2[1],
+            dayString = _value$split2[2];
+
+        var year = parseInt(yearString, 10);
+        var monthIndex = parseInt(monthString, 10) - 1 || 0;
+        var day = parseInt(dayString, 10) || 1;
+        var proposedValue = new Date();
+        proposedValue.setFullYear(year, monthIndex, day);
+        proposedValue.setHours(0, 0, 0, 0);
+        return proposedValue;
+      }();
+
+      onChange(processedValue, false);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChangeExternal", function () {
+      var onChange = _this.props.onChange;
+
+      if (!onChange) {
+        return;
+      }
+
+      var formElements = [_this.dayInput, _this.monthInput, _this.yearInput].filter(Boolean);
+      var values = {};
+      formElements.forEach(function (formElement) {
+        values[formElement.name] = formElement.value;
+      });
+
+      if (formElements.every(function (formElement) {
+        return !formElement.value;
+      })) {
+        onChange(null, false);
+      } else if (formElements.every(function (formElement) {
+        return formElement.value && formElement.validity.valid;
+      })) {
+        var year = parseInt(values.year, 10);
+        var monthIndex = parseInt(values.month, 10) - 1 || 0;
+        var day = parseInt(values.day || 1, 10);
+        var proposedValue = new Date();
+        proposedValue.setFullYear(year, monthIndex, day);
+        proposedValue.setHours(0, 0, 0, 0);
+
+        var processedValue = _this.getProcessedValue(proposedValue);
+
+        onChange(processedValue, false);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderDay", function (currentMatch, index) {
+      var _this$props = _this.props,
+          autoFocus = _this$props.autoFocus,
+          dayAriaLabel = _this$props.dayAriaLabel,
+          dayPlaceholder = _this$props.dayPlaceholder,
+          showLeadingZeros = _this$props.showLeadingZeros;
+      var _this$state = _this.state,
+          day = _this$state.day,
+          month = _this$state.month,
+          year = _this$state.year;
+
+      if (currentMatch && currentMatch.length > 2) {
+        throw new Error("Unsupported token: ".concat(currentMatch));
+      }
+
+      var showLeadingZerosFromFormat = currentMatch && currentMatch.length === 2;
+      return /*#__PURE__*/_react["default"].createElement(_DayInput["default"], _extends({
+        key: "day"
+      }, _this.commonInputProps, {
+        ariaLabel: dayAriaLabel,
+        autoFocus: index === 0 && autoFocus,
+        month: month,
+        placeholder: dayPlaceholder,
+        showLeadingZeros: showLeadingZerosFromFormat || showLeadingZeros,
+        value: day,
+        year: year
+      }));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderMonth", function (currentMatch, index) {
+      var _this$props2 = _this.props,
+          autoFocus = _this$props2.autoFocus,
+          locale = _this$props2.locale,
+          monthAriaLabel = _this$props2.monthAriaLabel,
+          monthPlaceholder = _this$props2.monthPlaceholder,
+          showLeadingZeros = _this$props2.showLeadingZeros;
+      var _this$state2 = _this.state,
+          month = _this$state2.month,
+          year = _this$state2.year;
+
+      if (currentMatch && currentMatch.length > 4) {
+        throw new Error("Unsupported token: ".concat(currentMatch));
+      }
+
+      if (currentMatch.length > 2) {
+        return /*#__PURE__*/_react["default"].createElement(_MonthSelect["default"], _extends({
+          key: "month"
+        }, _this.commonInputProps, {
+          ariaLabel: monthAriaLabel,
+          autoFocus: index === 0 && autoFocus,
+          locale: locale,
+          placeholder: monthPlaceholder,
+          "short": currentMatch.length === 3,
+          value: month,
+          year: year
+        }));
+      }
+
+      var showLeadingZerosFromFormat = currentMatch && currentMatch.length === 2;
+      return /*#__PURE__*/_react["default"].createElement(_MonthInput["default"], _extends({
+        key: "month"
+      }, _this.commonInputProps, {
+        ariaLabel: monthAriaLabel,
+        autoFocus: index === 0 && autoFocus,
+        placeholder: monthPlaceholder,
+        showLeadingZeros: showLeadingZerosFromFormat || showLeadingZeros,
+        value: month,
+        year: year
+      }));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderYear", function (currentMatch, index) {
+      var _this$props3 = _this.props,
+          autoFocus = _this$props3.autoFocus,
+          yearAriaLabel = _this$props3.yearAriaLabel,
+          yearPlaceholder = _this$props3.yearPlaceholder;
+      var year = _this.state.year;
+      return /*#__PURE__*/_react["default"].createElement(_YearInput["default"], _extends({
+        key: "year"
+      }, _this.commonInputProps, {
+        ariaLabel: yearAriaLabel,
+        autoFocus: index === 0 && autoFocus,
+        placeholder: yearPlaceholder,
+        value: year,
+        valueType: _this.valueType
+      }));
+    });
+
+    return _this;
+  }
+
+  _createClass(DateInput, [{
+    key: "getProcessedValue",
+
+    /**
+     * Gets current value in a desired format.
+     */
+    value: function getProcessedValue(value) {
+      var _this$props4 = this.props,
+          minDate = _this$props4.minDate,
+          maxDate = _this$props4.maxDate,
+          maxDetail = _this$props4.maxDetail,
+          returnValue = _this$props4.returnValue;
+
+      var processFunction = function () {
+        switch (returnValue) {
+          case 'start':
+            return getDetailValueFrom;
+
+          case 'end':
+            return getDetailValueTo;
+
+          case 'range':
+            return getDetailValueArray;
+
+          default:
+            throw new Error('Invalid returnValue.');
+        }
+      }();
+
+      return processFunction({
+        value: value,
+        minDate: minDate,
+        maxDate: maxDate,
+        maxDetail: maxDetail
+      });
+    }
+  }, {
+    key: "renderCustomInputs",
+    value: function renderCustomInputs() {
+      var placeholder = this.placeholder;
+      var format = this.props.format;
+      var elementFunctions = {
+        d: this.renderDay,
+        M: this.renderMonth,
+        y: this.renderYear
+      };
+      var allowMultipleInstances = typeof format !== 'undefined';
+      return _renderCustomInputs(placeholder, elementFunctions, allowMultipleInstances);
+    }
+  }, {
+    key: "renderNativeInput",
+    value: function renderNativeInput() {
+      var _this$props5 = this.props,
+          disabled = _this$props5.disabled,
+          maxDate = _this$props5.maxDate,
+          minDate = _this$props5.minDate,
+          name = _this$props5.name,
+          nativeInputAriaLabel = _this$props5.nativeInputAriaLabel,
+          required = _this$props5.required;
+      var value = this.state.value;
+      return /*#__PURE__*/_react["default"].createElement(_NativeInput["default"], {
+        key: "date",
+        ariaLabel: nativeInputAriaLabel,
+        disabled: disabled,
+        maxDate: maxDate || defaultMaxDate,
+        minDate: minDate || defaultMinDate,
+        name: name,
+        onChange: this.onChangeNative,
+        required: required,
+        value: value,
+        valueType: this.valueType
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var className = this.props.className;
+      /* eslint-disable jsx-a11y/click-events-have-key-events */
+
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
+
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        className: className,
+        onClick: this.onClick
+      }, this.renderNativeInput(), this.renderCustomInputs());
+    }
+  }, {
+    key: "formatDate",
+    get: function get() {
+      var maxDetail = this.props.maxDetail;
+      var options = {
+        year: 'numeric'
+      };
+      var level = allViews.indexOf(maxDetail);
+
+      if (level >= 2) {
+        options.month = 'numeric';
+      }
+
+      if (level >= 3) {
+        options.day = 'numeric';
+      }
+
+      return (0, _dateFormatter.getFormatter)(options);
+    }
+  }, {
+    key: "divider",
+    get: function get() {
+      return this.placeholder.match(/[^0-9a-z]/i)[0];
+    }
+  }, {
+    key: "placeholder",
+    get: function get() {
+      var _this$props6 = this.props,
+          format = _this$props6.format,
+          locale = _this$props6.locale;
+
+      if (format) {
+        return format;
+      }
+
+      var year = 2017;
+      var monthIndex = 11;
+      var day = 11;
+      var date = new Date(year, monthIndex, day);
+      var formattedDate = this.formatDate(locale, date);
+      var datePieces = ['year', 'month', 'day'];
+      var datePieceReplacements = ['y', 'M', 'd'];
+
+      function formatDatePiece(name, dateToFormat) {
+        return (0, _dateFormatter.getFormatter)(_defineProperty({
+          useGrouping: false
+        }, name, 'numeric'))(locale, dateToFormat).match(/\d{1,}/);
+      }
+
+      var placeholder = formattedDate;
+      datePieces.forEach(function (datePiece, index) {
+        var formattedDatePiece = formatDatePiece(datePiece, date);
+        var datePieceReplacement = datePieceReplacements[index];
+        placeholder = placeholder.replace(formattedDatePiece, datePieceReplacement);
+      });
+      return placeholder;
+    }
+  }, {
+    key: "commonInputProps",
+    get: function get() {
+      var _this2 = this;
+
+      var _this$props7 = this.props,
+          className = _this$props7.className,
+          disabled = _this$props7.disabled,
+          isCalendarOpen = _this$props7.isCalendarOpen,
+          maxDate = _this$props7.maxDate,
+          minDate = _this$props7.minDate,
+          required = _this$props7.required;
+      return {
+        className: className,
+        disabled: disabled,
+        maxDate: maxDate || defaultMaxDate,
+        minDate: minDate || defaultMinDate,
+        onChange: this.onChange,
+        onKeyDown: this.onKeyDown,
+        onKeyUp: this.onKeyUp,
+        // This is only for showing validity when editing
+        required: required || isCalendarOpen,
+        itemRef: function itemRef(ref, name) {
+          // Save a reference to each input field
+          _this2["".concat(name, "Input")] = ref;
+        }
+      };
+    }
+  }, {
+    key: "valueType",
+    get: function get() {
+      var maxDetail = this.props.maxDetail;
+      return getValueType(maxDetail);
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(nextProps, prevState) {
+      var minDate = nextProps.minDate,
+          maxDate = nextProps.maxDate,
+          maxDetail = nextProps.maxDetail;
+      var nextState = {};
+      /**
+       * If isCalendarOpen flag has changed, we have to update it.
+       * It's saved in state purely for use in getDerivedStateFromProps.
+       */
+
+      if (nextProps.isCalendarOpen !== prevState.isCalendarOpen) {
+        nextState.isCalendarOpen = nextProps.isCalendarOpen;
+      }
+      /**
+       * If the next value is different from the current one  (with an exception of situation in
+       * which values provided are limited by minDate and maxDate so that the dates are the same),
+       * get a new one.
+       */
+
+
+      var nextValue = getDetailValueFrom({
+        value: nextProps.value,
+        minDate: minDate,
+        maxDate: maxDate,
+        maxDetail: maxDetail
+      });
+      var values = [nextValue, prevState.value];
+
+      if ( // Toggling calendar visibility resets values
+      nextState.isCalendarOpen // Flag was toggled
+      || datesAreDifferent.apply(void 0, _toConsumableArray(values.map(function (value) {
+        return getDetailValueFrom({
+          value: value,
+          minDate: minDate,
+          maxDate: maxDate,
+          maxDetail: maxDetail
+        });
+      }))) || datesAreDifferent.apply(void 0, _toConsumableArray(values.map(function (value) {
+        return getDetailValueTo({
+          value: value,
+          minDate: minDate,
+          maxDate: maxDate,
+          maxDetail: maxDetail
+        });
+      })))) {
+        if (nextValue) {
+          nextState.year = (0, _dateUtils.getYear)(nextValue);
+          nextState.month = (0, _dateUtils.getMonthHuman)(nextValue);
+          nextState.day = (0, _dateUtils.getDate)(nextValue);
+        } else {
+          nextState.year = null;
+          nextState.month = null;
+          nextState.day = null;
+        }
+
+        nextState.value = nextValue;
+      }
+
+      return nextState;
+    }
+  }]);
+
+  return DateInput;
+}(_react.PureComponent);
+
+exports["default"] = DateInput;
+DateInput.defaultProps = {
+  maxDetail: 'month',
+  name: 'date',
+  returnValue: 'start'
+};
+
+var isValue = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].instanceOf(Date)]);
+
+DateInput.propTypes = {
+  autoFocus: _propTypes["default"].bool,
+  className: _propTypes["default"].string.isRequired,
+  dayAriaLabel: _propTypes["default"].string,
+  dayPlaceholder: _propTypes["default"].string,
+  disabled: _propTypes["default"].bool,
+  format: _propTypes["default"].string,
+  isCalendarOpen: _propTypes["default"].bool,
+  locale: _propTypes["default"].string,
+  maxDate: _propTypes2.isMaxDate,
+  maxDetail: _propTypes["default"].oneOf(allViews),
+  minDate: _propTypes2.isMinDate,
+  monthAriaLabel: _propTypes["default"].string,
+  monthPlaceholder: _propTypes["default"].string,
+  name: _propTypes["default"].string,
+  nativeInputAriaLabel: _propTypes["default"].string,
+  onChange: _propTypes["default"].func,
+  required: _propTypes["default"].bool,
+  returnValue: _propTypes["default"].oneOf(['start', 'end', 'range']),
+  showLeadingZeros: _propTypes["default"].bool,
+  value: _propTypes["default"].oneOfType([isValue, _propTypes["default"].arrayOf(isValue)]),
+  yearAriaLabel: _propTypes["default"].string,
+  yearPlaceholder: _propTypes["default"].string
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DateInput/DayInput.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DateInput/DayInput.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = DayInput;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _dateUtils = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+
+var _Input = _interopRequireDefault(__webpack_require__(/*! ./Input */ "./node_modules/react-date-picker/dist/DateInput/Input.js"));
+
+var _propTypes2 = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-date-picker/dist/shared/propTypes.js");
+
+var _utils = __webpack_require__(/*! ../shared/utils */ "./node_modules/react-date-picker/dist/shared/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function DayInput(_ref) {
+  var maxDate = _ref.maxDate,
+      minDate = _ref.minDate,
+      month = _ref.month,
+      year = _ref.year,
+      otherProps = _objectWithoutProperties(_ref, ["maxDate", "minDate", "month", "year"]);
+
+  var currentMonthMaxDays = function () {
+    if (!month) {
+      return 31;
+    }
+
+    return (0, _dateUtils.getDaysInMonth)(new Date(year, month - 1, 1));
+  }();
+
+  function isSameMonth(date) {
+    return date && year === (0, _dateUtils.getYear)(date) && month === (0, _dateUtils.getMonthHuman)(date);
+  }
+
+  var maxDay = (0, _utils.safeMin)(currentMonthMaxDays, isSameMonth(maxDate) && (0, _dateUtils.getDate)(maxDate));
+  var minDay = (0, _utils.safeMax)(1, isSameMonth(minDate) && (0, _dateUtils.getDate)(minDate));
+  return /*#__PURE__*/_react["default"].createElement(_Input["default"], _extends({
+    max: maxDay,
+    min: minDay,
+    name: "day"
+  }, otherProps));
+}
+
+DayInput.propTypes = {
+  ariaLabel: _propTypes["default"].string,
+  className: _propTypes["default"].string.isRequired,
+  disabled: _propTypes["default"].bool,
+  itemRef: _propTypes["default"].func,
+  maxDate: _propTypes2.isMaxDate,
+  minDate: _propTypes2.isMinDate,
+  month: _propTypes["default"].number,
+  onChange: _propTypes["default"].func,
+  onKeyDown: _propTypes["default"].func,
+  onKeyUp: _propTypes["default"].func,
+  placeholder: _propTypes["default"].string,
+  required: _propTypes["default"].bool,
+  showLeadingZeros: _propTypes["default"].bool,
+  value: _propTypes["default"].number,
+  year: _propTypes["default"].number
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DateInput/Input.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DateInput/Input.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Input;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _mergeClassNames = _interopRequireDefault(__webpack_require__(/*! merge-class-names */ "./node_modules/merge-class-names/dist/esm/index.js"));
+
+var _updateInputWidth = _interopRequireWildcard(__webpack_require__(/*! update-input-width */ "./node_modules/update-input-width/dist/esm/index.js"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+/* eslint-disable jsx-a11y/no-autofocus */
+function onFocus(event) {
+  var target = event.target;
+  requestAnimationFrame(function () {
+    return target.select();
+  });
+}
+
+function updateInputWidthOnFontLoad(element) {
+  if (!document.fonts) {
+    return;
+  }
+
+  var font = (0, _updateInputWidth.getFontShorthand)(element);
+
+  if (!font) {
+    return;
+  }
+
+  var isFontLoaded = document.fonts.check(font);
+
+  if (isFontLoaded) {
+    return;
+  }
+
+  function onLoadingDone() {
+    (0, _updateInputWidth["default"])(element);
+  }
+
+  document.fonts.addEventListener('loadingdone', onLoadingDone);
+}
+
+function getSelectionString() {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  return window.getSelection().toString();
+}
+
+function makeOnKeyPress(maxLength) {
+  return function onKeyPress(event) {
+    var key = event.key,
+        input = event.target;
+    var value = input.value;
+    var isNumberKey = !isNaN(parseInt(key, 10));
+    var selection = getSelectionString();
+
+    if (isNumberKey && (selection || value.length < maxLength)) {
+      return;
+    }
+
+    event.preventDefault();
+  };
+}
+
+function Input(_ref) {
+  var ariaLabel = _ref.ariaLabel,
+      autoFocus = _ref.autoFocus,
+      className = _ref.className,
+      disabled = _ref.disabled,
+      itemRef = _ref.itemRef,
+      max = _ref.max,
+      min = _ref.min,
+      name = _ref.name,
+      nameForClass = _ref.nameForClass,
+      onChange = _ref.onChange,
+      onKeyDown = _ref.onKeyDown,
+      _onKeyUp = _ref.onKeyUp,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === void 0 ? '--' : _ref$placeholder,
+      required = _ref.required,
+      showLeadingZeros = _ref.showLeadingZeros,
+      step = _ref.step,
+      value = _ref.value;
+  var hasLeadingZero = showLeadingZeros && value !== null && value < 10;
+  var maxLength = max.toString().length;
+  return [hasLeadingZero && /*#__PURE__*/_react["default"].createElement("span", {
+    key: "leadingZero",
+    className: "".concat(className, "__leadingZero")
+  }, "0"), /*#__PURE__*/_react["default"].createElement("input", {
+    key: "input",
+    "aria-label": ariaLabel,
+    autoComplete: "off",
+    autoFocus: autoFocus,
+    className: (0, _mergeClassNames["default"])("".concat(className, "__input"), "".concat(className, "__").concat(nameForClass || name), hasLeadingZero && "".concat(className, "__input--hasLeadingZero")),
+    "data-input": "true",
+    disabled: disabled,
+    max: max,
+    min: min,
+    name: name,
+    onChange: onChange,
+    onFocus: onFocus,
+    onKeyDown: onKeyDown,
+    onKeyPress: makeOnKeyPress(maxLength),
+    onKeyUp: function onKeyUp(event) {
+      (0, _updateInputWidth["default"])(event.target);
+
+      if (_onKeyUp) {
+        _onKeyUp(event);
+      }
+    },
+    placeholder: placeholder,
+    ref: function ref(_ref2) {
+      if (_ref2) {
+        (0, _updateInputWidth["default"])(_ref2);
+        updateInputWidthOnFontLoad(_ref2);
+      }
+
+      if (itemRef) {
+        itemRef(_ref2, name);
+      }
+    },
+    required: required,
+    step: step,
+    type: "number",
+    value: value !== null ? value : ''
+  })];
+}
+
+Input.propTypes = {
+  ariaLabel: _propTypes["default"].string,
+  className: _propTypes["default"].string.isRequired,
+  disabled: _propTypes["default"].bool,
+  itemRef: _propTypes["default"].func,
+  max: _propTypes["default"].number,
+  min: _propTypes["default"].number,
+  onChange: _propTypes["default"].func,
+  onKeyDown: _propTypes["default"].func,
+  onKeyUp: _propTypes["default"].func,
+  required: _propTypes["default"].bool,
+  showLeadingZeros: _propTypes["default"].bool,
+  step: _propTypes["default"].number,
+  value: _propTypes["default"].number
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DateInput/MonthInput.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DateInput/MonthInput.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = MonthInput;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _dateUtils = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+
+var _Input = _interopRequireDefault(__webpack_require__(/*! ./Input */ "./node_modules/react-date-picker/dist/DateInput/Input.js"));
+
+var _propTypes2 = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-date-picker/dist/shared/propTypes.js");
+
+var _utils = __webpack_require__(/*! ../shared/utils */ "./node_modules/react-date-picker/dist/shared/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function MonthInput(_ref) {
+  var maxDate = _ref.maxDate,
+      minDate = _ref.minDate,
+      year = _ref.year,
+      otherProps = _objectWithoutProperties(_ref, ["maxDate", "minDate", "year"]);
+
+  function isSameYear(date) {
+    return date && year === (0, _dateUtils.getYear)(date);
+  }
+
+  var maxMonth = (0, _utils.safeMin)(12, isSameYear(maxDate) && (0, _dateUtils.getMonthHuman)(maxDate));
+  var minMonth = (0, _utils.safeMax)(1, isSameYear(minDate) && (0, _dateUtils.getMonthHuman)(minDate));
+  return /*#__PURE__*/_react["default"].createElement(_Input["default"], _extends({
+    max: maxMonth,
+    min: minMonth,
+    name: "month"
+  }, otherProps));
+}
+
+MonthInput.propTypes = {
+  ariaLabel: _propTypes["default"].string,
+  className: _propTypes["default"].string.isRequired,
+  disabled: _propTypes["default"].bool,
+  itemRef: _propTypes["default"].func,
+  maxDate: _propTypes2.isMaxDate,
+  minDate: _propTypes2.isMinDate,
+  onChange: _propTypes["default"].func,
+  onKeyDown: _propTypes["default"].func,
+  onKeyUp: _propTypes["default"].func,
+  placeholder: _propTypes["default"].string,
+  required: _propTypes["default"].bool,
+  showLeadingZeros: _propTypes["default"].bool,
+  value: _propTypes["default"].number,
+  year: _propTypes["default"].number
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DateInput/MonthSelect.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DateInput/MonthSelect.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = MonthSelect;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _mergeClassNames = _interopRequireDefault(__webpack_require__(/*! merge-class-names */ "./node_modules/merge-class-names/dist/esm/index.js"));
+
+var _dateUtils = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+
+var _dateFormatter = __webpack_require__(/*! ../shared/dateFormatter */ "./node_modules/react-date-picker/dist/shared/dateFormatter.js");
+
+var _propTypes2 = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-date-picker/dist/shared/propTypes.js");
+
+var _utils = __webpack_require__(/*! ../shared/utils */ "./node_modules/react-date-picker/dist/shared/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function MonthSelect(_ref) {
+  var ariaLabel = _ref.ariaLabel,
+      className = _ref.className,
+      itemRef = _ref.itemRef,
+      locale = _ref.locale,
+      maxDate = _ref.maxDate,
+      minDate = _ref.minDate,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === void 0 ? '--' : _ref$placeholder,
+      _short = _ref["short"],
+      value = _ref.value,
+      year = _ref.year,
+      otherProps = _objectWithoutProperties(_ref, ["ariaLabel", "className", "itemRef", "locale", "maxDate", "minDate", "placeholder", "short", "value", "year"]);
+
+  function isSameYear(date) {
+    return date && year === (0, _dateUtils.getYear)(date);
+  }
+
+  var maxMonth = (0, _utils.safeMin)(12, isSameYear(maxDate) && (0, _dateUtils.getMonthHuman)(maxDate));
+  var minMonth = (0, _utils.safeMax)(1, isSameYear(minDate) && (0, _dateUtils.getMonthHuman)(minDate));
+
+  var dates = _toConsumableArray(Array(12)).map(function (el, index) {
+    return new Date(2019, index, 1);
+  });
+
+  var name = 'month';
+  var formatter = _short ? _dateFormatter.formatShortMonth : _dateFormatter.formatMonth;
+  return /*#__PURE__*/_react["default"].createElement("select", _extends({
+    "aria-label": ariaLabel,
+    className: (0, _mergeClassNames["default"])("".concat(className, "__input"), "".concat(className, "__").concat(name)),
+    "data-input": "true",
+    name: name,
+    ref: function ref(_ref2) {
+      if (itemRef) {
+        itemRef(_ref2, name);
+      }
+    },
+    value: value !== null ? value : ''
+  }, otherProps), !value && /*#__PURE__*/_react["default"].createElement("option", {
+    value: ""
+  }, placeholder), dates.map(function (date) {
+    var month = (0, _dateUtils.getMonthHuman)(date);
+    var disabled = month < minMonth || month > maxMonth;
+    return /*#__PURE__*/_react["default"].createElement("option", {
+      key: month,
+      disabled: disabled,
+      value: month
+    }, formatter(locale, date));
+  }));
+}
+
+MonthSelect.propTypes = {
+  ariaLabel: _propTypes["default"].string,
+  className: _propTypes["default"].string.isRequired,
+  disabled: _propTypes["default"].bool,
+  itemRef: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  maxDate: _propTypes2.isMaxDate,
+  minDate: _propTypes2.isMinDate,
+  onChange: _propTypes["default"].func,
+  onKeyDown: _propTypes["default"].func,
+  onKeyUp: _propTypes["default"].func,
+  placeholder: _propTypes["default"].string,
+  required: _propTypes["default"].bool,
+  "short": _propTypes["default"].bool,
+  value: _propTypes["default"].number,
+  year: _propTypes["default"].number
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DateInput/NativeInput.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DateInput/NativeInput.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = NativeInput;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _dateUtils = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+
+var _propTypes2 = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-date-picker/dist/shared/propTypes.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function NativeInput(_ref) {
+  var ariaLabel = _ref.ariaLabel,
+      disabled = _ref.disabled,
+      maxDate = _ref.maxDate,
+      minDate = _ref.minDate,
+      name = _ref.name,
+      onChange = _ref.onChange,
+      required = _ref.required,
+      value = _ref.value,
+      valueType = _ref.valueType;
+
+  var nativeInputType = function () {
+    switch (valueType) {
+      case 'decade':
+      case 'year':
+        return 'number';
+
+      case 'month':
+        return 'month';
+
+      case 'day':
+        return 'date';
+
+      default:
+        throw new Error('Invalid valueType.');
+    }
+  }();
+
+  var nativeValueParser = function () {
+    switch (valueType) {
+      case 'century':
+      case 'decade':
+      case 'year':
+        return _dateUtils.getYear;
+
+      case 'month':
+        return _dateUtils.getISOLocalMonth;
+
+      case 'day':
+        return _dateUtils.getISOLocalDate;
+
+      default:
+        throw new Error('Invalid valueType.');
+    }
+  }();
+
+  function stopPropagation(event) {
+    event.stopPropagation();
+  }
+
+  return /*#__PURE__*/_react["default"].createElement("input", {
+    "aria-label": ariaLabel,
+    disabled: disabled,
+    max: maxDate ? nativeValueParser(maxDate) : null,
+    min: minDate ? nativeValueParser(minDate) : null,
+    name: name,
+    onChange: onChange,
+    onFocus: stopPropagation,
+    required: required,
+    style: {
+      visibility: 'hidden',
+      position: 'absolute',
+      top: '-9999px',
+      left: '-9999px'
+    },
+    type: nativeInputType,
+    value: value ? nativeValueParser(value) : ''
+  });
+}
+
+NativeInput.propTypes = {
+  ariaLabel: _propTypes["default"].string,
+  disabled: _propTypes["default"].bool,
+  maxDate: _propTypes2.isMaxDate,
+  minDate: _propTypes2.isMinDate,
+  name: _propTypes["default"].string,
+  onChange: _propTypes["default"].func,
+  required: _propTypes["default"].bool,
+  value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].instanceOf(Date)]),
+  valueType: _propTypes2.isValueType
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DateInput/YearInput.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DateInput/YearInput.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = YearInput;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _dateUtils = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+
+var _Input = _interopRequireDefault(__webpack_require__(/*! ./Input */ "./node_modules/react-date-picker/dist/DateInput/Input.js"));
+
+var _propTypes2 = __webpack_require__(/*! ../shared/propTypes */ "./node_modules/react-date-picker/dist/shared/propTypes.js");
+
+var _utils = __webpack_require__(/*! ../shared/utils */ "./node_modules/react-date-picker/dist/shared/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function YearInput(_ref) {
+  var maxDate = _ref.maxDate,
+      minDate = _ref.minDate,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === void 0 ? '----' : _ref$placeholder,
+      valueType = _ref.valueType,
+      otherProps = _objectWithoutProperties(_ref, ["maxDate", "minDate", "placeholder", "valueType"]);
+
+  var maxYear = (0, _utils.safeMin)(275760, maxDate && (0, _dateUtils.getYear)(maxDate));
+  var minYear = (0, _utils.safeMax)(1, minDate && (0, _dateUtils.getYear)(minDate));
+
+  var yearStep = function () {
+    if (valueType === 'century') {
+      return 10;
+    }
+
+    return 1;
+  }();
+
+  return /*#__PURE__*/_react["default"].createElement(_Input["default"], _extends({
+    max: maxYear,
+    min: minYear,
+    name: "year",
+    placeholder: placeholder,
+    step: yearStep
+  }, otherProps));
+}
+
+YearInput.propTypes = {
+  ariaLabel: _propTypes["default"].string,
+  className: _propTypes["default"].string.isRequired,
+  disabled: _propTypes["default"].bool,
+  itemRef: _propTypes["default"].func,
+  maxDate: _propTypes2.isMaxDate,
+  minDate: _propTypes2.isMinDate,
+  onChange: _propTypes["default"].func,
+  onKeyDown: _propTypes["default"].func,
+  onKeyUp: _propTypes["default"].func,
+  placeholder: _propTypes["default"].string,
+  required: _propTypes["default"].bool,
+  value: _propTypes["default"].number,
+  valueType: _propTypes2.isValueType
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DatePicker.css":
+/*!************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DatePicker.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./DatePicker.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-date-picker/dist/DatePicker.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/DatePicker.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/DatePicker.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _makeEventProps = _interopRequireDefault(__webpack_require__(/*! make-event-props */ "./node_modules/make-event-props/dist/entry.js"));
+
+var _mergeClassNames = _interopRequireDefault(__webpack_require__(/*! merge-class-names */ "./node_modules/merge-class-names/dist/esm/index.js"));
+
+var _reactCalendar = _interopRequireDefault(__webpack_require__(/*! react-calendar */ "./node_modules/react-calendar/dist/esm/index.js"));
+
+var _reactFit = _interopRequireDefault(__webpack_require__(/*! react-fit */ "./node_modules/react-fit/dist/esm/Fit.js"));
+
+var _DateInput = _interopRequireDefault(__webpack_require__(/*! ./DateInput */ "./node_modules/react-date-picker/dist/DateInput.js"));
+
+var _propTypes2 = __webpack_require__(/*! ./shared/propTypes */ "./node_modules/react-date-picker/dist/shared/propTypes.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var baseClassName = 'react-date-picker';
+var outsideActionEvents = ['mousedown', 'focusin', 'touchstart'];
+var allViews = ['century', 'decade', 'year', 'month'];
+
+var DatePicker = /*#__PURE__*/function (_PureComponent) {
+  _inherits(DatePicker, _PureComponent);
+
+  var _super = _createSuper(DatePicker);
+
+  function DatePicker() {
+    var _this;
+
+    _classCallCheck(this, DatePicker);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _defineProperty(_assertThisInitialized(_this), "onOutsideAction", function (event) {
+      if (_this.wrapper && !_this.wrapper.contains(event.target)) {
+        _this.closeCalendar();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (value) {
+      var closeCalendar = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _this.props.closeCalendar;
+      var onChange = _this.props.onChange;
+
+      if (closeCalendar) {
+        _this.closeCalendar();
+      }
+
+      if (onChange) {
+        onChange(value);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onFocus", function (event) {
+      var _this$props = _this.props,
+          disabled = _this$props.disabled,
+          onFocus = _this$props.onFocus;
+
+      if (onFocus) {
+        onFocus(event);
+      } // Internet Explorer still fires onFocus on disabled elements
+
+
+      if (disabled) {
+        return;
+      }
+
+      _this.openCalendar();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "openCalendar", function () {
+      _this.setState({
+        isOpen: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "closeCalendar", function () {
+      _this.setState(function (prevState) {
+        if (!prevState.isOpen) {
+          return null;
+        }
+
+        return {
+          isOpen: false
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "toggleCalendar", function () {
+      _this.setState(function (prevState) {
+        return {
+          isOpen: !prevState.isOpen
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "stopPropagation", function (event) {
+      return event.stopPropagation();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "clear", function () {
+      return _this.onChange(null);
+    });
+
+    return _this;
+  }
+
+  _createClass(DatePicker, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.handleOutsideActionListeners();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      var isOpen = this.state.isOpen;
+      var _this$props2 = this.props,
+          onCalendarClose = _this$props2.onCalendarClose,
+          onCalendarOpen = _this$props2.onCalendarOpen;
+
+      if (isOpen !== prevState.isOpen) {
+        this.handleOutsideActionListeners();
+        var callback = isOpen ? onCalendarOpen : onCalendarClose;
+        if (callback) callback();
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.handleOutsideActionListeners(false);
+    }
+  }, {
+    key: "handleOutsideActionListeners",
+    value: function handleOutsideActionListeners(shouldListen) {
+      var _this2 = this;
+
+      var isOpen = this.state.isOpen;
+      var shouldListenWithFallback = typeof shouldListen !== 'undefined' ? shouldListen : isOpen;
+      var fnName = shouldListenWithFallback ? 'addEventListener' : 'removeEventListener';
+      outsideActionEvents.forEach(function (eventName) {
+        return document[fnName](eventName, _this2.onOutsideAction);
+      });
+    }
+  }, {
+    key: "renderInputs",
+    value: function renderInputs() {
+      var _this$props3 = this.props,
+          autoFocus = _this$props3.autoFocus,
+          calendarAriaLabel = _this$props3.calendarAriaLabel,
+          calendarIcon = _this$props3.calendarIcon,
+          clearAriaLabel = _this$props3.clearAriaLabel,
+          clearIcon = _this$props3.clearIcon,
+          dayAriaLabel = _this$props3.dayAriaLabel,
+          dayPlaceholder = _this$props3.dayPlaceholder,
+          disableCalendar = _this$props3.disableCalendar,
+          disabled = _this$props3.disabled,
+          format = _this$props3.format,
+          locale = _this$props3.locale,
+          maxDate = _this$props3.maxDate,
+          maxDetail = _this$props3.maxDetail,
+          minDate = _this$props3.minDate,
+          monthAriaLabel = _this$props3.monthAriaLabel,
+          monthPlaceholder = _this$props3.monthPlaceholder,
+          name = _this$props3.name,
+          nativeInputAriaLabel = _this$props3.nativeInputAriaLabel,
+          required = _this$props3.required,
+          returnValue = _this$props3.returnValue,
+          showLeadingZeros = _this$props3.showLeadingZeros,
+          value = _this$props3.value,
+          yearAriaLabel = _this$props3.yearAriaLabel,
+          yearPlaceholder = _this$props3.yearPlaceholder;
+      var isOpen = this.state.isOpen;
+
+      var _concat = [].concat(value),
+          _concat2 = _slicedToArray(_concat, 1),
+          valueFrom = _concat2[0];
+
+      var ariaLabelProps = {
+        dayAriaLabel: dayAriaLabel,
+        monthAriaLabel: monthAriaLabel,
+        nativeInputAriaLabel: nativeInputAriaLabel,
+        yearAriaLabel: yearAriaLabel
+      };
+      var placeholderProps = {
+        dayPlaceholder: dayPlaceholder,
+        monthPlaceholder: monthPlaceholder,
+        yearPlaceholder: yearPlaceholder
+      };
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        className: "".concat(baseClassName, "__wrapper")
+      }, /*#__PURE__*/_react["default"].createElement(_DateInput["default"], _extends({}, ariaLabelProps, placeholderProps, {
+        autoFocus: autoFocus,
+        className: "".concat(baseClassName, "__inputGroup"),
+        disabled: disabled,
+        format: format,
+        isCalendarOpen: isOpen,
+        locale: locale,
+        maxDate: maxDate,
+        maxDetail: maxDetail,
+        minDate: minDate,
+        name: name,
+        onChange: this.onChange,
+        required: required,
+        returnValue: returnValue,
+        showLeadingZeros: showLeadingZeros,
+        value: valueFrom
+      })), clearIcon !== null && /*#__PURE__*/_react["default"].createElement("button", {
+        "aria-label": clearAriaLabel,
+        className: "".concat(baseClassName, "__clear-button ").concat(baseClassName, "__button"),
+        disabled: disabled,
+        onClick: this.clear,
+        onFocus: this.stopPropagation,
+        type: "button"
+      }, clearIcon), calendarIcon !== null && !disableCalendar && /*#__PURE__*/_react["default"].createElement("button", {
+        "aria-label": calendarAriaLabel,
+        className: "".concat(baseClassName, "__calendar-button ").concat(baseClassName, "__button"),
+        disabled: disabled,
+        onBlur: this.resetValue,
+        onClick: this.toggleCalendar,
+        onFocus: this.stopPropagation,
+        type: "button"
+      }, calendarIcon));
+    }
+  }, {
+    key: "renderCalendar",
+    value: function renderCalendar() {
+      var disableCalendar = this.props.disableCalendar;
+      var isOpen = this.state.isOpen;
+
+      if (isOpen === null || disableCalendar) {
+        return null;
+      }
+
+      var _this$props4 = this.props,
+          calendarClassName = _this$props4.calendarClassName,
+          datePickerClassName = _this$props4.className,
+          onChange = _this$props4.onChange,
+          value = _this$props4.value,
+          calendarProps = _objectWithoutProperties(_this$props4, ["calendarClassName", "className", "onChange", "value"]);
+
+      var className = "".concat(baseClassName, "__calendar");
+      return /*#__PURE__*/_react["default"].createElement(_reactFit["default"], null, /*#__PURE__*/_react["default"].createElement("div", {
+        className: (0, _mergeClassNames["default"])(className, "".concat(className, "--").concat(isOpen ? 'open' : 'closed'))
+      }, /*#__PURE__*/_react["default"].createElement(_reactCalendar["default"], _extends({
+        className: calendarClassName,
+        onChange: this.onChange,
+        value: value || null
+      }, calendarProps))));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var _this$props5 = this.props,
+          className = _this$props5.className,
+          disabled = _this$props5.disabled;
+      var isOpen = this.state.isOpen;
+      return /*#__PURE__*/_react["default"].createElement("div", _extends({
+        className: (0, _mergeClassNames["default"])(baseClassName, "".concat(baseClassName, "--").concat(isOpen ? 'open' : 'closed'), "".concat(baseClassName, "--").concat(disabled ? 'disabled' : 'enabled'), className)
+      }, this.eventProps, {
+        onFocus: this.onFocus,
+        ref: function ref(_ref) {
+          if (!_ref) {
+            return;
+          }
+
+          _this3.wrapper = _ref;
+        }
+      }), this.renderInputs(), this.renderCalendar());
+    }
+  }, {
+    key: "eventProps",
+    get: function get() {
+      return (0, _makeEventProps["default"])(this.props);
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(nextProps, prevState) {
+      if (nextProps.isOpen !== prevState.isOpenProps) {
+        return {
+          isOpen: nextProps.isOpen,
+          isOpenProps: nextProps.isOpen
+        };
+      }
+
+      return null;
+    }
+  }]);
+
+  return DatePicker;
+}(_react.PureComponent);
+
+exports["default"] = DatePicker;
+var iconProps = {
+  xmlns: 'http://www.w3.org/2000/svg',
+  width: 19,
+  height: 19,
+  viewBox: '0 0 19 19',
+  stroke: 'black',
+  strokeWidth: 2
+};
+
+var CalendarIcon = /*#__PURE__*/_react["default"].createElement("svg", _extends({}, iconProps, {
+  className: "".concat(baseClassName, "__calendar-button__icon ").concat(baseClassName, "__button__icon")
+}), /*#__PURE__*/_react["default"].createElement("rect", {
+  fill: "none",
+  height: "15",
+  width: "15",
+  x: "2",
+  y: "2"
+}), /*#__PURE__*/_react["default"].createElement("line", {
+  x1: "6",
+  x2: "6",
+  y1: "0",
+  y2: "4"
+}), /*#__PURE__*/_react["default"].createElement("line", {
+  x1: "13",
+  x2: "13",
+  y1: "0",
+  y2: "4"
+}));
+
+var ClearIcon = /*#__PURE__*/_react["default"].createElement("svg", _extends({}, iconProps, {
+  className: "".concat(baseClassName, "__clear-button__icon ").concat(baseClassName, "__button__icon")
+}), /*#__PURE__*/_react["default"].createElement("line", {
+  x1: "4",
+  x2: "15",
+  y1: "4",
+  y2: "15"
+}), /*#__PURE__*/_react["default"].createElement("line", {
+  x1: "15",
+  x2: "4",
+  y1: "4",
+  y2: "15"
+}));
+
+DatePicker.defaultProps = {
+  calendarIcon: CalendarIcon,
+  clearIcon: ClearIcon,
+  closeCalendar: true,
+  isOpen: null,
+  returnValue: 'start'
+};
+
+var isValue = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].instanceOf(Date)]);
+
+DatePicker.propTypes = {
+  autoFocus: _propTypes["default"].bool,
+  calendarAriaLabel: _propTypes["default"].string,
+  calendarClassName: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string)]),
+  calendarIcon: _propTypes["default"].node,
+  className: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string)]),
+  clearAriaLabel: _propTypes["default"].string,
+  clearIcon: _propTypes["default"].node,
+  closeCalendar: _propTypes["default"].bool,
+  dayAriaLabel: _propTypes["default"].string,
+  dayPlaceholder: _propTypes["default"].string,
+  disableCalendar: _propTypes["default"].bool,
+  disabled: _propTypes["default"].bool,
+  format: _propTypes["default"].string,
+  isOpen: _propTypes["default"].bool,
+  locale: _propTypes["default"].string,
+  maxDate: _propTypes2.isMaxDate,
+  maxDetail: _propTypes["default"].oneOf(allViews),
+  minDate: _propTypes2.isMinDate,
+  monthAriaLabel: _propTypes["default"].string,
+  monthPlaceholder: _propTypes["default"].string,
+  name: _propTypes["default"].string,
+  nativeInputAriaLabel: _propTypes["default"].string,
+  onCalendarClose: _propTypes["default"].func,
+  onCalendarOpen: _propTypes["default"].func,
+  onChange: _propTypes["default"].func,
+  onFocus: _propTypes["default"].func,
+  required: _propTypes["default"].bool,
+  returnValue: _propTypes["default"].oneOf(['start', 'end', 'range']),
+  showLeadingZeros: _propTypes["default"].bool,
+  value: _propTypes["default"].oneOfType([isValue, _propTypes["default"].arrayOf(isValue)]),
+  yearAriaLabel: _propTypes["default"].string,
+  yearPlaceholder: _propTypes["default"].string
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/Divider.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/Divider.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Divider;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function Divider(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/_react["default"].createElement("span", {
+    className: "react-date-picker__inputGroup__divider"
+  }, children);
+}
+
+Divider.propTypes = {
+  children: _propTypes["default"].node
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/entry.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/entry.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+__webpack_require__(/*! react-calendar/dist/Calendar.css */ "./node_modules/react-calendar/dist/Calendar.css");
+
+var _DatePicker = _interopRequireDefault(__webpack_require__(/*! ./DatePicker */ "./node_modules/react-date-picker/dist/DatePicker.js"));
+
+__webpack_require__(/*! ./DatePicker.css */ "./node_modules/react-date-picker/dist/DatePicker.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+// File is created during build phase and placed in dist directory
+// eslint-disable-next-line import/no-unresolved
+var _default = _DatePicker["default"];
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/shared/dateFormatter.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/shared/dateFormatter.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getFormatter = getFormatter;
+exports.formatShortMonth = exports.formatMonth = void 0;
+
+var _getUserLocale = _interopRequireDefault(__webpack_require__(/*! get-user-locale */ "./node_modules/get-user-locale/dist/esm/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function getFormatter(options) {
+  return function (locale, date) {
+    return date.toLocaleString(locale || (0, _getUserLocale["default"])(), options);
+  };
+}
+/**
+ * Changes the hour in a Date to ensure right date formatting even if DST is messed up.
+ * Workaround for bug in WebKit and Firefox with historical dates.
+ * For more details, see:
+ * https://bugs.chromium.org/p/chromium/issues/detail?id=750465
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=1385643
+ *
+ * @param {Date} date Date.
+ */
+
+
+function toSafeHour(date) {
+  var safeDate = new Date(date);
+  return new Date(safeDate.setHours(12));
+}
+
+function getSafeFormatter(options) {
+  return function (locale, date) {
+    return getFormatter(options)(locale, toSafeHour(date));
+  };
+}
+
+var formatMonthOptions = {
+  month: 'long'
+};
+var formatShortMonthOptions = {
+  month: 'short'
+};
+var formatMonth = getSafeFormatter(formatMonthOptions);
+exports.formatMonth = formatMonth;
+var formatShortMonth = getSafeFormatter(formatShortMonthOptions);
+exports.formatShortMonth = formatShortMonth;
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/shared/dates.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/shared/dates.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getBegin = getBegin;
+exports.getEnd = getEnd;
+
+var _dateUtils = __webpack_require__(/*! @wojtekmaj/date-utils */ "./node_modules/@wojtekmaj/date-utils/dist/esm/index.js");
+
+/**
+ * Returns the beginning of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+function getBegin(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return (0, _dateUtils.getCenturyStart)(date);
+
+    case 'decade':
+      return (0, _dateUtils.getDecadeStart)(date);
+
+    case 'year':
+      return (0, _dateUtils.getYearStart)(date);
+
+    case 'month':
+      return (0, _dateUtils.getMonthStart)(date);
+
+    case 'day':
+      return (0, _dateUtils.getDayStart)(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+/**
+ * Returns the end of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+
+function getEnd(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return (0, _dateUtils.getCenturyEnd)(date);
+
+    case 'decade':
+      return (0, _dateUtils.getDecadeEnd)(date);
+
+    case 'year':
+      return (0, _dateUtils.getYearEnd)(date);
+
+    case 'month':
+      return (0, _dateUtils.getMonthEnd)(date);
+
+    case 'day':
+      return (0, _dateUtils.getDayEnd)(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/shared/propTypes.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/shared/propTypes.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isMaxDate = exports.isMinDate = exports.isValueType = void 0;
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var allViews = ['century', 'decade', 'year', 'month'];
+var allValueTypes = [].concat(_toConsumableArray(allViews.slice(1)), ['day']);
+
+var isValueType = _propTypes["default"].oneOf(allValueTypes);
+
+exports.isValueType = isValueType;
+
+var isMinDate = function isMinDate(props, propName, componentName) {
+  var minDate = props[propName];
+
+  if (!minDate) {
+    return null;
+  }
+
+  if (!(minDate instanceof Date)) {
+    return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
+  }
+
+  var maxDate = props.maxDate;
+
+  if (maxDate && minDate > maxDate) {
+    return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, minDate cannot be larger than maxDate."));
+  }
+
+  return null;
+};
+
+exports.isMinDate = isMinDate;
+
+var isMaxDate = function isMaxDate(props, propName, componentName) {
+  var maxDate = props[propName];
+
+  if (!maxDate) {
+    return null;
+  }
+
+  if (!(maxDate instanceof Date)) {
+    return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
+  }
+
+  var minDate = props.minDate;
+
+  if (minDate && maxDate < minDate) {
+    return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, maxDate cannot be smaller than minDate."));
+  }
+
+  return null;
+};
+
+exports.isMaxDate = isMaxDate;
+
+/***/ }),
+
+/***/ "./node_modules/react-date-picker/dist/shared/utils.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-date-picker/dist/shared/utils.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.between = between;
+exports.safeMin = safeMin;
+exports.safeMax = safeMax;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+/**
+ * Returns a value no smaller than min and no larger than max.
+ *
+ * @param {*} value Value to return.
+ * @param {*} min Minimum return value.
+ * @param {*} max Maximum return value.
+ */
+function between(value, min, max) {
+  if (min && min > value) {
+    return min;
+  }
+
+  if (max && max < value) {
+    return max;
+  }
+
+  return value;
+}
+
+function isValidNumber(num) {
+  return num !== null && num !== false && !Number.isNaN(Number(num));
+}
+
+function safeMin() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return Math.min.apply(Math, _toConsumableArray(args.filter(isValidNumber)));
+}
+
+function safeMax() {
+  for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    args[_key2] = arguments[_key2];
+  }
+
+  return Math.max.apply(Math, _toConsumableArray(args.filter(isValidNumber)));
+}
 
 /***/ }),
 
@@ -47788,6 +54056,417 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-fit/dist/esm/Fit.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-fit/dist/esm/Fit.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Fit; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var detect_element_overflow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! detect-element-overflow */ "./node_modules/detect-element-overflow/dist/esm/index.js");
+/* harmony import */ var _shared_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shared/utils */ "./node_modules/react-fit/dist/esm/shared/utils.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+
+
+
+var isBrowser = typeof window !== 'undefined';
+var isDisplayContentsSupported = isBrowser && 'CSS' in window && 'supports' in window.CSS && CSS.supports('display', 'contents');
+var isMutationObserverSupported = isBrowser && 'MutationObserver' in window;
+
+function capitalize(a) {
+  return a[0].toUpperCase() + a.slice(1);
+}
+
+function findScrollContainer(element) {
+  if (!element) {
+    return undefined;
+  }
+
+  var parent = element.parentElement;
+
+  while (parent) {
+    var _window$getComputedSt = window.getComputedStyle(parent),
+        overflow = _window$getComputedSt.overflow;
+
+    if (overflow.split(' ').every(function (o) {
+      return o === 'auto' || o === 'scroll';
+    })) {
+      return parent;
+    }
+
+    parent = parent.parentElement;
+  }
+
+  return document.documentElement;
+}
+
+function alignAxis(_ref) {
+  var axis = _ref.axis,
+      container = _ref.container,
+      element = _ref.element,
+      invertAxis = _ref.invertAxis,
+      secondary = _ref.secondary,
+      scrollContainer = _ref.scrollContainer,
+      spacing = _ref.spacing;
+  var style = window.getComputedStyle(element);
+  var parent = container.parentElement;
+  var scrollContainerCollisions = Object(detect_element_overflow__WEBPACK_IMPORTED_MODULE_3__["default"])(parent, scrollContainer);
+  var documentCollisions = Object(detect_element_overflow__WEBPACK_IMPORTED_MODULE_3__["default"])(parent, document.documentElement);
+  var isX = axis === 'x';
+  var startProperty = isX ? 'left' : 'top';
+  var endProperty = isX ? 'right' : 'bottom';
+  var sizeProperty = isX ? 'width' : 'height';
+  var overflowStartProperty = "overflow".concat(capitalize(startProperty));
+  var overflowEndProperty = "overflow".concat(capitalize(endProperty));
+  var scrollProperty = "scroll".concat(capitalize(startProperty));
+  var uppercasedSizeProperty = capitalize(sizeProperty);
+  var offsetSizeProperty = "offset".concat(uppercasedSizeProperty);
+  var clientSizeProperty = "client".concat(uppercasedSizeProperty);
+  var minSizeProperty = "min-".concat(sizeProperty);
+  var scrollbarWidth = scrollContainer[offsetSizeProperty] - scrollContainer[clientSizeProperty];
+  var startSpacing = _typeof(spacing) === 'object' ? spacing[startProperty] : spacing;
+  var availableStartSpace = -Math.max(scrollContainerCollisions[overflowStartProperty], documentCollisions[overflowStartProperty] + document.documentElement[scrollProperty]) - startSpacing;
+  var endSpacing = _typeof(spacing) === 'object' ? spacing[endProperty] : spacing;
+  var availableEndSpace = -Math.max(scrollContainerCollisions[overflowEndProperty], documentCollisions[overflowEndProperty] - document.documentElement[scrollProperty]) - endSpacing - scrollbarWidth;
+
+  if (secondary) {
+    availableStartSpace += parent[clientSizeProperty];
+    availableEndSpace += parent[clientSizeProperty];
+  }
+
+  var offsetSize = element[offsetSizeProperty];
+
+  function displayStart() {
+    element.style[startProperty] = 'unset';
+    element.style[endProperty] = secondary ? '0' : '100%';
+  }
+
+  function displayEnd() {
+    element.style[startProperty] = secondary ? '0' : '100%';
+    element.style[endProperty] = 'unset';
+  }
+
+  function displayIfFits(availableSpace, display) {
+    var fits = offsetSize <= availableSpace;
+
+    if (fits) {
+      display();
+    }
+
+    return fits;
+  }
+
+  function displayStartIfFits() {
+    return displayIfFits(availableStartSpace, displayStart);
+  }
+
+  function displayEndIfFits() {
+    return displayIfFits(availableEndSpace, displayEnd);
+  }
+
+  function displayWhereverShrinkedFits() {
+    var moreSpaceStart = availableStartSpace > availableEndSpace;
+    var minSize = style[minSizeProperty] && parseInt(style[minSizeProperty], 10);
+
+    function shrinkToSize(size) {
+      if (minSize && size < minSize) {
+        Object(_shared_utils__WEBPACK_IMPORTED_MODULE_4__["warnOnDev"])("<Fit />'s child will not fit anywhere with its current ".concat(minSizeProperty, " of ").concat(minSize, "px."));
+      }
+
+      var newSize = Math.max(size, minSize || 0);
+      Object(_shared_utils__WEBPACK_IMPORTED_MODULE_4__["warnOnDev"])("<Fit />'s child needed to have its ".concat(sizeProperty, " decreased to ").concat(newSize, "px."));
+      element.style[sizeProperty] = "".concat(newSize, "px");
+    }
+
+    if (moreSpaceStart) {
+      shrinkToSize(availableStartSpace);
+      displayStart();
+    } else {
+      shrinkToSize(availableEndSpace);
+      displayEnd();
+    }
+  }
+
+  var fits;
+
+  if (invertAxis) {
+    fits = displayStartIfFits() || displayEndIfFits();
+  } else {
+    fits = displayEndIfFits() || displayStartIfFits();
+  }
+
+  if (!fits) {
+    displayWhereverShrinkedFits();
+  }
+}
+
+function alignMainAxis(args) {
+  alignAxis(args);
+}
+
+function alignSecondaryAxis(args) {
+  alignAxis(_objectSpread(_objectSpread({}, args), {}, {
+    axis: args.axis === 'x' ? 'y' : 'x',
+    secondary: true
+  }));
+}
+
+function alignBothAxis(args) {
+  var invertAxis = args.invertAxis,
+      invertSecondaryAxis = args.invertSecondaryAxis,
+      commonArgs = _objectWithoutProperties(args, ["invertAxis", "invertSecondaryAxis"]);
+
+  alignMainAxis(_objectSpread(_objectSpread({}, commonArgs), {}, {
+    invertAxis: invertAxis
+  }));
+  alignSecondaryAxis(_objectSpread(_objectSpread({}, commonArgs), {}, {
+    invertAxis: invertSecondaryAxis
+  }));
+}
+
+var Fit = /*#__PURE__*/function (_Component) {
+  _inherits(Fit, _Component);
+
+  var _super = _createSuper(Fit);
+
+  function Fit() {
+    var _this;
+
+    _classCallCheck(this, Fit);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "onMutation", function () {
+      _this.fit();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "mutationObserver", isMutationObserverSupported && new MutationObserver(_this.onMutation));
+
+    _defineProperty(_assertThisInitialized(_this), "fit", function () {
+      var _assertThisInitialize = _assertThisInitialized(_this),
+          scrollContainer = _assertThisInitialize.scrollContainer,
+          container = _assertThisInitialize.container,
+          element = _assertThisInitialize.element;
+
+      if (!element) {
+        return;
+      }
+
+      var elementWidth = element.clientWidth;
+      var elementHeight = element.clientHeight; // No need to recalculate - already did that for current dimensions
+
+      if (_this.elementWidth === elementWidth && _this.elementHeight === elementHeight) {
+        return;
+      } // Save the dimensions so that we know we don't need to repeat the function if unchanged
+
+
+      _this.elementWidth = elementWidth;
+      _this.elementHeight = elementHeight;
+      var parent = container.parentElement; // Container was unmounted
+
+      if (!parent) {
+        return;
+      }
+      /**
+       * We need to ensure that <Fit />'s child has a absolute position. Otherwise,
+       * we wouldn't be able to place the child in the correct position.
+       */
+
+
+      var style = window.getComputedStyle(element);
+      var position = style.position;
+
+      if (position !== 'absolute') {
+        Object(_shared_utils__WEBPACK_IMPORTED_MODULE_4__["warnOnDev"])('<Fit />\'s child does not have absolute position. You should apply `position: absolute` to it.');
+        element.style.position = 'absolute';
+      }
+      /**
+       * We need to ensure that <Fit />'s parent has a relative position. Otherwise,
+       * we wouldn't be able to place the child in the correct position.
+       */
+
+
+      var parentStyle = window.getComputedStyle(parent);
+      var parentPosition = parentStyle.position;
+
+      if (parentPosition !== 'relative' && parentPosition !== 'absolute') {
+        Object(_shared_utils__WEBPACK_IMPORTED_MODULE_4__["warnOnDev"])('<Fit />\'s parent does not have relative position. You should apply `position: relative` to it.');
+        parent.style.position = 'relative';
+      }
+
+      var _this$props = _this.props,
+          invertAxis = _this$props.invertAxis,
+          invertSecondaryAxis = _this$props.invertSecondaryAxis,
+          mainAxis = _this$props.mainAxis,
+          spacing = _this$props.spacing;
+      alignBothAxis({
+        container: container,
+        element: element,
+        invertAxis: invertAxis,
+        invertSecondaryAxis: invertSecondaryAxis,
+        axis: mainAxis,
+        scrollContainer: scrollContainer,
+        spacing: spacing
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(Fit, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (!isDisplayContentsSupported) {
+        // eslint-disable-next-line react/no-find-dom-node
+        var element = Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["findDOMNode"])(this);
+        this.container = element;
+        this.element = element;
+        this.scrollContainer = findScrollContainer(element);
+      }
+
+      this.fit();
+
+      if (isMutationObserverSupported) {
+        this.mutationObserver.observe(this.element, {
+          attributes: true,
+          attributeFilter: ['class', 'style']
+        });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var children = this.props.children;
+      var child = react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.only(children);
+
+      if (isDisplayContentsSupported) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          ref: function ref(container) {
+            _this2.container = container;
+            var element = container && container.firstChild;
+            _this2.element = element;
+            _this2.scrollContainer = findScrollContainer(element);
+          },
+          style: {
+            display: 'contents'
+          }
+        }, child);
+      }
+
+      return child;
+    }
+  }]);
+
+  return Fit;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+Fit.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node,
+  invertAxis: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  invertSecondaryAxis: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  mainAxis: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOf(['x', 'y']),
+  spacing: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number, prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    bottom: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+    left: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+    right: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+    top: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired
+  })])
+};
+Fit.defaultProps = {
+  mainAxis: 'y',
+  spacing: 8
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-fit/dist/esm/shared/utils.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-fit/dist/esm/shared/utils.js ***!
+  \*********************************************************/
+/*! exports provided: isProduction, warnOnDev */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isProduction", function() { return isProduction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "warnOnDev", function() { return warnOnDev; });
+/**
+ * Checks whether we're running on a production build or not.
+ */
+var isProduction = "development" === 'production';
+
+var consoleOnDev = function consoleOnDev(method) {
+  if (!isProduction) {
+    var _console;
+
+    for (var _len = arguments.length, message = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      message[_key - 1] = arguments[_key];
+    }
+
+    // eslint-disable-next-line no-console
+    (_console = console)[method].apply(_console, message);
+  }
+};
+
+var warnOnDev = function warnOnDev() {
+  for (var _len2 = arguments.length, message = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    message[_key2] = arguments[_key2];
+  }
+
+  return consoleOnDev.apply(void 0, ['warn'].concat(message));
+};
+
+/***/ }),
+
 /***/ "./node_modules/react-input-autosize/lib/AutosizeInput.js":
 /*!****************************************************************!*\
   !*** ./node_modules/react-input-autosize/lib/AutosizeInput.js ***!
@@ -56030,6 +62709,597 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/update-input-width/dist/esm/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/update-input-width/dist/esm/index.js ***!
+  \***********************************************************/
+/*! exports provided: getFontShorthand, measureText, updateInputWidth, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFontShorthand", function() { return getFontShorthand; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "measureText", function() { return measureText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateInputWidth", function() { return updateInputWidth; });
+var allowedVariants = ['normal', 'small-caps'];
+/**
+ * Gets font CSS shorthand property given element.
+ *
+ * @param {HTMLElement} element Element to get font CSS shorthand property from
+ */
+
+function getFontShorthand(element) {
+  var style = window.getComputedStyle(element);
+
+  if (style.font) {
+    return style.font;
+  }
+
+  var isFontDefined = style['font-family'] !== '';
+
+  if (!isFontDefined) {
+    return '';
+  }
+
+  var fontVariant = allowedVariants.includes(style['font-variant']) ? style['font-variant'] : 'normal';
+  return "".concat(style['font-style'], " ").concat(fontVariant, " ").concat(style['font-weight'], " ").concat(style['font-size'], " / ").concat(style['line-height'], " ").concat(style['font-family']);
+}
+/**
+ * Measures text width given text and font CSS shorthand.
+ *
+ * @param {String} text Text to measure
+ * @param {String} font Font to use when measuring the text
+ */
+
+function measureText(text, font) {
+  var canvas = measureText.canvas || (measureText.canvas = document.createElement('canvas'));
+  var context = canvas.getContext('2d'); // Context type not supported
+
+  if (!context) {
+    return null;
+  }
+
+  context.font = font;
+
+  var _context$measureText = context.measureText(text),
+      width = _context$measureText.width;
+
+  return Math.ceil(width);
+}
+/**
+ * Updates input element width to fit its content given input element
+ * @param {HTMLInputElement} element
+ */
+
+function updateInputWidth(element) {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  var font = getFontShorthand(element);
+  var text = element.value || element.placeholder;
+  var width = measureText(text, font);
+
+  if (width === null) {
+    return null;
+  }
+
+  element.style.width = "".concat(width, "px");
+  return width;
+}
+/* harmony default export */ __webpack_exports__["default"] = (updateInputWidth);
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -56121,6 +63391,18 @@ var map = {
 	"./BoardRegistration/Edit.js": "./resources/js/Pages/BoardRegistration/Edit.js",
 	"./BoardRegistration/Index": "./resources/js/Pages/BoardRegistration/Index.js",
 	"./BoardRegistration/Index.js": "./resources/js/Pages/BoardRegistration/Index.js",
+	"./Client/Create": "./resources/js/Pages/Client/Create.js",
+	"./Client/Create.js": "./resources/js/Pages/Client/Create.js",
+	"./Client/Edit": "./resources/js/Pages/Client/Edit.js",
+	"./Client/Edit.js": "./resources/js/Pages/Client/Edit.js",
+	"./Client/Index": "./resources/js/Pages/Client/Index.js",
+	"./Client/Index.js": "./resources/js/Pages/Client/Index.js",
+	"./ClientPayment/Create": "./resources/js/Pages/ClientPayment/Create.js",
+	"./ClientPayment/Create.js": "./resources/js/Pages/ClientPayment/Create.js",
+	"./ClientPayment/Edit": "./resources/js/Pages/ClientPayment/Edit.js",
+	"./ClientPayment/Edit.js": "./resources/js/Pages/ClientPayment/Edit.js",
+	"./ClientPayment/Index": "./resources/js/Pages/ClientPayment/Index.js",
+	"./ClientPayment/Index.js": "./resources/js/Pages/ClientPayment/Index.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
 	"./Department/Create": "./resources/js/Pages/Department/Create.js",
@@ -56135,14 +63417,40 @@ var map = {
 	"./EducationCertificate/Edit.js": "./resources/js/Pages/EducationCertificate/Edit.js",
 	"./EducationCertificate/Index": "./resources/js/Pages/EducationCertificate/Index.js",
 	"./EducationCertificate/Index.js": "./resources/js/Pages/EducationCertificate/Index.js",
+	"./Expenditure/Create": "./resources/js/Pages/Expenditure/Create.js",
+	"./Expenditure/Create.js": "./resources/js/Pages/Expenditure/Create.js",
+	"./Expenditure/Edit": "./resources/js/Pages/Expenditure/Edit.js",
+	"./Expenditure/Edit.js": "./resources/js/Pages/Expenditure/Edit.js",
+	"./Expenditure/Index": "./resources/js/Pages/Expenditure/Index.js",
+	"./Expenditure/Index.js": "./resources/js/Pages/Expenditure/Index.js",
 	"./Install": "./resources/js/Pages/Install.js",
 	"./Install.js": "./resources/js/Pages/Install.js",
+	"./Loan/Create": "./resources/js/Pages/Loan/Create.js",
+	"./Loan/Create.js": "./resources/js/Pages/Loan/Create.js",
+	"./Loan/Edit": "./resources/js/Pages/Loan/Edit.js",
+	"./Loan/Edit.js": "./resources/js/Pages/Loan/Edit.js",
+	"./Loan/Index": "./resources/js/Pages/Loan/Index.js",
+	"./Loan/Index.js": "./resources/js/Pages/Loan/Index.js",
+	"./LoanRefund/Create": "./resources/js/Pages/LoanRefund/Create.js",
+	"./LoanRefund/Create.js": "./resources/js/Pages/LoanRefund/Create.js",
+	"./LoanRefund/Edit": "./resources/js/Pages/LoanRefund/Edit.js",
+	"./LoanRefund/Edit.js": "./resources/js/Pages/LoanRefund/Edit.js",
+	"./LoanRefund/Index": "./resources/js/Pages/LoanRefund/Index.js",
+	"./LoanRefund/Index.js": "./resources/js/Pages/LoanRefund/Index.js",
 	"./Organization/Create": "./resources/js/Pages/Organization/Create.js",
 	"./Organization/Create.js": "./resources/js/Pages/Organization/Create.js",
 	"./Organization/Edit": "./resources/js/Pages/Organization/Edit.js",
 	"./Organization/Edit.js": "./resources/js/Pages/Organization/Edit.js",
 	"./Organization/Index": "./resources/js/Pages/Organization/Index.js",
 	"./Organization/Index.js": "./resources/js/Pages/Organization/Index.js",
+	"./Project/Create": "./resources/js/Pages/Project/Create.js",
+	"./Project/Create.js": "./resources/js/Pages/Project/Create.js",
+	"./Project/Edit": "./resources/js/Pages/Project/Edit.js",
+	"./Project/Edit.js": "./resources/js/Pages/Project/Edit.js",
+	"./Project/Index": "./resources/js/Pages/Project/Index.js",
+	"./Project/Index.js": "./resources/js/Pages/Project/Index.js",
+	"./Project/Show": "./resources/js/Pages/Project/Show.js",
+	"./Project/Show.js": "./resources/js/Pages/Project/Show.js",
 	"./Section/Create": "./resources/js/Pages/Section/Create.js",
 	"./Section/Create.js": "./resources/js/Pages/Section/Create.js",
 	"./Section/Edit": "./resources/js/Pages/Section/Edit.js",
@@ -56160,7 +63468,9 @@ var map = {
 	"./User/Edit": "./resources/js/Pages/User/Edit.js",
 	"./User/Edit.js": "./resources/js/Pages/User/Edit.js",
 	"./User/Index": "./resources/js/Pages/User/Index.js",
-	"./User/Index.js": "./resources/js/Pages/User/Index.js"
+	"./User/Index.js": "./resources/js/Pages/User/Index.js",
+	"./User/Show": "./resources/js/Pages/User/Show.js",
+	"./User/Show.js": "./resources/js/Pages/User/Show.js"
 };
 
 
@@ -56641,12 +63951,6 @@ var Index = function Index() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
       boards = _usePage.boards;
 
-  function destroy(id) {
-    if (confirm('Are you sure you want to delete this Board?')) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"]["delete"](route('boardregistrations.destroy', id));
-    }
-  }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Organization Stracture"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -56683,12 +63987,891 @@ var Index = function Index() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-edit"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      onDelete: destroy(board.id),
-      className: "btn-circle mr-5 mb-5 js-tooltip-enabled",
+      message: "Are you sure you want to delete this Board?",
+      link: "boardregistrations.destroy",
+      id: board.id,
+      className: "btn-circle mr-5 mb-5"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-trash"
+    }))));
+  }))));
+};
+
+Index.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Client/Create.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Client/Create.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_FileInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/FileInput */ "./resources/js/Shared/FileInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    name: '',
+    address: '',
+    contact: '',
+    description: '',
+    fax: '',
+    website: '',
+    email: '',
+    image: ''
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleImage(file) {
+    var photo = '';
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      console.log('RESULT', reader.result);
+      setValues(function (values) {
+        return _objectSpread(_objectSpread({}, values), {}, {
+          image: reader.result
+        });
+      });
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].post(route('clients.store'), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Create Client"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Name",
+    name: "name",
+    type: "text",
+    errors: errors.name,
+    value: values.name,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Description",
+    name: "description",
+    type: "text",
+    errors: errors.description,
+    value: values.description,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Address",
+    name: "address",
+    type: "text",
+    errors: errors.address,
+    value: values.address,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Contact",
+    name: "contact",
+    type: "text",
+    errors: errors.contact,
+    value: values.contact,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Email",
+    name: "email",
+    type: "email",
+    errors: errors.email,
+    value: values.email,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Fax",
+    name: "fax",
+    type: "text",
+    errors: errors.fax,
+    value: values.fax,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Website",
+    name: "website",
+    type: "text",
+    errors: errors.website,
+    value: values.website,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_FileInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8 mb-4",
+    id: "client-image",
+    name: "image",
+    accept: "image/*",
+    type: "file",
+    errors: errors.image,
+    value: values.image,
+    label: "Client Image",
+    onChange: handleImage
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Create.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Create);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Client/Edit.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Client/Edit.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_FileInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/FileInput */ "./resources/js/Shared/FileInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Edit = function Edit() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      client = _usePage.client,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    name: client.name || '',
+    address: client.address || '',
+    contact: client.contact || '',
+    description: client.description || '',
+    fax: client.fax || '',
+    website: client.website || '',
+    email: client.email || '',
+    image: ''
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleImage(file) {
+    var photo = '';
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      console.log('RESULT', reader.result);
+      setValues(function (values) {
+        return _objectSpread(_objectSpread({}, values), {}, {
+          image: reader.result
+        });
+      });
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put(route('clients.update', client.id), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Create Client"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Name",
+    name: "name",
+    type: "text",
+    errors: errors.name,
+    value: values.name,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Description",
+    name: "description",
+    type: "text",
+    errors: errors.description,
+    value: values.description,
+    onChange: handleChange
+  }, values.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Address",
+    name: "address",
+    type: "text",
+    errors: errors.address,
+    value: values.address,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Contact",
+    name: "contact",
+    type: "text",
+    errors: errors.contact,
+    value: values.contact,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Email",
+    name: "email",
+    type: "email",
+    errors: errors.email,
+    value: values.email,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Fax",
+    name: "fax",
+    type: "text",
+    errors: errors.fax,
+    value: values.fax,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Client Website",
+    name: "website",
+    type: "text",
+    errors: errors.website,
+    value: values.website,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_FileInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8 mb-4",
+    id: "client-image",
+    name: "image",
+    accept: "image/*",
+    type: "file",
+    errors: errors.image,
+    value: values.image,
+    label: "Client Image",
+    onChange: handleImage
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Edit.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Edit);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Client/Index.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Client/Index.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      clients = _usePage.clients;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Clients List"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "col-md-12 mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: route('clients.create'),
+    className: "btn btn-alt-primary"
+  }, " Create Client")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-striped table-vcenter js-dataTable-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, " Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Address "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Contact "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Email "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }, "Acation"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, clients.map(function (client, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: client.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, client.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, client.address), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, client.contact), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, client.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('clients.edit', client.id),
+      className: "btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled",
       "data-toggle": "tooltip",
       "data-placement": "top",
-      "data-original-title": "Delete Board Registration",
-      title: "Delete Board Registration"
+      "data-original-title": "Edit Client",
+      title: "Edit Client"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Client?",
+      link: "clients.destroy",
+      id: client.id,
+      className: "btn-circle mr-5 mb-5"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-trash"
+    }))));
+  }))));
+};
+
+Index.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/ClientPayment/Create.js":
+/*!****************************************************!*\
+  !*** ./resources/js/Pages/ClientPayment/Create.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      project = _usePage.project,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    amount: '',
+    date_paid: '',
+    account_number: '',
+    receipt: '',
+    project_id: project.id
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        date_paid: value
+      });
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].post(route('client_payments.store'), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Create Client Payment"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Amount",
+    name: "amount",
+    type: "text",
+    errors: errors.amount,
+    value: values.amount,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Date Paid",
+    name: "date_paid",
+    type: "text",
+    errors: errors.date_paid,
+    value: values.date_paid,
+    onChange: handleDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Account Number",
+    name: "account_number",
+    type: "text",
+    errors: errors.account_number,
+    value: values.account_number,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Receipt",
+    name: "receipt",
+    type: "text",
+    errors: errors.receipt,
+    value: values.receipt,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Create.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Create);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/ClientPayment/Edit.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/ClientPayment/Edit.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+var Edit = function Edit() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      payment = _usePage.payment,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    amount: payment.amount || '',
+    date_paid: payment.date_paid || '',
+    account_number: payment.account_number || '',
+    receipt: payment.receipt || '',
+    project_id: payment.project_id
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        date_paid: value
+      });
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].post(route('client_payments.update', payment.id), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Edit Client Payment"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Amount",
+    name: "amount",
+    type: "text",
+    errors: errors.amount,
+    value: values.amount,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Date Paid",
+    name: "date_paid",
+    type: "text",
+    errors: errors.date_paid,
+    value: values.date_paid,
+    onChange: handleDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Account Number",
+    name: "account_number",
+    type: "text",
+    errors: errors.account_number,
+    value: values.account_number,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Receipt",
+    name: "receipt",
+    type: "text",
+    errors: errors.receipt,
+    value: values.receipt,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Edit.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Edit);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/ClientPayment/Index.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/ClientPayment/Index.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      payments = _usePage.payments;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Client Project Payment"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "col-md-12 mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: route('client_payments.create'),
+    className: "btn btn-alt-primary"
+  }, " Create Client Payment")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-striped table-vcenter js-dataTable-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Project Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Date "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Amount "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Account Number "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Receipt "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }, "Acation"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, payments.map(function (payment, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: payment.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, payment.project), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, payment.date_paid), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, payment.amount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, payment.account_number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, payment.receipt), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('client_payments.edit', payment.id),
+      className: "btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled",
+      "data-toggle": "tooltip",
+      "data-placement": "top",
+      "data-original-title": "Edit Client Payment",
+      title: "Edit Client Payment"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Client Payment?",
+      link: "client_payments.destroy",
+      id: payment.id,
+      className: "btn-circle mr-5 mb-5 "
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-trash"
     }))));
@@ -57019,12 +65202,6 @@ var Index = function Index() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
       departments = _usePage.departments;
 
-  function destroy(id) {
-    if (confirm('Are you sure you want to delete this Department?')) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"]["delete"](route('organizations.destroy', id));
-    }
-  }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Organization Stracture"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -57087,12 +65264,10 @@ var Index = function Index() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-edit"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      onDelete: destroy(department.id),
-      className: "btn-circle mr-5 mb-5 js-tooltip-enabled",
-      "data-toggle": "tooltip",
-      "data-placement": "top",
-      "data-original-title": "Delete Department",
-      title: "Delete Department"
+      message: "Are you sure you want to delete this Department?",
+      link: "departments.destroy",
+      id: department.id,
+      className: "btn-circle mr-5 mb-5"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-trash"
     }))));
@@ -57382,12 +65557,6 @@ var Index = function Index() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
       certificates = _usePage.certificates;
 
-  function destroy(id) {
-    if (confirm('Are you sure you want to delete this Certificate?')) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"]["delete"](route('educationcertificates.destroy', id));
-    }
-  }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Organization Stracture"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -57424,12 +65593,432 @@ var Index = function Index() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-edit"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      onDelete: destroy(certificate.id),
-      className: "btn-circle mr-5 mb-5 js-tooltip-enabled",
+      message: "Are you sure you want to delete this Certificate?",
+      link: "educationcertificates.destroy",
+      id: certificate.id,
+      className: "btn-circle mr-5 mb-5 "
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-trash"
+    }))));
+  }))));
+};
+
+Index.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Expenditure/Create.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/Expenditure/Create.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      project = _usePage.project,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    amount: '',
+    date_paid: '',
+    payment_voucher: '',
+    payee: '',
+    particular: '',
+    project_id: project.id
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        date_paid: value
+      });
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__["Inertia"].post(route('expenditures.store'), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    title: "Add Project Expanditure"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Amount",
+    name: "amount",
+    type: "text",
+    errors: errors.amount,
+    value: values.amount,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Date Paid",
+    name: "date_paid",
+    type: "text",
+    errors: errors.date_paid,
+    value: values.date_paid,
+    onChange: handleDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Payment Voucher",
+    name: "payment_voucher",
+    type: "text",
+    errors: errors.payment_voucher,
+    value: values.payment_voucher,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Payee",
+    name: "payee",
+    type: "text",
+    errors: errors.payee,
+    value: values.payee,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "col-md-8",
+    label: "Particular",
+    name: "particular",
+    type: "text",
+    errors: errors.particular,
+    value: values.particular,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Create.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Create);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Expenditure/Edit.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/Expenditure/Edit.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Edit = function Edit() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      expenditure = _usePage.expenditure,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    amount: expenditure.amount || '',
+    date_paid: expenditure.date_paid || '',
+    payment_voucher: expenditure.payment_voucher || '',
+    payee: expenditure.payee || '',
+    particular: expenditure.particular || '',
+    project_id: expenditure.project_id
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        date_paid: value
+      });
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__["Inertia"].put(route('expenditures.update', expenditure.id), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    title: "Edit Project Expenditure"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Amount",
+    name: "amount",
+    type: "text",
+    errors: errors.amount,
+    value: values.amount,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Date Paid",
+    name: "date_paid",
+    type: "text",
+    errors: errors.date_paid,
+    value: values.date_paid,
+    onChange: handleDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Payment Voucher",
+    name: "payment_voucher",
+    type: "text",
+    errors: errors.payment_voucher,
+    value: values.payment_voucher,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Payee",
+    name: "payee",
+    type: "text",
+    errors: errors.payee,
+    value: values.payee,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "col-md-8",
+    label: "Particular",
+    name: "particular",
+    type: "text",
+    errors: errors.particular,
+    value: values.particular,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Edit.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Edit);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Expenditure/Index.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/Expenditure/Index.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      expenditures = _usePage.expenditures;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Project Expenditure"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "col-md-12 mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: route('expenditures.create'),
+    className: "btn btn-alt-primary"
+  }, " Create Project Expenditure")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-striped table-vcenter js-dataTable-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Project Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Date "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Amount "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Payment Voucher "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Payee "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Particular "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }, "Acation"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, expenditures.map(function (expenditure, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: expenditure.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, expenditure.project), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, expenditure.date_paid), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, expenditure.amount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, expenditure.payment_voucher), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, expenditure.payee), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, expenditure.particular), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('expenditures.edit', expenditure.id),
+      className: "btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled",
       "data-toggle": "tooltip",
       "data-placement": "top",
-      "data-original-title": "Delete Certificate",
-      title: "Delete Certificate"
+      "data-original-title": "Edit Project expenditure",
+      title: "Edit Project expenditure"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Expenditure?",
+      link: "expenditures.destroy",
+      id: expenditure.id,
+      className: "btn-circle mr-5 mb-5"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-trash"
     }))));
@@ -57634,6 +66223,766 @@ function Install(_ref) {
     "class": "fa fa-repeat mr-10"
   }), " Reset"))))))))))));
 }
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Loan/Create.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Loan/Create.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      project = _usePage.project,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    amount: '',
+    description: '',
+    issued_date: '',
+    project_id: project.id
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        issued_date: value
+      });
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].post(route('loans.store'), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Create Project Loan"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Amount",
+    name: "amount",
+    type: "text",
+    errors: errors.amount,
+    value: values.amount,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Description",
+    name: "description",
+    type: "text",
+    errors: errors.description,
+    value: values.description,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Issued Date",
+    name: "issued_date",
+    type: "text",
+    errors: errors.issued_date,
+    value: values.issued_date,
+    onChange: handleDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Create.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Create);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Loan/Edit.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Loan/Edit.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Edit = function Edit() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      projects = _usePage.projects,
+      loan = _usePage.loan,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    amount: loan.amount || '',
+    description: loan.description || '',
+    issued_date: loan.issued_date || '',
+    project_id: loan.project_id || ''
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        issued_date: value
+      });
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].post(route('loans.update', loan.id), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Edit Project Loan"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Amount",
+    name: "amount",
+    type: "text",
+    errors: errors.amount,
+    value: values.amount,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Description",
+    name: "description",
+    type: "text",
+    errors: errors.description,
+    value: values.description,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Issued Date",
+    name: "issued_date",
+    type: "text",
+    errors: errors.issued_date,
+    value: values.issued_date,
+    onChange: handleDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Edit.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Edit);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Loan/Index.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Loan/Index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      loans = _usePage.loans;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Project Loans"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-striped table-vcenter js-dataTable-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Project Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Consultant Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Loan Amount"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Description "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Issued Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }, "Acation"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, loans.map(function (loan, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: loan.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, loan.project), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, loan.consaltants.map(function (consaltant) {
+      return consaltant.first_name + " " + consaltant.middle_name + " " + consaltant.last_name + " /";
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, loan.amount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, loan.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, loan.issued_date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('loan_refunds.create', loan.id),
+      className: "btn btn-circle btn-alt-info mr-5 mb-5 js-tooltip-enabled",
+      "data-toggle": "tooltip",
+      "data-placement": "top",
+      "data-original-title": "Add Project Loan Refund",
+      title: "Add Project Loan Refund"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-plus"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('loans.edit', loan.id),
+      className: "btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled",
+      "data-toggle": "tooltip",
+      "data-placement": "top",
+      "data-original-title": "Edit Project Loan",
+      title: "Edit Project Loan"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Loan?",
+      link: "loans.destroy",
+      id: loan.id,
+      className: "btn-circle mr-5 mb-5"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-trash"
+    }))));
+  }))));
+};
+
+Index.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/LoanRefund/Create.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/LoanRefund/Create.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      loan = _usePage.loan,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    amount: '',
+    description: '',
+    returned_date: '',
+    loan_id: loan.id
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        returned_date: value
+      });
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].post(route('loan_refunds.store'), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Create Project Loan Refund"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Amount",
+    name: "amount",
+    type: "text",
+    errors: errors.amount,
+    value: values.amount,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Description",
+    name: "description",
+    type: "text",
+    errors: errors.description,
+    value: values.description,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Returned Date",
+    name: "returned_date",
+    type: "text",
+    errors: errors.returned_date,
+    value: values.returned_date,
+    onChange: handleDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Create.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Create);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/LoanRefund/Edit.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/LoanRefund/Edit.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Edit = function Edit() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      loan = _usePage.loan,
+      refund = _usePage.refund,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    amount: refund.amount || '',
+    description: refund.description || '',
+    returned_date: refund.returned_date || '',
+    loan_id: loan.id || ''
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        returned_date: value
+      });
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].post(route('loan_refunds.update', refund.id), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Edit loan refund"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Amount",
+    name: "amount",
+    type: "text",
+    errors: errors.amount,
+    value: values.amount,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Description",
+    name: "description",
+    type: "text",
+    errors: errors.description,
+    value: values.description,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Returned Date",
+    name: "returned_date",
+    type: "text",
+    errors: errors.returned_date,
+    value: values.returned_date,
+    onChange: handleDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Edit.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Edit);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/LoanRefund/Index.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/LoanRefund/Index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      refunds = _usePage.refunds;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Project refunds"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "col-md-12 mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: route('loan_refunds.create'),
+    className: "btn btn-alt-primary"
+  }, " Create Project refund")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-striped table-vcenter js-dataTable-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Project Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Consultant Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Loan Refund Amount"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Description "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Returned Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }, "Acation"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, refunds.map(function (refund, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: refund.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, refund.project), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, refund.consultant), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, refund.amount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, board.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, refund.returned_date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('laon_refunds.edit', refund.id),
+      className: "btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled",
+      "data-toggle": "tooltip",
+      "data-placement": "top",
+      "data-original-title": "Edit Project refund",
+      title: "Edit Project refund"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Loan Refund?",
+      link: "loan_refunds.destroy",
+      id: refund.id,
+      className: "btn-circle mr-5 mb-5"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-trash"
+    }))));
+  }))));
+};
+
+Index.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -58100,6 +67449,869 @@ Index.layout = function (page) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Project/Create.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/Project/Create.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_SelectInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/SelectInput */ "./resources/js/Shared/SelectInput.js");
+/* harmony import */ var _Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Shared/MultiSelectInput */ "./resources/js/Shared/MultiSelectInput.js");
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      users = _usePage.users,
+      departments = _usePage.departments,
+      clients = _usePage.clients,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    name: '',
+    description: '',
+    contract_sum_vat_exclusive: 0,
+    contract_sum_vat_inclusive: 0,
+    client_id: '',
+    department_id: '',
+    userdetail_id: '',
+    start_date: '',
+    end_date: ''
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleStartDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        start_date: value
+      });
+    });
+  }
+
+  function handleEndDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        end_date: value
+      });
+    });
+  }
+
+  function handleVAT(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+
+    if (key === 'contract_sum_vat_exclusive') {
+      setValues(function (values) {
+        return _objectSpread(_objectSpread({}, values), {}, {
+          contract_sum_vat_exclusive: parseInt(value),
+          contract_sum_vat_inclusive: parseInt(value) + parseInt(value) * 0.18
+        });
+      });
+    }
+
+    if (key === 'contract_sum_vat_inclusive') {
+      setValues(function (values) {
+        return _objectSpread(_objectSpread({}, values), {}, {
+          contract_sum_vat_inclusive: parseInt(value),
+          contract_sum_vat_exclusive: parseInt(value) - parseInt(value) * 0.18
+        });
+      });
+    }
+  }
+
+  function handleMultiSelectChange(newValue, actionMeta) {
+    var key = actionMeta.name;
+    var value = newValue;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].post(route('projects.store'), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Create Project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Project (Contract) Name",
+    name: "name",
+    type: "text",
+    errors: errors.name,
+    value: values.name,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Description",
+    name: "description",
+    type: "text",
+    errors: errors.description,
+    value: values.description,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Contract Sum VAT Exclusive",
+    name: "contract_sum_vat_exclusive",
+    type: "text",
+    errors: errors.contract_sum_vat_exclusive,
+    value: values.contract_sum_vat_exclusive,
+    onChange: handleVAT
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Contract Sum VAT Inclusive",
+    name: "contract_sum_vat_inclusive",
+    type: "text",
+    errors: errors.contract_sum_vat_inclusive,
+    value: values.contract_sum_vat_inclusive,
+    onChange: handleVAT
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Client",
+    name: "client_id",
+    type: "text",
+    errors: errors.client_id,
+    value: values.client_id,
+    onChange: handleChange
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    selected: true
+  }, "Select Client"), clients.map(function (client) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: client.id
+    }, client.name);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: "col-md-8",
+    label: "Department",
+    name: "department_id",
+    options: departments,
+    errors: errors.department_id,
+    value: values.department_id,
+    onChange: handleMultiSelectChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: "col-md-8",
+    label: "Consaltant",
+    name: "userdetail_id",
+    options: users,
+    errors: errors.userdetail_id,
+    value: values.userdetail_id,
+    onChange: handleMultiSelectChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "col-md-8",
+    label: "Start Date",
+    name: "start_date",
+    type: "text",
+    errors: errors.start_date,
+    value: values.start_date,
+    onChange: handleStartDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "col-md-8",
+    label: "End Date",
+    name: "end_date",
+    type: "text",
+    errors: errors.end_date,
+    value: values.end_date,
+    onChange: handleEndDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Create.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Create);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Project/Edit.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Project/Edit.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/TextInput */ "./resources/js/Shared/TextInput.js");
+/* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Shared/TextAreaInput */ "./resources/js/Shared/TextAreaInput.js");
+/* harmony import */ var _Shared_SelectInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Shared/SelectInput */ "./resources/js/Shared/SelectInput.js");
+/* harmony import */ var _Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Shared/MultiSelectInput */ "./resources/js/Shared/MultiSelectInput.js");
+/* harmony import */ var _Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/Shared/DatePeakerInput */ "./resources/js/Shared/DatePeakerInput.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Edit = function Edit() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
+      project = _usePage.project,
+      users = _usePage.users,
+      departments = _usePage.departments,
+      clients = _usePage.clients,
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      sending = _useState2[0],
+      setSending = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    name: project.name || '',
+    description: project.description || '',
+    contract_sum_vat_exclusive: project.contract_sum_vat_exclusive || '',
+    contract_sum_vat_inclusive: project.contract_sum_vat_inclusive || '',
+    client_id: project.client_id || '',
+    department_id: project.department_id || '',
+    userdetail_id: project.userdetail_id || '',
+    start_date: project.start_date || '',
+    end_date: project.end_date || ''
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      values = _useState4[0],
+      setValues = _useState4[1];
+
+  function handleChange(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleStartDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        start_date: value
+      });
+    });
+  }
+
+  function handleEndDateChange(value) {
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        end_date: value
+      });
+    });
+  }
+
+  function handleVAT(e) {
+    var key = e.target.name;
+    var value = e.target.value;
+
+    if (key === 'contract_sum_vat_exclusive') {
+      setValues(function (values) {
+        return _objectSpread(_objectSpread({}, values), {}, {
+          contract_sum_vat_exclusive: parseInt(value),
+          contract_sum_vat_inclusive: parseInt(value) + parseInt(value) * 0.18
+        });
+      });
+    }
+
+    if (key === 'contract_sum_vat_inclusive') {
+      setValues(function (values) {
+        return _objectSpread(_objectSpread({}, values), {}, {
+          contract_sum_vat_inclusive: parseInt(value),
+          contract_sum_vat_exclusive: parseInt(value) - parseInt(value) * 0.18
+        });
+      });
+    }
+  }
+
+  function handleMultiSelectChange(newValue, actionMeta) {
+    var key = actionMeta.name;
+    var value = newValue;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSending(true);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__["Inertia"].put(route('projects.update', project.id), values).then(function () {
+      setSending(false);
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Edit Project"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Project (Contract) Name",
+    name: "name",
+    type: "text",
+    errors: errors.name,
+    value: values.name,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextAreaInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Description",
+    name: "description",
+    type: "text",
+    errors: errors.description,
+    value: values.description,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Contract Sum VAT Exclusive",
+    name: "contract_sum_vat_exclusive",
+    type: "text",
+    errors: errors.contract_sum_vat_exclusive,
+    value: values.contract_sum_vat_exclusive,
+    onChange: handleVAT
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "col-md-8",
+    label: "Contract Sum VAT Inclusive",
+    name: "contract_sum_vat_inclusive",
+    type: "text",
+    errors: errors.contract_sum_vat_inclusive,
+    value: values.contract_sum_vat_inclusive,
+    onChange: handleVAT
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Client",
+    name: "client_id",
+    type: "text",
+    errors: errors.client_id,
+    value: values.client_id,
+    onChange: handleChange
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    selected: true
+  }, "Select Client"), clients.map(function (client) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: client.id
+    }, client.name);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: "col-md-8",
+    label: "Department",
+    name: "department_id",
+    options: departments,
+    errors: errors.department_id,
+    value: values.department_id,
+    onChange: handleMultiSelectChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: "col-md-8",
+    label: "Consaltant",
+    name: "userdetail_id",
+    options: users,
+    errors: errors.userdetail_id,
+    value: values.userdetail_id,
+    onChange: handleMultiSelectChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "col-md-8",
+    label: "Start Date",
+    name: "start_date",
+    type: "text",
+    errors: errors.start_date,
+    value: values.start_date,
+    onChange: handleStartDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DatePeakerInput__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "col-md-8",
+    label: "End Date",
+    name: "end_date",
+    type: "text",
+    errors: errors.end_date,
+    value: values.end_date,
+    onChange: handleEndDateChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "form-group pl-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    type: "submit",
+    loading: sending,
+    className: "btn btn-alt-primary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "si si-login mr-10"
+  }), " Save Changes"))));
+};
+
+Edit.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Edit);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Project/Index.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Project/Index.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      projects = _usePage.projects;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Project List"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "col-md-12 mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: route('projects.create'),
+    className: "btn btn-alt-primary"
+  }, " Create Project (Contract)")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-striped table-vcenter js-dataTable-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Project (Contract) Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "d-none d-sm-table-cell"
+  }, "Constract Sum (VAT Inclusive) "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Remarks"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center"
+  }, "Acation"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, projects.map(function (project, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: project.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, project.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "font-w600"
+    }, project.contract_sum_vat_inclusive), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "d-none d-sm-table-cell"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: "badge badge-pill badge-primary"
+    }, project.remarks)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('projects.show', project.id),
+      className: "btn btn-circle btn-alt-success mr-5 mb-5 js-tooltip-enabled",
+      "data-toggle": "tooltip",
+      "data-placement": "top",
+      "data-original-title": "Show Project",
+      title: "Show Project"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-eye"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('projects.edit', project.id),
+      className: "btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled",
+      "data-toggle": "tooltip",
+      "data-placement": "top",
+      "data-original-title": "Edit Project",
+      title: "Edit Project"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Project (Contract)?",
+      link: "projects.destroy",
+      id: project.id,
+      className: "btn-circle mr-5 mb-5"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-trash"
+    }))));
+  }))));
+};
+
+Index.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Project/Show.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Project/Show.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Shared_DropdownMenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Shared/DropdownMenuItem */ "./resources/js/Shared/DropdownMenuItem.js");
+
+
+
+
+
+
+
+
+
+var Show = function Show() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      project = _usePage.project,
+      expenditures = _usePage.expenditures,
+      client_payments = _usePage.client_payments,
+      organization = _usePage.organization,
+      client = _usePage.client,
+      project_summary = _usePage.project_summary;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Project List"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "col-md-12 mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: route('expenditures.create', project.id),
+    className: "btn btn-alt-primary mr-3"
+  }, " Add Expenditure"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: route('client_payments.create', project.id),
+    className: "btn btn-alt-success mr-3"
+  }, " Add client Payment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+    href: route('loans.create', project.id),
+    className: "btn btn-alt-warning mr-3"
+  }, " Add Loan")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "block-header block-header-default"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+    className: "block-title"
+  }, project.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "block-options"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    className: "si si-printer"
+  }), " Print Project Summary"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option",
+    "data-toggle": "block-option",
+    "data-action": "fullscreen_toggle"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    className: "si si-size-fullscreen"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option",
+    "data-toggle": "block-option",
+    "data-action": "state_toggle",
+    "data-action-mode": "demo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    className: "si si-refresh"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "block-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "row my-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "col-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "h3"
+  }, organization.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("address", null, organization.address, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), organization.contact, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), organization.fax, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), organization.email, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), organization.website)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "col-6 text-right"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "h3"
+  }, client.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("address", null, client.address, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), client.contact, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), client.fax, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), client.email, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), client.website))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "table-responsive push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "h4 text-center"
+  }, "Instaldment Payments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-hover"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center",
+    style: {
+      width: "60px"
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Accont Number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center",
+    style: {
+      width: "90px"
+    }
+  }, "Receipt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-right",
+    style: {
+      width: "120px"
+    }
+  }, "Date Paid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-right",
+    style: {
+      width: "120px"
+    }
+  }, "Amount"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, !client_payments ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colSpan: "5",
+    className: "text-center"
+  }, "No Data available")) : client_payments.map(function (payment, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: index
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DropdownMenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      icon: "fa fa-pencil"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('client_payments.edit', payment.id),
+      className: "dropdown-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    }), " Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Client Payment?",
+      link: "client_payments.destroy",
+      id: payment.id,
+      className: "dropdown-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-trash"
+    }), " Delete"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: "font-w600 mb-5"
+    }, payment.account_number)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, payment.receipt), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-right"
+    }, payment.date_paid), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-right"
+    }, payment.amount, " Tsh"));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+    className: "table-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colspan: "4",
+    className: "font-w600 text-right"
+  }, "Subtotal"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    className: "text-right"
+  }, client_payments.map(function (item) {
+    return item.amount;
+  }).reduce(function (prev, next) {
+    return prev + next;
+  }), " Tsh"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "table-responsive push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "h4 text-center"
+  }, "Detailed Expenditures"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-hover"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center",
+    style: {
+      width: "60px"
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Payee"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center",
+    style: {
+      width: "120px"
+    }
+  }, "Payment Voucher"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-left"
+  }, "Particular"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-right",
+    style: {
+      width: "120px"
+    }
+  }, "Date Paid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-right",
+    style: {
+      width: "120px"
+    }
+  }, "Amount"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, !expenditures ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colSpan: "6",
+    className: "text-center"
+  }, "No Data available")) : expenditures.map(function (payment, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: index
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DropdownMenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      icon: "fa fa-pencil"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('expenditures.edit', payment.id),
+      className: "dropdown-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    }), " Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Expenditure?",
+      link: "expenditures.destroy",
+      id: payment.id,
+      className: "dropdown-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-trash"
+    }), " Delete"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: "font-w600 mb-5"
+    }, payment.payee)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, payment.payment_voucher), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-left"
+    }, payment.particular), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-right"
+    }, payment.date_paid), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-right"
+    }, payment.amount, " Tsh"));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+    className: "table-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colspan: "5",
+    className: "font-w600 text-right"
+  }, "Subtotal"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    className: "text-right"
+  }, expenditures.map(function (item) {
+    return item.amount;
+  }).reduce(function (prev, next) {
+    return prev + next;
+  }), " Tsh"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "table-responsive push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "h4 text-center"
+  }, "Institute Income Summary"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-hover"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center",
+    style: {
+      width: "60px"
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-left"
+  }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-right"
+  }, "Amount"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, !project_summary ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colspan: "3",
+    className: "font-w600 text-center"
+  }, "No Data available")) : project_summary.map(function (summary, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: index + 1
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, index + 1), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-left"
+    }, summary.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-right"
+    }, summary.amount, " Tsh"));
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    className: "text-muted text-center"
+  }, "Thank you very much for doing business with us. We look forward to working with you again!"))));
+};
+
+Show.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Show);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Section/Create.js":
 /*!**********************************************!*\
   !*** ./resources/js/Pages/Section/Create.js ***!
@@ -58353,12 +68565,6 @@ var Index = function Index() {
       department = _usePage.department,
       sections = _usePage.sections;
 
-  function destroy(id) {
-    if (confirm('Are you sure you want to delete this Section?')) {
-      Inertia["delete"](route('sections.destroy', id));
-    }
-  }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Organization Stracture"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -58417,12 +68623,10 @@ var Index = function Index() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-edit"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      onDelete: destroy(section.id),
-      className: "btn-circle mr-5 mb-5 js-tooltip-enabled",
-      "data-toggle": "tooltip",
-      "data-placement": "top",
-      "data-original-title": "Delete Section",
-      title: "Delete Section"
+      message: "Are you sure you want to delete this Section?",
+      link: "sections.destroy",
+      id: section.id,
+      className: "btn-circle mr-5 mb-5 "
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-trash"
     }))));
@@ -58692,12 +68896,6 @@ var Index = function Index(id) {
       units = _usePage.units,
       section = _usePage.section;
 
-  function destroy() {
-    if (confirm('Are you sure you want to delete this Unit?')) {
-      Inertia["delete"](route('units.destroy', id));
-    }
-  }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Organization Stracture"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -58738,12 +68936,10 @@ var Index = function Index(id) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-edit"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      onDelete: destroy(unit.id),
-      className: "btn-circle mr-5 mb-5 js-tooltip-enabled",
-      "data-toggle": "tooltip",
-      "data-placement": "top",
-      "data-original-title": "Delete Unit",
-      title: "Delete Unit"
+      message: "Are you sure you want to delete this Unit?",
+      link: "units.destroy",
+      id: unit.id,
+      className: "btn-circle mr-5 mb-5"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-trash"
     }))));
@@ -59255,12 +69451,6 @@ var Index = function Index() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
       user_details = _usePage.user_details;
 
-  function destroy(id) {
-    if (confirm('Are you sure you want to delete this Unit?')) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"]["delete"](route('userdetails.destroy', id));
-    }
-  }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Organization Stracture"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -59314,12 +69504,10 @@ var Index = function Index() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-edit"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      onDelete: destroy(user.id),
-      className: "btn-circle mr-5 mb-5 js-tooltip-enabled",
-      "data-toggle": "tooltip",
-      "data-placement": "top",
-      "data-original-title": "Delete Unit",
-      title: "Delete Unit"
+      message: "Are you sure you want to delete this Constaltant?",
+      link: "userdetails.destroy",
+      id: user.id,
+      className: "btn-circle mr-5 mb-5 "
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
       className: "fa fa-trash"
     }))));
@@ -59333,6 +69521,144 @@ Index.layout = function (page) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/User/Show.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/User/Show.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      user_details = _usePage.user_details;
+
+  function destroy(id) {
+    if (confirm('Are you sure you want to delete this Unit?')) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"]["delete"](route('userdetails.destroy', id));
+    }
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
+    id: "main-container",
+    style: "min-height: 309.5px;"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "bg-image bg-image-bottom",
+    style: "background-image: url('assets/media/photos/photo13@2x.jpg');"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "bg-primary-dark-op py-30"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "content content-full text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "mb-15"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    "class": "img-link",
+    href: "be_pages_generic_profile.html"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    "class": "img-avatar img-avatar96 img-avatar-thumb",
+    src: "assets/media/avatars/avatar15.jpg",
+    alt: ""
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+    "class": "h3 text-white font-w700 mb-10"
+  }, "John Smith"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+    "class": "h5 text-white-op"
+  }, "Product Manager ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    "class": "text-primary-light",
+    href: "javascript:void(0)"
+  }, "@GraphicXspace")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    type: "button",
+    "class": "btn btn-rounded btn-hero btn-sm btn-alt-success mb-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-plus mr-5"
+  }), " Add Friend"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    type: "button",
+    "class": "btn btn-rounded btn-hero btn-sm btn-alt-primary mb-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-envelope-o mr-5"
+  }), " Message"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    "class": "btn btn-rounded btn-hero btn-sm btn-alt-secondary mb-5 px-20",
+    href: "be_pages_generic_profile_edit.html"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-pencil"
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+    "class": "content-heading"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    type: "button",
+    "class": "btn btn-sm btn-rounded btn-alt-secondary float-right"
+  }, "View More.."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "si si-briefcase mr-5"
+  }), " Projects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "row items-push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "col-md-6 col-xl-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "block block-rounded ribbon ribbon-modern ribbon-primary text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "ribbon-box"
+  }, "$2500"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "block-content block-content-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "item item-circle bg-danger text-danger-light mx-auto my-20"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-globe"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "text-warning"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-fw fa-star"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-fw fa-star"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-fw fa-star"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-fw fa-star"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-fw fa-star"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "block-content block-content-full block-content-sm bg-body-light"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "font-w600 mb-5"
+  }, "Website Design"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "font-size-sm text-muted"
+  }, "https://example.com")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    "class": "block-content block-content-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    "class": "btn btn-rounded btn-alt-secondary",
+    href: "javascript:void(0)"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+    "class": "fa fa-briefcase mr-5"
+  }), "View Project")))))));
+};
+
+Show.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Show);
 
 /***/ }),
 
@@ -59444,6 +69770,82 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /***/ }),
 
+/***/ "./resources/js/Shared/DatePeakerInput.js":
+/*!************************************************!*\
+  !*** ./resources/js/Shared/DatePeakerInput.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_date_picker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-date-picker */ "./node_modules/react-date-picker/dist/entry.js");
+/* harmony import */ var react_date_picker__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_date_picker__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Icon */ "./resources/js/Shared/Icon.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var label = _ref.label,
+      name = _ref.name,
+      className = _ref.className,
+      _ref$errors = _ref.errors,
+      errors = _ref$errors === void 0 ? [] : _ref$errors,
+      onChange = _ref.onChange,
+      props = _objectWithoutProperties(_ref, ["label", "name", "className", "errors", "onChange"]);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(new Date()),
+      _useState2 = _slicedToArray(_useState, 2),
+      startDate = _useState2[0],
+      setStartDate = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group ".concat(className, " ").concat(errors.length ? 'is-invalid' : '')
+  }, label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: name
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_date_picker__WEBPACK_IMPORTED_MODULE_1___default.a, _extends({
+    onChange: onChange,
+    id: name,
+    name: name
+  }, props, {
+    format: "dd-MM-yyyy",
+    calendarIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      className: "si si-calendar"
+    }),
+    clearIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      className: "si si-close"
+    }),
+    className: "form-input js-datepicker  js-datepicker-enabled form-control ".concat(errors.length ? 'error' : ''),
+    "aria-invalid": errors.length ? 'true' : '',
+    "aria-describedby": errors.length ? name + '-error' : ''
+  })), errors && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: name + '-error',
+    className: "invalid-feedback animated fadeInDown"
+  }, errors[0]));
+});
+
+/***/ }),
+
 /***/ "./resources/js/Shared/DeleteButton.js":
 /*!*********************************************!*\
   !*** ./resources/js/Shared/DeleteButton.js ***!
@@ -59455,17 +69857,147 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _DeleteModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DeleteModel */ "./resources/js/Shared/DeleteModel.js");
+
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var onDelete = _ref.onDelete,
-      children = _ref.children,
-      className = _ref.className;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  var children = _ref.children,
+      className = _ref.className,
+      message = _ref.message,
+      link = _ref.link,
+      id = _ref.id;
+  var hash = Math.random().toString(36).slice(2, 20);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-alt-danger ".concat(className),
     tabIndex: "-1",
     type: "button",
-    onClick: onDelete
-  }, children);
+    "data-toggle": "modal",
+    "data-target": "#modal-delete-".concat(id, "-").concat(hash)
+  }, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DeleteModel__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    message: message,
+    link: link,
+    id: id,
+    hash: hash
+  }));
+});
+
+/***/ }),
+
+/***/ "./resources/js/Shared/DeleteModel.js":
+/*!********************************************!*\
+  !*** ./resources/js/Shared/DeleteModel.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var message = _ref.message,
+      link = _ref.link,
+      id = _ref.id,
+      hash = _ref.hash;
+
+  function handleDelete(e) {
+    e.preventDefault();
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"]["delete"](route(link, id));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal",
+    id: "modal-delete-".concat(id, "-").concat(hash),
+    tabindex: "-1",
+    style: {
+      zIndex: 999
+    },
+    role: "dialog",
+    "aria-labelledby": "modal-delete-".concat(id, "-").concat(hash),
+    "aria-hidden": "true"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal-dialog modal-sm",
+    role: "document"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block block-themed block-transparent mb-0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-header bg-primary-danger"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "block-title"
+  }, "Delete Action"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-options"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option",
+    "data-dismiss": "modal",
+    "aria-label": "Close"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-close"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, message))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal-footer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn btn-alt-secondary",
+    "data-dismiss": "modal"
+  }, "Close"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn btn-alt-danger",
+    onClick: handleDelete,
+    "data-dismiss": "modal"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-check"
+  }), " Delete")))));
+});
+
+/***/ }),
+
+/***/ "./resources/js/Shared/DropdownMenuItem.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Shared/DropdownMenuItem.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Shared/Icon */ "./resources/js/Shared/Icon.js");
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var icon = _ref.icon,
+      children = _ref.children;
+  var isActive = false;
+
+  function handleOnClick(e) {
+    e.preventDefault();
+    isActive = !isActive; // console.log(isActive)
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn",
+    "data-toggle": "dropdown",
+    "aria-haspopup": "true",
+    onClick: handleOnClick,
+    "aria-expanded": isActive ? "true" : "false"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: icon
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "dropdown-menu"
+  }, children));
 });
 
 /***/ }),
@@ -60567,6 +71099,22 @@ __webpack_require__.r(__webpack_exports__);
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     text: "Education Cetificates",
     link: "educationcertificates.index",
+    icon: ""
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiLinkMainMenuItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    text: "Project Managment",
+    link: "projects.index",
+    icon: "si si-folder-alt"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    text: "Clients",
+    link: "clients.index",
+    icon: ""
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    text: "Projects",
+    link: "projects.index",
+    icon: ""
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    text: "Loans",
+    link: "loans.index",
     icon: ""
   }))));
 });

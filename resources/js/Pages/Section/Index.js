@@ -8,11 +8,6 @@ import DeleteButton from '../../Shared/DeleteButton';
 const Index = () => {
     const { department, sections } = usePage();
 
-    function destroy(id) {
-        if (confirm('Are you sure you want to delete this Section?')) {
-          Inertia.delete(route('sections.destroy', id));
-        }
-      }
 
     return (
     <BlockCard title="Organization Stracture">
@@ -48,7 +43,11 @@ const Index = () => {
                         <InertiaLink href={route('sections.edit',[department.id , section.id])} className="btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="Edit Section" title="Edit Section">
                             <i className="fa fa-edit"></i>
                         </InertiaLink>
-                        <DeleteButton onDelete={destroy(section.id)} className="btn-circle mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="Delete Section" title="Delete Section">
+                        <DeleteButton 
+                        message="Are you sure you want to delete this Section?" 
+                        link="sections.destroy"
+                        id={section.id}  
+                        className="btn-circle mr-5 mb-5 ">
                             <i className="fa fa-trash"></i>
                         </DeleteButton>
                         </td>

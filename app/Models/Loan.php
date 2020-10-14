@@ -11,6 +11,10 @@ class Loan extends Model
 
     protected $guarded = [];
 
+    protected $dates = [
+        'issued_date'
+    ];
+
     public function loan_refunds()
     {
         return $this->hasMany(LoanRefund::class);

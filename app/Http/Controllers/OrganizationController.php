@@ -123,10 +123,15 @@ class OrganizationController extends Controller
 
         if(!is_null($request['image'])){
 
-            $organization->addMediaFromBase64($request['image'])->toMediaCollection();
+            list($type, $request['image']) = explode(';', $request['image']);
+            list(, $request['image']) = explode(',', $request['image']);
+            list(,$type) = explode(':', $type);
+            list(, $extension) = explode('/', $type);
+
+            $organization->addMediaFromBase64($request['image'])->usingFileName(rand(100,999).$organization->name."." .$extension)->toMediaCollection();
         }
         
-        return Redirect::route('organizations.index')->with('success', 'Organization Updated.');
+        return Redirect::route('clients.index')->with('success', 'Organization Updated.');
     }
 
     /**
@@ -137,6 +142,8 @@ class OrganizationController extends Controller
      */
     public function destroy(Organization $organization)
     {
-        //
+        $organization->delete(); 
+    
+        return Redirect::route('organizations.index')->with(['success' => 'Organization Deleted Successful']);
     }
 }

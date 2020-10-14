@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Loan;
+use Inertia\Inertia;
 use App\Models\LoanRefund;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class LoanRefundController extends Controller
 {
@@ -22,9 +25,9 @@ class LoanRefundController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Loan $loan)
     {
-        //
+        return Inertia::render('LoanRefund/Create', ['loan'=> $loan]);
     }
 
     /**
@@ -35,7 +38,21 @@ class LoanRefundController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'amount' => ['required'],
+            'returned_date' => ['required'],
+            'description' => ['required'],
+            'loan_id' => ['required', 'exists:loans,id']
+        ]);
+
+        $loan = LoanRefund::create([
+            'amount' => $request['amount'],
+            'returned_date' => date('Y-m-d H:i:s',strtotime($request['returned_date'])),
+            'description' => $request['description'],
+            'loan_id' => $request['loan_id']
+        ]);
+
+        return Redirect::route('laon.show',['loan'=>$request['loan_id']])->with('success', 'Loan Refund Created');
     }
 
     /**
@@ -55,9 +72,9 @@ class LoanRefundController extends Controller
      * @param  \App\Models\LoanRefund  $loanRefund
      * @return \Illuminate\Http\Response
      */
-    public function edit(LoanRefund $loanRefund)
+    public function edit(LoanRefund $loan_refund)
     {
-        //
+        return Inertia::render('LoanRefund/Edit', ['refund'=> $loan_refund]);
     }
 
     /**
@@ -67,9 +84,23 @@ class LoanRefundController extends Controller
      * @param  \App\Models\LoanRefund  $loanRefund
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LoanRefund $loanRefund)
+    public function update(Request $request, LoanRefund $loan_refund)
     {
-        //
+        $request->validate([
+            'amount' => ['required'],
+            'returned_date' => ['required'],
+            'description' => ['required'],
+            'loan_id' => ['required', 'exists:loans,id']
+        ]);
+
+        $loan_refund->update([
+            'amount' => $request['amount'],
+            'returned_date' => date('Y-m-d H:i:s',strtotime($request['returned_date'])),
+            'description' => $request['description'],
+            'loan_id' => $request['loan_id']
+        ]);
+
+        return Redirect::route('laon.show',['loan'=> $request['loan_id']])->with('success', 'Loan Refund Updated');
     }
 
     /**
@@ -78,8 +109,10 @@ class LoanRefundController extends Controller
      * @param  \App\Models\LoanRefund  $loanRefund
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LoanRefund $loanRefund)
+    public function destroy(LoanRefund $loan_refund)
     {
-        //
+        $loan_refund->delete(); 
+    
+        return Redirect::back()->with(['success' => 'Loan Refund Deleted Successful']);
     }
 }

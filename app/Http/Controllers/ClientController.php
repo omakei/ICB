@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ClientController extends Controller
 {
@@ -14,7 +16,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Client/Index', ['clients' => Client::all()]);
     }
 
     /**
@@ -24,7 +26,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Client/Create');
     }
 
     /**
@@ -35,7 +37,38 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'String'],
+            'address' => ['required'],
+            'contact' => ['required'],
+            'email' => ['required'],
+            'website' => ['required'],
+            'fax' => ['required'],
+            'image' => ['required']
+        ]);
+
+        // dd($request);
+
+        $client = Client::create([
+            'name' => $request['name'],
+            'address' => $request['address'],
+            'contact' => $request['contact'],
+            'email' => $request['email'],
+            'website' => $request['website'],
+            'fax' => $request['fax'],
+        ]);
+
+        if(!is_null($request['image'])){
+
+            list($type, $request['image']) = explode(';', $request['image']);
+            list(, $request['image']) = explode(',', $request['image']);
+            list(,$type) = explode(':', $type);
+            list(, $extension) = explode('/', $type);
+
+            $client->addMediaFromBase64($request['image'])->usingFileName(rand(100,999).$client->name."." .$extension)->toMediaCollection();
+        }
+        
+        return Redirect::route('clients.index')->with('success', 'Client created.');
     }
 
     /**
@@ -57,7 +90,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return Inertia::render('Client/Edit', ['client' => $client]);
     }
 
     /**
@@ -69,7 +102,36 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'String'],
+            'address' => ['required'],
+            'contact' => ['required'],
+            'email' => ['required'],
+            'website' => ['required'],
+            'fax' => ['required'],
+            'image' => ['required']
+        ]);
+
+        $client->update([
+            'name' => $request['name'],
+            'address' => $request['address'],
+            'contact' => $request['contact'],
+            'email' => $request['email'],
+            'website' => $request['website'],
+            'fax' => $request['fax'],
+        ]);
+
+        if(!is_null($request['image'])){
+
+            list($type, $request['image']) = explode(';', $request['image']);
+            list(, $request['image']) = explode(',', $request['image']);
+            list(,$type) = explode(':', $type);
+            list(, $extension) = explode('/', $type);
+
+            $client->addMediaFromBase64($request['image'])->usingFileName(rand(100,999).$client->name."." .$extension)->toMediaCollection();
+        }
+        
+        return Redirect::route('organizations.index')->with('success', 'Client Updated.');
     }
 
     /**
@@ -80,6 +142,8 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete(); 
+    
+        return Redirect::route('clients.index')->with(['success' => 'Client Deleted Successful']);
     }
 }

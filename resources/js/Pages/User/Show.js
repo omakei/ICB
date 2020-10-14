@@ -16,52 +16,70 @@ const Index = () => {
       }
 
     return (
-    <BlockCard title="Organization Stracture">
-    <div className="col-md-12 mb-3">
-        <InertiaLink href={route('userdetails.create')} className="btn btn-alt-primary"> Create User</InertiaLink>
+<main id="main-container" style="min-height: 309.5px;">
+    <div class="bg-image bg-image-bottom" style="background-image: url('assets/media/photos/photo13@2x.jpg');">
+        <div class="bg-primary-dark-op py-30">
+            <div class="content content-full text-center">
+                <div class="mb-15">
+                    <a class="img-link" href="be_pages_generic_profile.html">
+                        <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/media/avatars/avatar15.jpg" alt=""/>
+                    </a>
+                </div>
+                <h1 class="h3 text-white font-w700 mb-10">
+                    John Smith
+                </h1>
+                <h2 class="h5 text-white-op">
+                    Product Manager <a class="text-primary-light" href="javascript:void(0)">@GraphicXspace</a>
+                </h2>
+                <button type="button" class="btn btn-rounded btn-hero btn-sm btn-alt-success mb-5">
+                    <i class="fa fa-plus mr-5"></i> Add Friend
+                </button>
+                <button type="button" class="btn btn-rounded btn-hero btn-sm btn-alt-primary mb-5">
+                    <i class="fa fa-envelope-o mr-5"></i> Message
+                </button>
+                <a class="btn btn-rounded btn-hero btn-sm btn-alt-secondary mb-5 px-20" href="be_pages_generic_profile_edit.html">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </div>
+        </div>
     </div>
-    <table className="table table-bordered table-striped table-vcenter js-dataTable-full">
-            <thead>
-                <tr>
-                    <th className="text-center"></th>
-                    <th>Full Name</th>
-                    <th className="d-none d-sm-table-cell">Mobile Number</th>
-                    <th className="d-none d-sm-table-cell" >Department </th>
-                    <th className="d-none d-sm-table-cell" >Activation Code </th>
-                    <th className="text-center" >Acation</th>
-                </tr>
-            </thead>
-            <tbody>
-                {user_details.map((user, index)=>(
-                    <tr key={user.id}>
-                        <td className="text-center">{index+1}</td>
-                        <td className="font-w600">{user.first_name + ' ' + user.middle_name+ ' ' + user.last_name}</td>
-                        <td className="d-none d-sm-table-cell">{user.mobile_number}</td>
-                        <td className="d-none d-sm-table-cell">
-                            {user.department}
-                        </td>
-                        <td className="d-none d-sm-table-cell">
-                            {user.activation_code}
-                        </td>
-                        <td className="text-center">
-                        <InertiaLink href={route('userdetails.show', user.id)} className="btn btn-circle btn-alt-success mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="View Sections" title="View Sections">
-                            <i className="fa fa-eye"></i>
-                        </InertiaLink>
-                        <InertiaLink href={route('userdetails.edit',user.id)} className="btn btn-circle btn-alt-primary mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="Edit Unit" title="Edit Unit">
-                            <i className="fa fa-edit"></i>
-                        </InertiaLink>
-                        <DeleteButton onDelete={destroy(user.id)} className="btn-circle mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="Delete Unit" title="Delete Unit">
-                            <i className="fa fa-trash"></i>
-                        </DeleteButton>
-                        </td>
-                    </tr>
-                ))}
-                
-            </tbody>
-        </table>
-    </BlockCard>
+    <div class="content">
+        <h2 class="content-heading">
+            <button type="button" class="btn btn-sm btn-rounded btn-alt-secondary float-right">View More..</button>
+            <i class="si si-briefcase mr-5"></i> Projects
+        </h2>
+        <div class="row items-push">
+            <div class="col-md-6 col-xl-3">
+                <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                    <div class="ribbon-box">$2500</div>
+                    <div class="block-content block-content-full">
+                        <div class="item item-circle bg-danger text-danger-light mx-auto my-20">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="text-warning">
+                            <i class="fa fa-fw fa-star"></i>
+                            <i class="fa fa-fw fa-star"></i>
+                            <i class="fa fa-fw fa-star"></i>
+                            <i class="fa fa-fw fa-star"></i>
+                            <i class="fa fa-fw fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm bg-body-light">
+                        <div class="font-w600 mb-5">Website Design</div>
+                        <div class="font-size-sm text-muted">https://example.com</div>
+                    </div>
+                    <div class="block-content block-content-full">
+                        <a class="btn btn-rounded btn-alt-secondary" href="javascript:void(0)">
+                            <i class="fa fa-briefcase mr-5"></i>View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
     )
 }
-Index.layout = page => <Layout children={page} />;
+Show.layout = page => <Layout children={page} />;
 
-export default Index;
+export default Show;

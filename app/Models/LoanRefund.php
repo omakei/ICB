@@ -11,6 +11,10 @@ class LoanRefund extends Model
 
     protected $guarded = [];
 
+    protected $dates = [
+        'returned_date'
+    ];
+
     public function loan()
     {
         return $this->belongsTo(Loan::class);

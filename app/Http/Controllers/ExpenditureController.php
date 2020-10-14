@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
+use App\Models\Project;
 use App\Models\Expenditure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ExpenditureController extends Controller
 {
@@ -22,9 +25,9 @@ class ExpenditureController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Project $project)
     {
-        //
+        return Inertia::render('Expenditure/Create', ['project'=> $project]);
     }
 
     /**
@@ -35,7 +38,25 @@ class ExpenditureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'amount' => ['required'],
+            'date_paid' => ['required'],
+            'payment_voucher' => ['required'],
+            'payee' => ['required'],
+            'particular' => ['required'],
+            'project_id' => ['required', 'exists:projects,id']
+        ]);
+
+        $expenditure = Expenditure::create([
+            'amount' => $request['amount'],
+            'date_paid' => date('Y-m-d H:i:s',strtotime($request['date_paid'])),
+            'payment_voucher' => $request['payment_voucher'],
+            'payee' => $request['payee'],
+            'particular' => $request['particular'],
+            'project_id' => $request['project_id']
+        ]);
+
+        return Redirect::route('projects.show',['project' => $request['project_id']])->with('success', 'Expenditure Created');
     }
 
     /**
@@ -57,7 +78,7 @@ class ExpenditureController extends Controller
      */
     public function edit(Expenditure $expenditure)
     {
-        //
+        return Inertia::render('Expenditure/Edit', ['expenditure'=> $expenditure]);
     }
 
     /**
@@ -69,7 +90,25 @@ class ExpenditureController extends Controller
      */
     public function update(Request $request, Expenditure $expenditure)
     {
-        //
+        $request->validate([
+            'amount' => ['required'],
+            'date_paid' => ['required'],
+            'payment_voucher' => ['required'],
+            'payee' => ['required'],
+            'particular' => ['required'],
+            'project_id' => ['required', 'exists:projects,id']
+        ]);
+
+        $expenditure->update([
+            'amount' => $request['amount'],
+            'date_paid' => date('Y-m-d H:i:s',strtotime($request['date_paid'])),
+            'payment_voucher' => $request['payment_voucher'],
+            'payee' => $request['payee'],
+            'particular' => $request['particular'],
+            'project_id' => $request['project_id']
+        ]);
+
+        return Redirect::route('projects.show',['project' =>$request['project_id']])->with('success', 'Expenditure Created');
     }
 
     /**
@@ -80,6 +119,8 @@ class ExpenditureController extends Controller
      */
     public function destroy(Expenditure $expenditure)
     {
-        //
+        $expenditure->delete();
+
+        return Redirect::back()->with('success', 'Expenditure deleted!');
     }
 }

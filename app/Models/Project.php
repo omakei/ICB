@@ -11,6 +11,10 @@ class Project extends Model
 
     protected $guarded = [];
 
+    protected $dates = [
+        'start_date', 'end_date'
+    ];
+
     public function client()
     {
         return $this->belongsTo(Client::class);
@@ -20,4 +24,20 @@ class Project extends Model
     {
         return $this->belongsToMany(Department::class);
     }
+
+    public function user_details()
+    {
+        return $this->belongsToMany(UserDetails::class, 'user_details_project');
+    }
+
+    public function expenditures()
+    {
+        return $this->hasMany(Expenditure::class);
+    }
+
+    public function client_payments()
+    {
+        return $this->hasMany(ClientPayment::class);
+    }
+
 }
