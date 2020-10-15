@@ -95,4 +95,15 @@ class User extends Authenticatable
             return $assign_roles;
 
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'user_role');
+    }
+
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class, 'user_permission');
+    }
+
 }

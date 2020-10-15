@@ -67,6 +67,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
 
     Route::get('loans/{project}/create', [LoanController::class, 'create'])->name('loans.create');
     Route::get('loans', [LoanController::class, 'index'])->name('loans.index');
+    Route::get('loans/{loan}', [LoanController::class, 'show'])->name('loans.show');
     Route::post('loans/store', [LoanController::class, 'store'])->name('loans.store');
     Route::get('loans/{loan}/edit', [LoanController::class, 'edit'])->name('loans.edit');
     Route::put('loans/{loan}/update', [LoanController::class, 'update'])->name('loans.update');

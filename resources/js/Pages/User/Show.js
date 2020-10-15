@@ -6,72 +6,74 @@ import Layout from '@/Shared/Layout';
 import DeleteButton from '../../Shared/DeleteButton';
 import { Inertia } from '@inertiajs/inertia';
 
-const Index = () => {
-    const { user_details } = usePage();
-
-    function destroy(id) {
-        if (confirm('Are you sure you want to delete this Unit?')) {
-          Inertia.delete(route('userdetails.destroy', id));
-        }
-      }
+const Show = () => {
+    const { userdetail, projects, image, department, account } = usePage();
 
     return (
-<main id="main-container" style="min-height: 309.5px;">
-    <div class="bg-image bg-image-bottom" style="background-image: url('assets/media/photos/photo13@2x.jpg');">
-        <div class="bg-primary-dark-op py-30">
-            <div class="content content-full text-center">
-                <div class="mb-15">
-                    <a class="img-link" href="be_pages_generic_profile.html">
-                        <img class="img-avatar img-avatar96 img-avatar-thumb" src="assets/media/avatars/avatar15.jpg" alt=""/>
+<main id="main-container" style={{minHeight: 309.5 + 'px'}}>
+    <div className="bg-image bg-image-bottom" style={{backgroundImage: 'assets/media/photos/photo13@2x.jpg'}}>
+        <div className="bg-primary-dark-op py-30">
+            <div className="content content-full text-center">
+                <div className="mb-15">
+                    <a className="img-link" href="be_pages_generic_profile.html">
+                        <img className="img-avatar img-avatar96 img-avatar-thumb" src={image} alt=""/>
                     </a>
                 </div>
-                <h1 class="h3 text-white font-w700 mb-10">
-                    John Smith
+                <h1 className="h3 text-white font-w700 mb-10">
+                    {userdetail.first_name + " "+ userdetail.middle_name +" "+ userdetail.last_name}
                 </h1>
-                <h2 class="h5 text-white-op">
-                    Product Manager <a class="text-primary-light" href="javascript:void(0)">@GraphicXspace</a>
+                <h2 className="h5 text-white-op">
+                    {userdetail.title}<a className="text-primary-light" href="#">{department.name}</a>
                 </h2>
-                <button type="button" class="btn btn-rounded btn-hero btn-sm btn-alt-success mb-5">
-                    <i class="fa fa-plus mr-5"></i> Add Friend
+                <button type="button" className={`btn btn-rounded btn-hero btn-sm btn-alt-${account.status==1?"info":"danger"} mb-5`}>
+                    <i className="fa fa-wrench mr-5"></i>{account.status==1?"Disable":"Activate"} Account
                 </button>
-                <button type="button" class="btn btn-rounded btn-hero btn-sm btn-alt-primary mb-5">
-                    <i class="fa fa-envelope-o mr-5"></i> Message
-                </button>
-                <a class="btn btn-rounded btn-hero btn-sm btn-alt-secondary mb-5 px-20" href="be_pages_generic_profile_edit.html">
-                    <i class="fa fa-pencil"></i>
-                </a>
             </div>
         </div>
     </div>
-    <div class="content">
-        <h2 class="content-heading">
-            <button type="button" class="btn btn-sm btn-rounded btn-alt-secondary float-right">View More..</button>
-            <i class="si si-briefcase mr-5"></i> Projects
+    <div className="content">
+        <h2 className="content-heading">
+            <i className="si si-briefcase mr-5"></i>Featured Projects
         </h2>
-        <div class="row items-push">
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
-                    <div class="ribbon-box">$2500</div>
-                    <div class="block-content block-content-full">
-                        <div class="item item-circle bg-danger text-danger-light mx-auto my-20">
-                            <i class="fa fa-globe"></i>
-                        </div>
-                        <div class="text-warning">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
+        <div className="row items-push">
+            {projects.map((project)=>(
+                <div className="col-md-6 col-xl-3">
+                <div className="block block-rounded ribbon ribbon-modern ribbon-primary text-center">
+                    <div className="ribbon-box">{project.remarks}</div>
+                    <div className="block-content block-content-full">
+                        <div className="item item-circle bg-primary text-danger-light mx-auto my-20">
+                            <i className="fa fa-briefcase"></i>
                         </div>
                     </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="font-w600 mb-5">Website Design</div>
-                        <div class="font-size-sm text-muted">https://example.com</div>
+                    <div className="block-content block-content-full block-content-sm bg-body-light">
+                        <div className="font-w600 mb-5">{project.name}</div>
+                        <div className="font-size-sm text-muted">{project.client.name}</div>
                     </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-rounded btn-alt-secondary" href="javascript:void(0)">
-                            <i class="fa fa-briefcase mr-5"></i>View Project
+                    <div className="block-content block-content-full">
+                        <a className="btn btn-rounded btn-alt-secondary" href="#">
+                            <i className="fa fa-briefcase mr-5"></i>View Project
                         </a>
+                    </div>
+                </div>
+            </div>
+            ))}
+        </div>
+    </div>
+    <div className="content">
+        <h2 className="content-heading">
+            <i className="si si-key mr-5"></i>Permissions
+        </h2>
+        <div className="row items-push">
+            <div className="block block-rounded mb-5 px-20 py-10">
+                <div style={{display:"inline"}}>
+                    <div className="text-center" style={{width: '50px', display:"inline"}}>
+                        <label className="js-task-status css-control css-control-primary css-checkbox py-0">
+                            <input type="checkbox" className="css-control-input" checked/>
+                            <span className="css-control-indicator"></span>
+                        </label>
+                    </div>
+                    <div className="js-task-content font-w600" style={{display:"inline"}}>
+                        Contract Signing
                     </div>
                 </div>
             </div>

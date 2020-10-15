@@ -9,14 +9,14 @@ import TextAreaInput from '@/Shared/TextAreaInput'
 import DatePeakerInput from '@/Shared/DatePeakerInput'
 
 const Edit =  ()=>{
-  const {loan, refund, errors } = usePage();
+  const {refund, errors } = usePage();
   const [sending, setSending] = useState(false);
 
   const [values, setValues] = useState({
     amount:  refund.amount || '',
     description: refund.description || '',
     returned_date: refund. returned_date || '',
-    loan_id: loan.id || ''
+    loan_id: refund.loan_id || ''
   });
 
   function handleChange(e) {

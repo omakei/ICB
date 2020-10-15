@@ -10,17 +10,19 @@ import MultiSelectInput from '@/Shared/MultiSelectInput'
 import FileInput from '@/Shared/FileInput'
 
 const Edit =  ()=>{
-  const { userdetail , departments, certificates , boards, errors } = usePage();
+  const { userdetail , departments,board_registrations,roles,user_role,education_certificaties, certificates, email, boards, errors, titles } = usePage();
     const [sending, setSending] = useState(false);
     const [values, setValues] = useState({
       first_name:userdetail.first_name || '',
       middle_name:userdetail.middle_name || '',
       last_name:userdetail.last_name || '',
       mobile_number:userdetail.mobile_number ||'',
-      department:userdetail.department || '',
-      email:userdetail.email  || '',
-      board_registrations: userdetail.board_registrations || [],
-      education_certificaties:userdetail.education_certificaties || [],
+      department:userdetail.department_id || '',
+      email:email || '',
+      role: user_role|| [],
+      title: userdetail.title || '',
+      board_registrations: board_registrations || [],
+      education_certificaties: education_certificaties || [],
       image:''
    
     });
@@ -118,15 +120,30 @@ const Edit =  ()=>{
                 />
                   <SelectInput
                     className="col-md-8"
-                    label="department"
+                    label="Department"
                     name="department"
                     type="text"
-                    errors={errors.is_academic}
-                    value={values.is_academic}
+                    errors={errors.department}
+                    value={values.department}
                     onChange={handleChange}
                 >
                   {departments.map((department)=>(
                     <option value={department.id}>{department.name}</option>
+                  ))}
+                
+                </SelectInput>
+
+                <SelectInput
+                    className="col-md-8"
+                    label="Title"
+                    name="title"
+                    type="text"
+                    errors={errors.titles}
+                    value={values.titles}
+                    onChange={handleChange}
+                >
+                  {titles.map((title)=>(
+                    <option value={title.value}>{title.option}</option>
                   ))}
                 
                 </SelectInput>
@@ -135,7 +152,7 @@ const Edit =  ()=>{
                     className="col-md-8"
                     label="Board Registrations"
                     name="board_registrations"
-                    defaultValue={[board_registrations[0], board_registrations[1]]}
+                    defaultValue={board_registrations}
                     options={boards}
                     errors={errors.board_registrations}
                     value={values.board_registrations}
@@ -145,10 +162,21 @@ const Edit =  ()=>{
                     className="col-md-8"
                     label="Education Certificates"
                     name="education_certificaties"
-                    defaultValue={[education_certificaties[0], education_certificaties[1]]}
+                    defaultValue={education_certificaties}
                     options={certificates}
                     errors={errors.education_certificaties}
                     value={values.education_certificaties}
+                    onChange={handleMultiSelectChange}
+                />
+
+                  <MultiSelectInput
+                    className="col-md-8"
+                    label="Role(s)"
+                    name="role"
+                    defaultValue={user_role}
+                    options={roles}
+                    errors={errors.role}
+                    value={values.role}
                     onChange={handleMultiSelectChange}
                 />
                 <FileInput

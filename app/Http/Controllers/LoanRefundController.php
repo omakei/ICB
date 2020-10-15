@@ -52,7 +52,7 @@ class LoanRefundController extends Controller
             'loan_id' => $request['loan_id']
         ]);
 
-        return Redirect::route('laon.show',['loan'=>$request['loan_id']])->with('success', 'Loan Refund Created');
+        return Redirect::route('laons.show',['loan'=>$request['loan_id']])->with('success', 'Loan Refund Created');
     }
 
     /**
@@ -100,7 +100,7 @@ class LoanRefundController extends Controller
             'loan_id' => $request['loan_id']
         ]);
 
-        return Redirect::route('laon.show',['loan'=> $request['loan_id']])->with('success', 'Loan Refund Updated');
+        return Redirect::route('laons.show',['loan'=> $request['loan_id']])->with('success', 'Loan Refund Updated');
     }
 
     /**

@@ -140,7 +140,7 @@ export default ({ children }) => {
                             <i className="si si-wallet text-success"></i>
                             <div className="font-w600">+$29 New sale</div>
                             <div>
-                                <a href="javascript:void(0)">Admin Template</a>
+                                <a href="#">Admin Template</a>
                             </div>
                             <div className="font-size-xs text-muted">5 min ago</div>
                         </li>
@@ -160,11 +160,11 @@ export default ({ children }) => {
                     </div>
                 </div>
                 <div className="block-content">
-                    <form action="be_pages_dashboard.html" method="post" onSubmit="return false;">
+                    <form action="be_pages_dashboard.html" method="post" >
                         <div className="form-group mb-15">
                             <label htmlFor="side-overlay-profile-name">Name</label>
                             <div className="input-group">
-                                <input type="text" className="form-control" id="side-overlay-profile-name" name="side-overlay-profile-name" placeholder="Your name.." value="John Smith"/>
+                                <input type="text" className="form-control" id="side-overlay-profile-name" name="side-overlay-profile-name" placeholder="Your name.." defaultValue="John Smith"/>
                                 <div className="input-group-append">
                                     <span className="input-group-text">
                                         <i className="fa fa-user"></i>
@@ -175,7 +175,7 @@ export default ({ children }) => {
                         <div className="form-group mb-15">
                             <label htmlFor="side-overlay-profile-email">Email</label>
                             <div className="input-group">
-                                <input type="email" className="form-control" id="side-overlay-profile-email" name="side-overlay-profile-email" placeholder="Your email.." value="john.smith@example.com"/>
+                                <input type="email" className="form-control" id="side-overlay-profile-email" name="side-overlay-profile-email" placeholder="Your email.." defaultValue="john.smith@example.com"/>
                                 <div className="input-group-append">
                                     <span className="input-group-text">
                                         <i className="fa fa-envelope"></i>
@@ -231,29 +231,29 @@ export default ({ children }) => {
                     <div className="row gutters-tiny">
                         <div className="col-6">
                             <div className="custom-control custom-checkbox mb-5">
-                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-status" name="side-overlay-settings-status" value="1" checked/>
+                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-status" name="side-overlay-settings-status" defaultValue="1" defaultChecked/>
                                 <label className="custom-control-label" htmlFor="side-overlay-settings-status">Online Status</label>
                             </div>
                             <div className="custom-control custom-checkbox mb-5">
-                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-public-profile" name="side-overlay-settings-public-profile" value="1"/>
+                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-public-profile" name="side-overlay-settings-public-profile" defaultValue="1"/>
                                 <label className="custom-control-label" htmlFor="side-overlay-settings-public-profile">Public Profile</label>
                             </div>
                             <div className="custom-control custom-checkbox mb-5">
-                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-notifications" name="side-overlay-settings-notifications" value="1" checked/>
+                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-notifications" name="side-overlay-settings-notifications" defaultValue="1" defaultChecked/>
                                 <label className="custom-control-label" htmlFor="side-overlay-settings-notifications">Notifications</label>
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="custom-control custom-checkbox mb-5">
-                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-updates" name="side-overlay-settings-updates" value="1"/>
+                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-updates" name="side-overlay-settings-updates" defaultValue="1"/>
                                 <label className="custom-control-label" htmlFor="side-overlay-settings-updates">Auto updates</label>
                             </div>
                             <div className="custom-control custom-checkbox mb-5">
-                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-api-access" name="side-overlay-settings-api-access" value="1" checked/>
+                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-api-access" name="side-overlay-settings-api-access" defaultValue="1" defaultChecked/>
                                 <label className="custom-control-label" htmlFor="side-overlay-settings-api-access">API Access</label>
                             </div>
                             <div className="custom-control custom-checkbox mb-5">
-                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-limit-requests" name="side-overlay-settings-limit-requests" value="1"/>
+                                <input type="checkbox" className="custom-control-input" id="side-overlay-settings-limit-requests" name="side-overlay-settings-limit-requests" defaultValue="1"/>
                                 <label className="custom-control-label" htmlFor="side-overlay-settings-limit-requests">API Requests</label>
                             </div>
                         </div>
@@ -324,7 +324,7 @@ export default ({ children }) => {
                         </li>
                         <li className="list-inline-item">
                             {/* <!-- Layout API, functionality initialized in Template._uiApiLayout() --> */}
-                            <a className="link-effect text-dual-primary-dark" data-toggle="layout" data-action="sidebar_style_inverse_toggle" href="javascript:void(0)">
+                            <a className="link-effect text-dual-primary-dark" data-toggle="layout" data-action="sidebar_style_inverse_toggle" href="#">
                                 <i className="si si-drop"></i>
                             </a>
                         </li>
@@ -380,32 +380,32 @@ export default ({ children }) => {
                         <h6 className="dropdown-header">Color Themes</h6>
                         <div className="row no-gutters text-center mb-5">
                             <div className="col-2 mb-5">
-                                <a className="text-default" data-toggle="theme" data-theme="default" href="javascript:void(0)">
+                                <a className="text-default" data-toggle="theme" data-theme="default" href="#">
                                     <i className="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div className="col-2 mb-5">
-                                <a className="text-elegance" data-toggle="theme" data-theme="assets/css/themes/elegance.min.css" href="javascript:void(0)">
+                                <a className="text-elegance" data-toggle="theme" data-theme="assets/css/themes/elegance.min.css" href="#">
                                     <i className="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div className="col-2 mb-5">
-                                <a className="text-pulse" data-toggle="theme" data-theme="assets/css/themes/pulse.min.css" href="javascript:void(0)">
+                                <a className="text-pulse" data-toggle="theme" data-theme="assets/css/themes/pulse.min.css" href="#">
                                     <i className="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div className="col-2 mb-5">
-                                <a className="text-flat" data-toggle="theme" data-theme="assets/css/themes/flat.min.css" href="javascript:void(0)">
+                                <a className="text-flat" data-toggle="theme" data-theme="assets/css/themes/flat.min.css" href="#">
                                     <i className="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div className="col-2 mb-5">
-                                <a className="text-corporate" data-toggle="theme" data-theme="assets/css/themes/corporate.min.css" href="javascript:void(0)">
+                                <a className="text-corporate" data-toggle="theme" data-theme="assets/css/themes/corporate.min.css" href="#">
                                     <i className="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div className="col-2 mb-5">
-                                <a className="text-earth" data-toggle="theme" data-theme="assets/css/themes/earth.min.css" href="javascript:void(0)">
+                                <a className="text-earth" data-toggle="theme" data-theme="assets/css/themes/earth.min.css" href="#">
                                     <i className="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
@@ -476,7 +476,7 @@ export default ({ children }) => {
 
                         {/* <!-- Toggle Side Overlay --> */}
                         {/* <!-- Layout API, functionality initialized in Template._uiApiLayout() --> */}
-                        <a className="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
+                        <a className="dropdown-item" href="#" data-toggle="layout" data-action="side_overlay_toggle">
                             <i className="si si-wrench mr-5"></i> Settings
                         </a>
                         {/* <!-- END Side Overlay --> */}
@@ -499,7 +499,7 @@ export default ({ children }) => {
                         <h5 className="h6 text-center py-10 mb-0 border-b text-uppercase">Notifications</h5>
                         <ul className="list-unstyled my-20">
                             <li>
-                                <a className="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                <a className="text-body-color-dark media mb-15" href="#">
                                     <div className="ml-5 mr-15">
                                         <i className="fa fa-fw fa-check text-success"></i>
                                     </div>
@@ -510,7 +510,7 @@ export default ({ children }) => {
                                 </a>
                             </li>
                             <li>
-                                <a className="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                <a className="text-body-color-dark media mb-15" href="#">
                                     <div className="ml-5 mr-15">
                                         <i className="fa fa-fw fa-exclamation-triangle text-warning"></i>
                                     </div>
@@ -521,7 +521,7 @@ export default ({ children }) => {
                                 </a>
                             </li>
                             <li>
-                                <a className="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                <a className="text-body-color-dark media mb-15" href="#">
                                     <div className="ml-5 mr-15">
                                         <i className="fa fa-fw fa-times text-danger"></i>
                                     </div>
@@ -532,7 +532,7 @@ export default ({ children }) => {
                                 </a>
                             </li>
                             <li>
-                                <a className="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                <a className="text-body-color-dark media mb-15" href="#">
                                     <div className="ml-5 mr-15">
                                         <i className="fa fa-fw fa-exclamation-triangle text-warning"></i>
                                     </div>
@@ -543,7 +543,7 @@ export default ({ children }) => {
                                 </a>
                             </li>
                             <li>
-                                <a className="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                <a className="text-body-color-dark media mb-15" href="#">
                                     <div className="ml-5 mr-15">
                                         <i className="fa fa-fw fa-plus text-primary"></i>
                                     </div>
@@ -555,7 +555,7 @@ export default ({ children }) => {
                             </li>
                         </ul>
                         <div className="dropdown-divider"></div>
-                        <a className="dropdown-item text-center mb-0" href="javascript:void(0)">
+                        <a className="dropdown-item text-center mb-0" href="#">
                             <i className="fa fa-flag mr-5"></i> View All
                         </a>
                     </div>

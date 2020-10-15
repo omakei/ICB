@@ -36,6 +36,9 @@ const Index = () => {
                         <td className="d-none d-sm-table-cell">{loan.description}</td>
                         <td className="font-w600">{loan.issued_date}</td>
                         <td className="text-center">
+                        <InertiaLink href={route('loans.show',loan.id)} className="btn btn-circle btn-alt-info mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="Add Project Loan Refund" title="Add Project Loan Refund">
+                            <i className="fa fa-eye"></i>
+                        </InertiaLink>
                         <InertiaLink href={route('loan_refunds.create',loan.id)} className="btn btn-circle btn-alt-info mr-5 mb-5 js-tooltip-enabled" data-toggle="tooltip" data-placement="top" data-original-title="Add Project Loan Refund" title="Add Project Loan Refund">
                             <i className="fa fa-plus"></i>
                         </InertiaLink>

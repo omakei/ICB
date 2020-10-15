@@ -45,6 +45,6 @@ class UserDetails extends Model implements HasMedia
 
     public function projects()
     {
-        return $this->belongsToMany(Project::class);
+        return $this->belongsToMany(Project::class, 'user_details_project');
     }
 }

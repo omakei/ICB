@@ -11,7 +11,7 @@ import FileInput from '@/Shared/FileInput'
 import Axios from 'axios';
 
 const Create =  ()=>{
-    const { departments, certificates , boards, errors } = usePage();
+    const { departments, certificates ,roles,  boards, errors, titles } = usePage();
     const [sending, setSending] = useState(false);
     const [values, setValues] = useState({
       first_name:'',
@@ -20,6 +20,8 @@ const Create =  ()=>{
       mobile_number:'',
       department:'',
       email:'',
+      title:'',
+      role: [],
       board_registrations: [],
       education_certificaties: [],
       image:''
@@ -134,7 +136,7 @@ const Create =  ()=>{
                 />
                   <SelectInput
                     className="col-md-8"
-                    label="department"
+                    label="Department"
                     name="department"
                     type="text"
                     errors={errors.department}
@@ -144,6 +146,22 @@ const Create =  ()=>{
                   <option selected>Select department</option>
                   {departments.map((department)=>(
                     <option value={department.id}>{department.name}</option>
+                  ))}
+                
+                </SelectInput>
+
+                <SelectInput
+                    className="col-md-8"
+                    label="Title"
+                    name="title"
+                    type="text"
+                    errors={errors.title}
+                    value={values.title}
+                    onChange={handleChange}
+                >
+                  <option selected>Select Title</option>
+                  {titles.map((title)=>(
+                    <option value={title.value}>{title.option}</option>
                   ))}
                 
                 </SelectInput>
@@ -164,6 +182,15 @@ const Create =  ()=>{
                     options={certificates}
                     errors={errors.education_certificaties}
                     value={values.education_certificaties}
+                    onChange={handleMultiSelectChange}
+                />
+                <MultiSelectInput
+                    className="col-md-8"
+                    label="Role(s)"
+                    name="role"
+                    options={roles}
+                    errors={errors.role}
+                    value={values.role}
                     onChange={handleMultiSelectChange}
                 />
                 <FileInput

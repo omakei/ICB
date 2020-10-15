@@ -63431,6 +63431,8 @@ var map = {
 	"./Loan/Edit.js": "./resources/js/Pages/Loan/Edit.js",
 	"./Loan/Index": "./resources/js/Pages/Loan/Index.js",
 	"./Loan/Index.js": "./resources/js/Pages/Loan/Index.js",
+	"./Loan/Show": "./resources/js/Pages/Loan/Show.js",
+	"./Loan/Show.js": "./resources/js/Pages/Loan/Show.js",
 	"./LoanRefund/Create": "./resources/js/Pages/LoanRefund/Create.js",
 	"./LoanRefund/Create.js": "./resources/js/Pages/LoanRefund/Create.js",
 	"./LoanRefund/Edit": "./resources/js/Pages/LoanRefund/Edit.js",
@@ -64906,9 +64908,412 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Dashboard = function Dashboard() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Dashboard"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Dashboard goes here!"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row js-appear-enabled animated fadeIn",
+    "data-toggle": "appear"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-xl-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "block block-link-shadow text-right",
+    href: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content block-content-full clearfix"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "float-left mt-10 d-none d-sm-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-users fa-3x text-body-bg-dark"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h3 font-w600 js-count-to-enabled",
+    "data-toggle": "countTo",
+    "data-speed": "10",
+    "data-to": "15"
+  }, "15"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "Consaltanis")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-xl-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "block block-link-shadow text-right",
+    href: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content block-content-full clearfix"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "float-left mt-10 d-none d-sm-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-wallet fa-3x text-body-bg-dark"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h3 font-w600"
+  }, "Tsh", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    "data-toggle": "countTo",
+    "data-speed": "1000",
+    "data-to": "1000000000",
+    className: "js-count-to-enabled"
+  }, "1000000000")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "Earnings")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-xl-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "block block-link-shadow text-right",
+    href: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content block-content-full clearfix"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "float-left mt-10 d-none d-sm-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-bag fa-3x text-body-bg-dark"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h3 font-w600 js-count-to-enabled",
+    "data-toggle": "countTo",
+    "data-speed": "1000",
+    "data-to": "15"
+  }, "15"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "Finished Projects")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-xl-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "block block-link-shadow text-right",
+    href: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content block-content-full clearfix"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "float-left mt-10 d-none d-sm-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-bag fa-3x text-body-bg-dark"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h3 font-w600 js-count-to-enabled",
+    "data-toggle": "countTo",
+    "data-speed": "1000",
+    "data-to": "10"
+  }, "10"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "Unfished Projects"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row js-appear-enabled animated fadeIn",
+    "data-toggle": "appear"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "block-title"
+  }, "ICB Earnings  ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "This year")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-options"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option",
+    "data-toggle": "block-option",
+    "data-action": "state_toggle",
+    "data-action-mode": "demo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-refresh"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-wrench"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content block-content-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pull-all"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor-expand"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: ""
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor-shrink"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: ""
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("canvas", {
+    className: "js-chartjs-dashboard-lines chartjs-render-monitor",
+    style: {
+      display: 'block',
+      width: '521px',
+      height: '260px'
+    },
+    width: "521",
+    height: "260"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row items-push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "This Month"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "720"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-up"
+  }), " +16%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "This Week"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "160"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-danger"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-down"
+  }), " -3%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "Average"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "24.3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-up"
+  }), " +9%")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "block-title"
+  }, "Institute Earnings ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "This year")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-options"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option",
+    "data-toggle": "block-option",
+    "data-action": "state_toggle",
+    "data-action-mode": "demo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-refresh"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-wrench"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content block-content-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pull-all"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor-expand"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: ""
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor-shrink"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: ""
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("canvas", {
+    className: "js-chartjs-dashboard-lines2 chartjs-render-monitor",
+    style: {
+      display: 'block',
+      width: '521px',
+      height: '260px'
+    },
+    width: "521",
+    height: "260"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content bg-white"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row items-push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "This Month"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "$ 6,540"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-up"
+  }), " +4%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "This Week"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "$ 1,525"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-danger"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-down"
+  }), " -7%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "Balance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "$ 9,352"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-up"
+  }), " +35%"))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row js-appear-enabled animated fadeIn",
+    "data-toggle": "appear"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "block-title"
+  }, "Department Earnings ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "This year")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-options"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option",
+    "data-toggle": "block-option",
+    "data-action": "state_toggle",
+    "data-action-mode": "demo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-refresh"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-wrench"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content block-content-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pull-all"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor-expand"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: ""
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor-shrink"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: ""
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("canvas", {
+    className: "js-chartjs-dashboard-lines chartjs-render-monitor",
+    style: {
+      display: 'block',
+      width: '521px',
+      height: '260px'
+    },
+    width: "521",
+    height: "260"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row items-push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "This Month"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "720"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-up"
+  }), " +16%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "This Week"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "160"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-danger"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-down"
+  }), " -3%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "Average"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "24.3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-up"
+  }), " +9%")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "block-title"
+  }, "Consaltants Earnings ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "This year")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-options"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option",
+    "data-toggle": "block-option",
+    "data-action": "state_toggle",
+    "data-action-mode": "demo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-refresh"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn-block-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "si si-wrench"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content block-content-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pull-all"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor-expand"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: ""
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "chartjs-size-monitor-shrink"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: ""
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("canvas", {
+    className: "js-chartjs-dashboard-lines2 chartjs-render-monitor",
+    style: {
+      display: 'block',
+      width: '521px',
+      height: '260px'
+    },
+    width: "521",
+    height: "260"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "block-content bg-white"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row items-push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "This Month"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "$ 6,540"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-up"
+  }), " +4%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "This Week"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "$ 1,525"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-danger"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-down"
+  }), " -7%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 col-sm-4 text-center text-sm-left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-sm font-w600 text-uppercase text-muted"
+  }, "Balance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-size-h4 font-w600"
+  }, "$ 9,352"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "font-w600 text-success"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-caret-up"
+  }), " +35%"))))))));
 };
 
 Dashboard.layout = function (page) {
@@ -66571,6 +66976,15 @@ var Index = function Index() {
     }, loan.issued_date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
       className: "text-center"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('loans.show', loan.id),
+      className: "btn btn-circle btn-alt-info mr-5 mb-5 js-tooltip-enabled",
+      "data-toggle": "tooltip",
+      "data-placement": "top",
+      "data-original-title": "Add Project Loan Refund",
+      title: "Add Project Loan Refund"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-eye"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
       href: route('loan_refunds.create', loan.id),
       className: "btn btn-circle btn-alt-info mr-5 mb-5 js-tooltip-enabled",
       "data-toggle": "tooltip",
@@ -66606,6 +67020,132 @@ Index.layout = function (page) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Loan/Show.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Loan/Show.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/BlockCard */ "./resources/js/Shared/BlockCard.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/DeleteButton */ "./resources/js/Shared/DeleteButton.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Shared_DropdownMenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Shared/DropdownMenuItem */ "./resources/js/Shared/DropdownMenuItem.js");
+
+
+
+
+
+
+
+
+
+var Show = function Show() {
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
+      loan = _usePage.loan,
+      refunds = _usePage.refunds;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_BlockCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "Project Loan Refunds"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "table-responsive push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table table-bordered table-hover"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center",
+    style: {
+      width: '60px'
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-center",
+    style: {
+      width: '90px'
+    }
+  }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-right",
+    style: {
+      width: "120px"
+    }
+  }, "Return Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    className: "text-right",
+    style: {
+      width: "120px"
+    }
+  }, "Amount"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, !refunds ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colSpan: "4",
+    className: "text-center"
+  }, " No Data Available")) : refunds.map(function (refund, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: index
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-center"
+    }, index + 1, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DropdownMenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      icon: "fa fa-pencil"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["InertiaLink"], {
+      href: route('loan_refunds.edit', refund.id),
+      className: "dropdown-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-edit"
+    }), " Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_DeleteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      message: "Are you sure you want to delete this Refund?",
+      link: "loan_refunds.destroy",
+      id: refund.id,
+      classNameName: "dropdown-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      classNameName: "fa fa-trash"
+    }), " Delete"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      className: "font-w600 mb-5"
+    }, refund.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-right"
+    }, refund.returned_date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      className: "text-right"
+    }, refund.amount, " Tsh"));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colSpan: "3",
+    className: "font-w600 text-right"
+  }, "Subtotal"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    className: "text-right"
+  }, refunds.length == 0 ? 0 : refunds.map(function (item) {
+    return item.amount;
+  }).reduce(function (prev, next) {
+    return prev + next;
+  }), " Tsh")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colSpan: "3",
+    className: "font-w600 text-right"
+  }, "Loan Issued"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    className: "text-right"
+  }, loan.amount, " Tsh")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+    className: "table-warning"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    colSpan: "3",
+    className: "font-w700 text-uppercase text-right"
+  }, "Total Unpaid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+    className: "font-w700 text-right"
+  }, loan.amount - (refunds.length == 0 ? 0 : refunds.map(function (item) {
+    return item.amount;
+  }).reduce(function (prev, next) {
+    return prev + next;
+  })), " Tsh"))))));
+};
+
+Show.layout = function (page) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: page
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Show);
 
 /***/ }),
 
@@ -66802,7 +67342,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Edit = function Edit() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
-      loan = _usePage.loan,
       refund = _usePage.refund,
       errors = _usePage.errors;
 
@@ -66815,7 +67354,7 @@ var Edit = function Edit() {
     amount: refund.amount || '',
     description: refund.description || '',
     returned_date: refund.returned_date || '',
-    loan_id: loan.id || ''
+    loan_id: refund.loan_id || ''
   }),
       _useState4 = _slicedToArray(_useState3, 2),
       values = _useState4[0],
@@ -69014,8 +69553,10 @@ var Create = function Create() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
       departments = _usePage.departments,
       certificates = _usePage.certificates,
+      roles = _usePage.roles,
       boards = _usePage.boards,
-      errors = _usePage.errors;
+      errors = _usePage.errors,
+      titles = _usePage.titles;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -69029,6 +69570,8 @@ var Create = function Create() {
     mobile_number: '',
     department: '',
     email: '',
+    title: '',
+    role: [],
     board_registrations: [],
     education_certificaties: [],
     image: ''
@@ -69138,7 +69681,7 @@ var Create = function Create() {
     onChange: handleChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: "col-md-8",
-    label: "department",
+    label: "Department",
     name: "department",
     type: "text",
     errors: errors.department,
@@ -69150,6 +69693,20 @@ var Create = function Create() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: department.id
     }, department.name);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Title",
+    name: "title",
+    type: "text",
+    errors: errors.title,
+    value: values.title,
+    onChange: handleChange
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    selected: true
+  }, "Select Title"), titles.map(function (title) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: title.value
+    }, title.option);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
     className: "col-md-8",
     label: "Board Registrations",
@@ -69165,6 +69722,14 @@ var Create = function Create() {
     options: certificates,
     errors: errors.education_certificaties,
     value: values.education_certificaties,
+    onChange: handleMultiSelectChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Role(s)",
+    name: "role",
+    options: roles,
+    errors: errors.role,
+    value: values.role,
     onChange: handleMultiSelectChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_FileInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: "col-md-8 mb-4",
@@ -69252,9 +69817,15 @@ var Edit = function Edit() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
       userdetail = _usePage.userdetail,
       departments = _usePage.departments,
+      board_registrations = _usePage.board_registrations,
+      roles = _usePage.roles,
+      user_role = _usePage.user_role,
+      education_certificaties = _usePage.education_certificaties,
       certificates = _usePage.certificates,
+      email = _usePage.email,
       boards = _usePage.boards,
-      errors = _usePage.errors;
+      errors = _usePage.errors,
+      titles = _usePage.titles;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -69266,10 +69837,12 @@ var Edit = function Edit() {
     middle_name: userdetail.middle_name || '',
     last_name: userdetail.last_name || '',
     mobile_number: userdetail.mobile_number || '',
-    department: userdetail.department || '',
-    email: userdetail.email || '',
-    board_registrations: userdetail.board_registrations || [],
-    education_certificaties: userdetail.education_certificaties || [],
+    department: userdetail.department_id || '',
+    email: email || '',
+    role: user_role || [],
+    title: userdetail.title || '',
+    board_registrations: board_registrations || [],
+    education_certificaties: education_certificaties || [],
     image: ''
   }),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -69362,21 +69935,33 @@ var Edit = function Edit() {
     onChange: handleChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: "col-md-8",
-    label: "department",
+    label: "Department",
     name: "department",
     type: "text",
-    errors: errors.is_academic,
-    value: values.is_academic,
+    errors: errors.department,
+    value: values.department,
     onChange: handleChange
   }, departments.map(function (department) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: department.id
     }, department.name);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: "col-md-8",
+    label: "Title",
+    name: "title",
+    type: "text",
+    errors: errors.titles,
+    value: values.titles,
+    onChange: handleChange
+  }, titles.map(function (title) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: title.value
+    }, title.option);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
     className: "col-md-8",
     label: "Board Registrations",
     name: "board_registrations",
-    defaultValue: [board_registrations[0], board_registrations[1]],
+    defaultValue: board_registrations,
     options: boards,
     errors: errors.board_registrations,
     value: values.board_registrations,
@@ -69385,10 +69970,19 @@ var Edit = function Edit() {
     className: "col-md-8",
     label: "Education Certificates",
     name: "education_certificaties",
-    defaultValue: [education_certificaties[0], education_certificaties[1]],
+    defaultValue: education_certificaties,
     options: certificates,
     errors: errors.education_certificaties,
     value: values.education_certificaties,
+    onChange: handleMultiSelectChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_MultiSelectInput__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: "col-md-8",
+    label: "Role(s)",
+    name: "role",
+    defaultValue: user_role,
+    options: roles,
+    errors: errors.role,
+    value: values.role,
     onChange: handleMultiSelectChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_FileInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: "col-md-8 mb-4",
@@ -69550,106 +70144,118 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Index = function Index() {
+var Show = function Show() {
   var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__["usePage"])(),
-      user_details = _usePage.user_details;
-
-  function destroy(id) {
-    if (confirm('Are you sure you want to delete this Unit?')) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__["Inertia"]["delete"](route('userdetails.destroy', id));
-    }
-  }
+      userdetail = _usePage.userdetail,
+      projects = _usePage.projects,
+      image = _usePage.image,
+      department = _usePage.department,
+      account = _usePage.account;
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
     id: "main-container",
-    style: "min-height: 309.5px;"
+    style: {
+      minHeight: 309.5 + 'px'
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "bg-image bg-image-bottom",
-    style: "background-image: url('assets/media/photos/photo13@2x.jpg');"
+    className: "bg-image bg-image-bottom",
+    style: {
+      backgroundImage: 'assets/media/photos/photo13@2x.jpg'
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "bg-primary-dark-op py-30"
+    className: "bg-primary-dark-op py-30"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "content content-full text-center"
+    className: "content content-full text-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "mb-15"
+    className: "mb-15"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    "class": "img-link",
+    className: "img-link",
     href: "be_pages_generic_profile.html"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    "class": "img-avatar img-avatar96 img-avatar-thumb",
-    src: "assets/media/avatars/avatar15.jpg",
+    className: "img-avatar img-avatar96 img-avatar-thumb",
+    src: image,
     alt: ""
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
-    "class": "h3 text-white font-w700 mb-10"
-  }, "John Smith"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
-    "class": "h5 text-white-op"
-  }, "Product Manager ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    "class": "text-primary-light",
-    href: "javascript:void(0)"
-  }, "@GraphicXspace")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    className: "h3 text-white font-w700 mb-10"
+  }, userdetail.first_name + " " + userdetail.middle_name + " " + userdetail.last_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+    className: "h5 text-white-op"
+  }, userdetail.title, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    className: "text-primary-light",
+    href: "#"
+  }, department.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     type: "button",
-    "class": "btn btn-rounded btn-hero btn-sm btn-alt-success mb-5"
+    className: "btn btn-rounded btn-hero btn-sm btn-alt-".concat(account.status == 1 ? "info" : "danger", " mb-5")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-plus mr-5"
-  }), " Add Friend"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-    type: "button",
-    "class": "btn btn-rounded btn-hero btn-sm btn-alt-primary mb-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-envelope-o mr-5"
-  }), " Message"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    "class": "btn btn-rounded btn-hero btn-sm btn-alt-secondary mb-5 px-20",
-    href: "be_pages_generic_profile_edit.html"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-pencil"
-  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "content"
+    className: "fa fa-wrench mr-5"
+  }), account.status == 1 ? "Disable" : "Activate", " Account")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
-    "class": "content-heading"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-    type: "button",
-    "class": "btn btn-sm btn-rounded btn-alt-secondary float-right"
-  }, "View More.."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "si si-briefcase mr-5"
-  }), " Projects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "row items-push"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "col-md-6 col-xl-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "block block-rounded ribbon ribbon-modern ribbon-primary text-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "ribbon-box"
-  }, "$2500"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "block-content block-content-full"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "item item-circle bg-danger text-danger-light mx-auto my-20"
+    className: "content-heading"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-globe"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "text-warning"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-fw fa-star"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-fw fa-star"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-fw fa-star"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-fw fa-star"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-fw fa-star"
+    className: "si si-briefcase mr-5"
+  }), "Featured Projects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "row items-push"
+  }, projects.map(function (project) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "col-md-6 col-xl-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "block block-rounded ribbon ribbon-modern ribbon-primary text-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "ribbon-box"
+    }, project.remarks), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "block-content block-content-full"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "item item-circle bg-primary text-danger-light mx-auto my-20"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-briefcase"
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "block-content block-content-full block-content-sm bg-body-light"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "font-w600 mb-5"
+    }, project.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "font-size-sm text-muted"
+    }, project.client.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "block-content block-content-full"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      className: "btn btn-rounded btn-alt-secondary",
+      href: "#"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+      className: "fa fa-briefcase mr-5"
+    }), "View Project"))));
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "block-content block-content-full block-content-sm bg-body-light"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "font-w600 mb-5"
-  }, "Website Design"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "font-size-sm text-muted"
-  }, "https://example.com")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    "class": "block-content block-content-full"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    "class": "btn btn-rounded btn-alt-secondary",
-    href: "javascript:void(0)"
+    className: "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+    className: "content-heading"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-    "class": "fa fa-briefcase mr-5"
-  }), "View Project")))))));
+    className: "si si-key mr-5"
+  }), "Permissions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "row items-push"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "block block-rounded mb-5 px-20 py-10"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    style: {
+      display: "inline"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "text-center",
+    style: {
+      width: '50px',
+      display: "inline"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+    className: "js-task-status css-control css-control-primary css-checkbox py-0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+    type: "checkbox",
+    className: "css-control-input",
+    checked: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    className: "css-control-indicator"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "js-task-content font-w600",
+    style: {
+      display: "inline"
+    }
+  }, "Contract Signing"))))));
 };
 
 Show.layout = function (page) {
@@ -70365,7 +70971,7 @@ __webpack_require__.r(__webpack_exports__);
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "font-w600"
   }, "+$29 New sale"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "javascript:void(0)"
+    href: "#"
   }, "Admin Template")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "font-size-xs text-muted"
   }, "5 min ago"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70387,8 +70993,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "block-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     action: "be_pages_dashboard.html",
-    method: "post",
-    onSubmit: "return false;"
+    method: "post"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group mb-15"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -70401,7 +71006,7 @@ __webpack_require__.r(__webpack_exports__);
     id: "side-overlay-profile-name",
     name: "side-overlay-profile-name",
     placeholder: "Your name..",
-    value: "John Smith"
+    defaultValue: "John Smith"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "input-group-append"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -70420,7 +71025,7 @@ __webpack_require__.r(__webpack_exports__);
     id: "side-overlay-profile-email",
     name: "side-overlay-profile-email",
     placeholder: "Your email..",
-    value: "john.smith@example.com"
+    defaultValue: "john.smith@example.com"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "input-group-append"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -70500,8 +71105,8 @@ __webpack_require__.r(__webpack_exports__);
     className: "custom-control-input",
     id: "side-overlay-settings-status",
     name: "side-overlay-settings-status",
-    value: "1",
-    checked: true
+    defaultValue: "1",
+    defaultChecked: true
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "custom-control-label",
     htmlFor: "side-overlay-settings-status"
@@ -70512,7 +71117,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "custom-control-input",
     id: "side-overlay-settings-public-profile",
     name: "side-overlay-settings-public-profile",
-    value: "1"
+    defaultValue: "1"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "custom-control-label",
     htmlFor: "side-overlay-settings-public-profile"
@@ -70523,8 +71128,8 @@ __webpack_require__.r(__webpack_exports__);
     className: "custom-control-input",
     id: "side-overlay-settings-notifications",
     name: "side-overlay-settings-notifications",
-    value: "1",
-    checked: true
+    defaultValue: "1",
+    defaultChecked: true
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "custom-control-label",
     htmlFor: "side-overlay-settings-notifications"
@@ -70537,7 +71142,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "custom-control-input",
     id: "side-overlay-settings-updates",
     name: "side-overlay-settings-updates",
-    value: "1"
+    defaultValue: "1"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "custom-control-label",
     htmlFor: "side-overlay-settings-updates"
@@ -70548,8 +71153,8 @@ __webpack_require__.r(__webpack_exports__);
     className: "custom-control-input",
     id: "side-overlay-settings-api-access",
     name: "side-overlay-settings-api-access",
-    value: "1",
-    checked: true
+    defaultValue: "1",
+    defaultChecked: true
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "custom-control-label",
     htmlFor: "side-overlay-settings-api-access"
@@ -70560,7 +71165,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "custom-control-input",
     id: "side-overlay-settings-limit-requests",
     name: "side-overlay-settings-limit-requests",
-    value: "1"
+    defaultValue: "1"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "custom-control-label",
     htmlFor: "side-overlay-settings-limit-requests"
@@ -70628,7 +71233,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "link-effect text-dual-primary-dark",
     "data-toggle": "layout",
     "data-action": "sidebar_style_inverse_toggle",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "si si-drop"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -70687,7 +71292,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-default",
     "data-toggle": "theme",
     "data-theme": "default",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-2x fa-circle"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70696,7 +71301,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-elegance",
     "data-toggle": "theme",
     "data-theme": "assets/css/themes/elegance.min.css",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-2x fa-circle"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70705,7 +71310,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-pulse",
     "data-toggle": "theme",
     "data-theme": "assets/css/themes/pulse.min.css",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-2x fa-circle"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70714,7 +71319,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-flat",
     "data-toggle": "theme",
     "data-theme": "assets/css/themes/flat.min.css",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-2x fa-circle"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70723,7 +71328,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-corporate",
     "data-toggle": "theme",
     "data-theme": "assets/css/themes/corporate.min.css",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-2x fa-circle"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70732,7 +71337,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-earth",
     "data-toggle": "theme",
     "data-theme": "assets/css/themes/earth.min.css",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-2x fa-circle"
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
@@ -70842,7 +71447,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "dropdown-divider"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "dropdown-item",
-    href: "javascript:void(0)",
+    href: "#",
     "data-toggle": "layout",
     "data-action": "side_overlay_toggle"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -70877,7 +71482,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "list-unstyled my-20"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "text-body-color-dark media mb-15",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ml-5 mr-15"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -70890,7 +71495,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-muted font-size-sm font-italic"
   }, "15 min ago")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "text-body-color-dark media mb-15",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ml-5 mr-15"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -70903,7 +71508,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-muted font-size-sm font-italic"
   }, "50 min ago")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "text-body-color-dark media mb-15",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ml-5 mr-15"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -70916,7 +71521,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-muted font-size-sm font-italic"
   }, "4 hours ago")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "text-body-color-dark media mb-15",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ml-5 mr-15"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -70929,7 +71534,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "text-muted font-size-sm font-italic"
   }, "16 hours ago")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "text-body-color-dark media mb-15",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ml-5 mr-15"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -70944,7 +71549,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "dropdown-divider"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "dropdown-item text-center mb-0",
-    href: "javascript:void(0)"
+    href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-flag mr-5"
   }), " View All"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
