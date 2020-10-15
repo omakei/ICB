@@ -19,7 +19,7 @@ const Edit =  ()=>{
       mobile_number:userdetail.mobile_number ||'',
       department:userdetail.department_id || '',
       email:email || '',
-      role: user_role|| [],
+      roles: user_role|| [],
       title: userdetail.title || '',
       board_registrations: board_registrations || [],
       education_certificaties: education_certificaties || [],
@@ -175,8 +175,8 @@ const Edit =  ()=>{
                     name="role"
                     defaultValue={user_role}
                     options={roles}
-                    errors={errors.role}
-                    value={values.role}
+                    errors={errors.roles}
+                    value={values.roles}
                     onChange={handleMultiSelectChange}
                 />
                 <FileInput

@@ -21,7 +21,7 @@ const Create =  ()=>{
       department:'',
       email:'',
       title:'',
-      role: [],
+      roles: [],
       board_registrations: [],
       education_certificaties: [],
       image:''
@@ -189,8 +189,8 @@ const Create =  ()=>{
                     label="Role(s)"
                     name="role"
                     options={roles}
-                    errors={errors.role}
-                    value={values.role}
+                    errors={errors.roles}
+                    value={values.roles}
                     onChange={handleMultiSelectChange}
                 />
                 <FileInput

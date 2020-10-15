@@ -81,6 +81,7 @@ class UserDetailsController extends Controller
             'department' => ['required', 'exists:departments,id'],
             'email' => ['required'],
             'title' => ['required'],
+            'roles*value' => ['required', 'exists:roles,id'],
             'board_registrations*value' => ['required', 'exists:board_registrations,id'],
             'education_certificaties*value' => ['required', 'exists:education_certificaties,id'],
             'image' => ['required'],
@@ -105,6 +106,11 @@ class UserDetailsController extends Controller
         foreach ($request['education_certificaties'] as $certificate) {
             
             $userdetails->education_certificates()->attach($certificate['value']);
+        }
+
+        foreach ($request['roles'] as $role) {
+            
+            $userdetails->roles()->attach($role['value']);
         }
 
         if(!is_null($request['image'])){
@@ -198,6 +204,7 @@ class UserDetailsController extends Controller
             'email' => ['required'],
             'title' => ['required'],
             'board_registrations*value' => ['required', 'exists:board_registrations,id'],
+            'roles*value' => ['required', 'exists:roles,id'],
             'education_certificaties*value' => ['required', 'exists:education_certificaties,id'],
             'image' => ['sometimes'],
 
@@ -221,6 +228,11 @@ class UserDetailsController extends Controller
         foreach ($request['education_certificaties'] as $certificate) {
             
             $userdetail->education_certificates()->sync($certificate['value']);
+        }
+        
+        foreach ($request['roles'] as $role) {
+            
+            $userdetail->roles()->sync($role['value']);
         }
 
         if(!is_null($request['image'])){
