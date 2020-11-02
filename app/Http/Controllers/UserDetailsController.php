@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\BoardRegistration;
 use App\Models\EducationCertificate;
 use App\Models\Organization;
-use App\Models\Role;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
@@ -57,11 +57,20 @@ class UserDetailsController extends Controller
 
             return $data;
         });
+
+        $roles = Role::where('name','!=','superuser')->get()->map(function($role){
+            $data['value'] = $role->name;
+            $data['label'] = $role->name;
+
+            return $data;
+        });
+
         return Inertia::render('User/Create',[ 
             'boards'=> $boards, 
             'certificates' => $certificates, 
             'departments'=> Department::where('type', 'department')->get(), 
-            'titles' => get_title_dropdown()
+            'titles' => get_title_dropdown(),
+            'roles' => $roles
              ]);
     }
 
@@ -81,7 +90,7 @@ class UserDetailsController extends Controller
             'department' => ['required', 'exists:departments,id'],
             'email' => ['required'],
             'title' => ['required'],
-            'roles*value' => ['required', 'exists:roles,id'],
+            'roles*value' => ['required', 'exists:roles,name'],
             'board_registrations*value' => ['required', 'exists:board_registrations,id'],
             'education_certificaties*value' => ['required', 'exists:education_certificaties,id'],
             'image' => ['required'],
@@ -108,11 +117,6 @@ class UserDetailsController extends Controller
             $userdetails->education_certificates()->attach($certificate['value']);
         }
 
-        foreach ($request['roles'] as $role) {
-            
-            $userdetails->roles()->attach($role['value']);
-        }
-
         if(!is_null($request['image'])){
             
             list($type, $request['image']) = explode(';', $request['image']);
@@ -122,12 +126,16 @@ class UserDetailsController extends Controller
 
             $userdetails->addMediaFromBase64($request['image'])->usingFileName(rand(100,999).$userdetails->first_name."." .$extension)->toMediaCollection('profile-images');
         }
-        $user = User::where('user_id', $userdetails->id)->first();
 
-        $user->update([
+        $user = User::create([
             'name' => $userdetails->first_name. " ".$userdetails->middle_name. " ".$userdetails->last_name,
-            'email' => $request['email']
+            'email' => $request['email'],
+            'password' => Hash::make('password#12'),
+            'activation_code' => rand(100, 999)."-ICB-". rand(100, 999)."-IMS",
+            'user_id' => $userdetails->id
         ]);
+
+        $user->assignRole(array_values(array_column($request['roles'], 'value')));
 
         return Redirect::route('userdetails.index')->with('success', 'User Created Successful');
     }
@@ -170,7 +178,14 @@ class UserDetailsController extends Controller
 
             return $data;
         });
-        // dd($userdetail->account->roles);
+        
+        $roles = Role::where('name','!=','superuser')->get()->map(function($role){
+            $data['value'] = $role->name;
+            $data['label'] = $role->name;
+
+            return $data;
+        });
+
 
         return Inertia::render('User/Edit',[ 
             'userdetail' => $userdetail,
@@ -182,7 +197,8 @@ class UserDetailsController extends Controller
             'boards'=> $boards, 
             'certificates' => $certificates, 
             'departments'=> Department::where('type', 'department')->get(), 
-            'titles' => get_title_dropdown() 
+            'titles' => get_title_dropdown(),
+            'roles'=> $roles 
             ]);
     }
 
@@ -230,10 +246,6 @@ class UserDetailsController extends Controller
             $userdetail->education_certificates()->sync($certificate['value']);
         }
         
-        foreach ($request['roles'] as $role) {
-            
-            $userdetail->roles()->sync($role['value']);
-        }
 
         if(!is_null($request['image'])){
             
@@ -245,12 +257,14 @@ class UserDetailsController extends Controller
             $userdetail->addMediaFromBase64($request['image'])->usingFileName(rand(100,999).$userdetail->first_name."." .$extension)->toMediaCollection('profile-images');
         }
         
-        $user = User::create([
+        $user = User::where('user_id', $userdetail->id)->first();
+
+        $user->update([
             'name' => $userdetail->first_name. " ".$userdetail->middle_name. " ".$userdetail->last_name,
-            'email' => $request['email'],
-            'password' => Hash::make('password#12'),
-            'activation_code' => rand(100, 999)."-ICB-". rand(100, 999)."-IMS"
+            'email' => $request['email']
         ]);
+
+        $user->syncRoles(array_values(array_column($request['roles'], 'value')));
 
         return Redirect::route('userdetails.index')->with('success', 'User Created Successful');
     }

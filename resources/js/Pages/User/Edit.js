@@ -172,7 +172,7 @@ const Edit =  ()=>{
                   <MultiSelectInput
                     className="col-md-8"
                     label="Role(s)"
-                    name="role"
+                    name="roles"
                     defaultValue={user_role}
                     options={roles}
                     errors={errors.roles}

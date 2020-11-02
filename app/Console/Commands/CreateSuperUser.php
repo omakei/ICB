@@ -128,12 +128,7 @@ class CreateSuperUser extends Command
         $user->updated_at = Carbon::now();
         $user->save();
 
-        $superuserId = DB::table('roles')->where('name', 'superuser')->value('id');
-
-        DB::table('user_role')->insert([
-            'role_id' => $superuserId,
-            'user_id' => $user->id,
-        ]);
+        $user->assignRole('superuser');
 
         $this->info('Congratulations, Now you are the SUPERUSER of this system.');
  

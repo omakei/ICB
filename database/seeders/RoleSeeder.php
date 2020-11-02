@@ -29,7 +29,7 @@ class RoleSeeder extends Seeder
                 'description' => 'Manager of ICB department',
             ],
             [
-                'name' => 'Lecture',
+                'name' => 'consaltant',
                 'description' => 'academic lecture'
             ],
            

@@ -187,7 +187,7 @@ const Create =  ()=>{
                 <MultiSelectInput
                     className="col-md-8"
                     label="Role(s)"
-                    name="role"
+                    name="roles"
                     options={roles}
                     errors={errors.roles}
                     value={values.roles}
