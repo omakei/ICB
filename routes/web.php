@@ -45,7 +45,10 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::resource('boardregistrations', BoardRegistrationController::class);
     Route::resource('projects', ProjectController::class);
     Route::resource('clients', ClientController::class);
-
+    Route::get('projects/{project}/add_machine_charges', [ProjectController::class, 'addMachineCharges'])->name('projects.add_machine_charges');
+    Route::post('projects/{project}/update_status', [ProjectController::class, 'updateStatus'])->name('projects.update_status');
+    Route::get('projects/{project}/change_status', [ProjectController::class, 'editStatus'])->name('projects.change_status');
+    
 
     Route::get('client_payments/{project}/create', [ClientPaymentController::class, 'create'])->name('client_payments.create');
     Route::post('client_payments/store', [ClientPaymentController::class, 'store'])->name('client_payments.store');

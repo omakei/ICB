@@ -11,11 +11,13 @@ const Show = () => {
     const { project, expenditures, client_payments, organization, client, project_summary } = usePage();
     
     return (
-    <BlockCard title="Project List">
+    <BlockCard title="Project Details">
         <div className="col-md-12 mb-3">
             <InertiaLink href={route('expenditures.create', project.id)} className="btn btn-alt-primary mr-3"> Add Expenditure</InertiaLink>
             <InertiaLink href={route('client_payments.create', project.id)} className="btn btn-alt-success mr-3"> Add client Payment</InertiaLink>
             <InertiaLink href={route('loans.create',project.id)} className="btn btn-alt-warning mr-3"> Add Loan</InertiaLink>
+            <InertiaLink href={route('projects.add_machine_charges',project.id)} className="btn btn-alt-info mr-3"> {project.machine_charge==0? "Add":"Remove" } Machine Charges</InertiaLink>
+            <InertiaLink href={route('projects.change_status',project.id)} className="btn btn-alt-secondary mr-3">Change Status</InertiaLink>
         </div>
         <div className="block">
             <div className="block-header block-header-default">
@@ -55,7 +57,7 @@ const Show = () => {
                 </div>
 
                 <div className="table-responsive push">
-                <p className="h4 text-center">Instaldment Payments</p>
+                <p className="h4 text-center">Instalment Payments</p>
                     <table className="table table-bordered table-hover">
                         <thead>
                             <tr>

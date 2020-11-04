@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use App\Models\Client;
-use App\Models\ClientPayment;
 use App\Models\Project;
 use App\Models\Department;
 use App\Models\Expenditure;
-use App\Models\Organization;
 use App\Models\UserDetails;
+use App\Models\Organization;
 use Illuminate\Http\Request;
+use App\Models\ClientPayment;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Redirect;
 
 class ProjectController extends Controller
@@ -136,8 +137,13 @@ class ProjectController extends Controller
 
         $gross_income_to_institute = $project->contract_sum_vat_exclusive * 0.13;
         $gross_income_to_icb = $project->contract_sum_vat_exclusive * 0.09;
-        $machine_charges = $project->contract_sum_vat_exclusive * 0.01;
 
+        if($project->machine_charge){
+            $machine_charges = $project->contract_sum_vat_exclusive * 0.01;
+        }else{
+            $machine_charges = 0;
+        }
+        
         $net_income = $project->contract_sum_vat_exclusive - ($gross_income_to_institute + $gross_income_to_icb + $machine_charges);
 
         $direct_cost = $project->expenditures->sum('amount');
@@ -245,5 +251,54 @@ class ProjectController extends Controller
         $project->delete(); 
     
         return Redirect::route('projects.index')->with(['success' => 'Project Deleted Successful']);
+    }
+
+     /**
+     * Update Project Status
+     *
+     * @param  \App\Models\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+    public function updateStatus(Request $request, Project $project)
+    {
+        $request->validate([
+            'remarks' => ['required', Rule::in(['ongoing', 'complited', 'complited pending payment'])]
+        ]);
+        
+        $project->remarks = $request['remarks'];
+        $project->save(); 
+    
+        return Redirect::route('projects.show',['project' => $project->id])->with('success', 'Project Udated!');
+    }
+
+     /**
+     * Edit project status
+     *
+     * @param  \App\Models\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+    public function editStatus(Project $project)
+    {
+        $statuses = [
+            ['label'=> 'Ongoing', 'value' => 'ongoing'],
+            ['label'=> 'Complited', 'value' => 'complited'],
+            ['label'=> 'Complited Pending Payment', 'value' => 'complited pending payment'],
+        ];
+
+        return Inertia::render('Project/Status', ['project' => $project, 'statuses' => $statuses]);
+    }
+
+     /**
+     * Update machine charge
+     *
+     * @param  \App\Models\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+    public function addMachineCharges(Project $project)
+    {
+        $project->machine_charge = !$project->machine_charge;
+        $project->save(); 
+    
+        return Redirect::route('projects.show',['project' => $project->id])->with('success', 'Project Udated!');
     }
 }
